@@ -1,7 +1,10 @@
+
+import LandindLayout from "@/Components/AdvertiseLayout";
 export default function Home() {
-    return (
-        <div>
-            Cargo landing Page
-        </div>
-    );
+    
+  return (
+    <>
+
+    </>
+  );
 }

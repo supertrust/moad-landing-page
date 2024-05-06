@@ -1,10 +1,10 @@
 import React from 'react';
-
+import LandindLayout from '@/Components/AdvertiseLayout';
 const Page = () => {
     return (
-        <div>
-            advertiser landing page
-        </div>
+        <>
+        <LandindLayout/>
+        </>
     );
 };
 
