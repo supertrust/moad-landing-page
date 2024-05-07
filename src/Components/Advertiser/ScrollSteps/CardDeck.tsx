@@ -15,11 +15,14 @@ const CardDeck = () => {
               <li className="reactive h-[700px]">
                 <div className="contents">
                   <div className="w-[580px] mt-[75px]  ml-[80px]">
-                    <h1 className=" text-[68px] font-bold  text-[#561AA4]">
-                      광고 효과는 확실하게, 관리도 간편하게
+                    <h1 className=" text-[68px] font-bold  text-[#0E121B]">
+                      화물차 랩핑으로
+                      <span className="text-[#561AA4]">
+                        사업을 확장시켜보세요
+                      </span>
                     </h1>
                     <p className="text-[#101440] text-[32px] font-bold w-[480px]">
-                      빠른 광고 신청과 계약 관리로 간편하게 믿고 관리하세요.
+                      마음에 드시는 광고 선택 후 의뢰하기를 눌러주세요.
                     </p>
                   </div>
 
@@ -33,24 +36,25 @@ const CardDeck = () => {
                 </div>
                 <div className="step-num flex justify-center items-center">
                   <div>
-                  <Image
-                    src={stepUnion}
-                    alt="icon"
-                    className="w-[20px] h-[24px] mr-1"
-                  />
+                    <Image
+                      src={stepUnion}
+                      alt="icon"
+                      className="w-[20px] h-[24px] mr-1"
+                    />
                   </div>
-                 <div>
-                 STEP-1
-                 </div>
-                
+                  <div>STEP-1</div>
                 </div>
               </li>
               <li className="reactive h-[700px]">
                 <div className="contents">
                   <div className="w-[580px] mt-[75px]  ml-[80px]">
-                    <h1 className=" text-[68px] font-bold  text-[#561AA4]">
-                      광고 효과는 확실하게, 관리도 간편하게
+                    <h1 className=" text-[68px] font-bold  text-[#0E121B]">
+                      화물차 랩핑으로
+                    
                     </h1>
+                    <span className="text-[#561AA4]">
+                        사업을 확장시켜보세요
+                      </span>
                     <p className="text-[#101440] text-[32px] font-bold w-[480px]">
                       빠른 광고 신청과 계약 관리로 간편하게 믿고 관리하세요.
                     </p>
@@ -65,16 +69,13 @@ const CardDeck = () => {
                 </div>
                 <div className="step-num flex justify-center items-center">
                   <div>
-                  <Image
-                    src={stepUnion}
-                    alt="icon"
-                    className="w-[20px] h-[24px] mr-1"
-                  />
+                    <Image
+                      src={stepUnion}
+                      alt="icon"
+                      className="w-[20px] h-[24px] mr-1"
+                    />
                   </div>
-                 <div>
-                 STEP-2
-                 </div>
-                
+                  <div>STEP-2</div>
                 </div>
               </li>
             </ul>

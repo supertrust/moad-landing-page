@@ -1,9 +1,11 @@
 
-import LandindLayout from "@/Components/AdvertiseLayout";
+import CargoLayout from "@/Components/CargoLayout";
+
 export default function Home() {
     
   return (
     <>
+<CargoLayout/>
 
     </>
   );

@@ -1,11 +1,9 @@
-"use client";
-import React, { useState } from "react";
-import Image from "next/image";
-import DownIcon from "../../Assets/chevron-up.svg";
-import Link from "next/link";
-import { useRouter } from 'next/router';
-import Nav from "@/Components/Advertiser/PagesNavbar/Nav";
-const page = () => {
+'use client'
+import React,{useState} from 'react'
+import Nav from '@/Components/Advertiser/PagesNavbar/Nav'
+import Image from 'next/image'
+import DownIcon from '../../Assets/chevron-up.svg'
+const Page = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDropdown = () => {
@@ -14,8 +12,7 @@ const page = () => {
   return (
     <>
     <Nav/>
-      {/* DrowpDown--Content */}
-      <div className="flex justify-center mt-20">
+    <div className="flex justify-center mt-20">
         <div className="w-[1170px]  px-10  py-6 bg-slate-100 border border-zinc-200 flex-col justify-start items-end gap-10 inline-flex">
           <div className="flex justify-center  items-center ">
             <div className="text-neutral-900 w-[35px]  font-medium font-['Pretendard']">
@@ -27,7 +24,7 @@ const page = () => {
             >
               <Image
                 src={DownIcon}
-                className=""
+        
                 width={26}
                 alt="Drop-Down-icon"
                 height={26}
@@ -244,13 +241,14 @@ const page = () => {
               제1조. 목적
             </div>
             <div className="w-[1170px] text-neutral-900 text-base font-normal font-['Pretendard'] leading-snug">
-              (주)머스트핀테크(이하 “회사“라고 함)는 회사가 제공하고자 하는
-              서비스(이하 “회사 서비스“)를 이용하는 개인(이하 “이용자“ 또는
-              “개인“)의 정보(이하 “개인정보“)를 보호하기 위해, 개인정보보호법,
-              정보통신망 이용촉진 및 정보보호 등에 관한 법률(이하
-              '정보통신망법') 등 관련 법령을 준수하고, 서비스 이용자의 개인정보
+
+              {`주`}머스트핀테크{`이하 “회사“라고 함`}는 회사가 제공하고자 하는
+              서비스{`이하 “회사 서비스“`}를 이용하는 개인{`이하 “이용자“ 또는
+              “개인“`}의 정보{`이하 “개인정보"`}를 보호하기 위해, 개인정보보호법,
+              정보통신망 이용촉진 및 정보보호 등에 관한 법률{`이하
+              '정보통신망법'`} 등 관련 법령을 준수하고, 서비스 이용자의 개인정보
               보호 관련한 고충을 신속하고 원활하게 처리할 수 있도록 하기 위하여
-              다음과 같이 개인정보처리방침(이하 “본 방침“)을 수립합니다.
+              다음과 같이 개인정보처리방침{`이하 “본 방침"`}을 수립합니다.
             </div>
           </div>
           <div className="flex-col justify-start items-start gap-2 flex">
@@ -287,7 +285,7 @@ const page = () => {
                 본 방침은 개인정보 관련 법령, 지침, 고시 또는 정부나 회사
                 서비스의 정책이나 내용의 변경에 따라 개정될 수 있습니다.
                 <br />
-                회사는{" "}
+                회사는
               </span>
               <span className="text-neutral-900 text-base font-bold font-['Pretendard'] leading-snug">
                 제1항
@@ -299,7 +297,7 @@ const page = () => {
                 서면·모사전송·전자우편 또는 이와 비슷한 방법으로 이용자에게
                 공지하는 방법
                 <br />
-                회사는{" "}
+                회사는
               </span>
               <span className="text-neutral-900 text-base font-bold font-['Pretendard'] leading-snug">
                 제2항
@@ -366,7 +364,7 @@ const page = () => {
               </span>
               <span className="text-neutral-900 text-base font-normal font-['Pretendard'] leading-snug">
                 향후 서비스 제공시 수집내역 : 카드번호, 유효기간, 생년월일 6자리
-                (yy/mm/dd), 은행명 및 계좌번호
+                {`yy/mm/dd`}, 은행명 및 계좌번호
               </span>
             </div>
           </div>
@@ -397,7 +395,7 @@ const page = () => {
                 필수 수집 정보: 이름, 생년월일,태어난시간, 연락처, IP Address,
                 서비스 이용기록, 불량 이용 기록, 접속로그, 문의내역, 모바일
                 단말기 정보, 서비스 사용중 귀하의 모바일기기 위치정보, 광고
-                식별자 정보(ADID,IDFA)
+                식별자 정보{`ADID,IDFA`}
                 <br />
                 선택 수집 정보 : 고객센터 이용 시 또는 이벤트 응모시에 고충처리,
                 경품발송 및 세금신고 등을 위해 회원가입시 수집하지 않는
@@ -405,7 +403,7 @@ const page = () => {
                 <br />
               </span>
               <span className="text-neutral-900 text-base font-normal font-['Pretendard'] leading-snug">
-                {" "}
+              
                 관련 내용을 안내하고 별도 동의를 받습니다.
                 <br /> - 고객센터 : 이메일주소, 실명 변경 정보 등
                 <br /> - 이벤트 응모 및 당첨 : 이름, 전화번호, 이메일주소,
@@ -422,11 +420,11 @@ const page = () => {
             <div className="w-[1170px]">
               <span className="text-neutral-900 text-base font-normal font-['Pretendard'] leading-snug">
                 회사는 이용자의 서비스 이용에 따른 통계∙분석 및 부정이용의
-                확인∙분석을 위하여 다음과 같은 정보를 수집합니다. (부정이용이란
+                확인∙분석을 위하여 다음과 같은 정보를 수집합니다. {`부정이용이란
                 회원탈퇴 후 재가입, 상품구매 후 구매취소 등을 반복적으로 행하는
                 등 회사가 제공하는 할인쿠폰, 이벤트 혜택 등의 경제상 이익을
                 불·편법적으로 수취하는 행위, 이용약관 등에서 금지하고 있는 행위,
-                명의도용 등의 불·편법행위 등을 말합니다.)
+                명의도용 등의 불·편법행위 등을 말합니다.`}
                 <br />
               </span>
               <span className="text-neutral-900 text-base font-normal font-['Pretendard'] leading-snug">
@@ -569,7 +567,7 @@ const page = () => {
                 <br />
               </span>
               <span className="text-neutral-900 text-base font-normal font-['Pretendard'] leading-snug">
-                {" "}
+            
                 -개인위치정보에 관한 기록 : 6개월
               </span>
             </div>
@@ -590,9 +588,9 @@ const page = () => {
             </div>
             <div className="w-[1170px] text-neutral-900 text-base font-normal font-['Pretendard'] leading-snug">
               이용자가 회원가입 등을 위해 입력한 정보는 개인정보 처리 목적이
-              달성된 후 별도의 DB로 옮겨져(종이의 경우 별도의 서류함) 내부 방침
-              및 기타 관련 법령에 의한 정보보호 사유에 따라(보유 및 이용기간
-              참조) 일정 기간 저장된 후 파기 되어집니다. 회사는 파기 사유가
+              달성된 후 별도의 DB로 옮겨져{`종이의 경우 별도의 서류함`} 내부 방침
+              및 기타 관련 법령에 의한 정보보호 사유에 따라{`보유 및 이용기간
+              참조`} 일정 기간 저장된 후 파기 되어집니다. 회사는 파기 사유가
               발생한 개인정보를 개인정보보호 책임자의 승인절차를 거쳐
               파기합니다.
             </div>
@@ -630,7 +628,7 @@ const page = () => {
                 수신자에게 개인정보의 수집출처를 고지하고 전화권유를 하는 경우
                 <br /> 회사는 전항에도 불구하고 수신자가 수신거부의사를
                 표시하거나 사전 동의를 철회한 경우에는 영리목적의 광고성 정보를
-                전송하지 않으며 수신거부 및 수신동의 철회에 대한 처리 결과{" "}
+                전송하지 않으며 수신거부 및 수신동의 철회에 대한 처리 결과
                 <br /> 를 알립니다.
                 <br />
               </span>
@@ -694,7 +692,7 @@ const page = () => {
               </span>
               <span className="text-neutral-900 text-base font-normal font-['Pretendard'] leading-snug">
                 의 경우 회사는 그 법정대리인의 이름, 생년월일, 성별,
-                중복가입확인 정보(ID), 휴대폰 번호 등을 추가로 수집합니다.
+                중복가입확인 정보{`ID`}, 휴대폰 번호 등을 추가로 수집합니다.
               </span>
             </div>
           </div>
@@ -756,7 +754,7 @@ const page = () => {
             </div>
             <div className="w-[1170px] text-neutral-900 text-base font-normal font-['Pretendard'] leading-snug">
               회사는 이용자 혹은 법정 대리인의 요청에 의해 해지 또는 삭제된
-              개인정보는 회사가 수집하는 "개인정보의 보유 및 이용기간"에 명시된
+              개인정보는 회사가 수집하는 개인정보의 보유 및 이용기간 에 명시된
               바에 따라 처리하고 그 외의 용도로 열람 또는 이용할 수 없도록
               처리하고 있습니다.
             </div>
@@ -786,7 +784,7 @@ const page = () => {
               회사는 만일의 사태에 대비하여 침입차단 시스템을 이용하여 보안에
               최선을 다하고 있습니다.
               <br />
-              회사는 민감한 개인정보(를 수집 및 보유하고 있는 경우)를 암호화
+              회사는 민감한 개인정보{`를 수집 및 보유하고 있는 경우`}를 암호화
               통신 등을 통하여 네트워크상에서 개인정보를 안전하게 전송할 수
               있도록 하고 있습니다.
             </div>
@@ -807,7 +805,7 @@ const page = () => {
             </div>
             <div className="w-[1170px]">
               <span className="text-neutral-900 text-base font-normal font-['Pretendard'] leading-snug">
-                회사는 개인정보의 분실·도난·유출(이하 "유출 등"이라 한다) 사실을
+                회사는 개인정보의 분실·도난·유출{`이하 "유출 등"이라 한다`} 사실을
                 안 때에는 지체 없이 다음 각 호의 모든 사항을 해당 이용자에게
                 알리고 방송통신위원회 또는 한국인터넷진흥원에 신고합니다.
                 <br />
@@ -844,8 +842,8 @@ const page = () => {
                 회사는 이용자의 개인정보에 관하여 개인정보보호법 등 관계 법규를
                 위반 하는 사항을 내용으로 하는 국제계약을 체결하지 않습니다.
                 <br />
-                회사는 이용자의 개인정보를 국외에 제공(조회되는 경우를
-                포함)ᆞ처리위탁ᆞ보관(이하 "이전"이라 함)하려면 이용자의 동의를
+                회사는 이용자의 개인정보를 국외에 제공{`조회되는 경우를
+                포함`}ᆞ처리위탁ᆞ보관{`이하 "이전"이라 함`}하려면 이용자의 동의를
                 받습니다. 다만, 본조
               </span>
               <span className="text-neutral-900 text-base font-bold font-['Pretendard'] leading-snug">
@@ -872,8 +870,8 @@ const page = () => {
                 <br />
                 개인정보가 이전되는 국가, 이전일시 및 이전방법
                 <br />
-                개인정보를 이전받는 자의 성명(법인인 경우 그 명칭 및 정보관리
-                책임자의 연락처를 말한다)
+                개인정보를 이전받는 자의 성명{`법인인 경우 그 명칭 및 정보관리
+                책임자의 연락처를 말한다`}
                 <br />
                 개인정보를 이전받는 자의 개인정보 이용목적 및 보유ᆞ이용 기간
                 <br />
@@ -915,13 +913,13 @@ const page = () => {
                 개인정보침해의 신고, 상담에 대하여는 아래의 기관에 문의하시기
                 바랍니다.
                 <br />
-                개인정보분쟁조정위원회 : (국번없이) 1833-6972 (www.kopico.go.kr)
+                개인정보분쟁조정위원회 : {`국번없이`} 1833-6972 {`www.kopico.go.kr`}
                 <br />
-                개인정보침해신고센터 : (국번없이) 118 (privacy.kisa.or.kr)
+                개인정보침해신고센터 : {`국번없이`} 118 {`privacy.kisa.or.kr`}
                 <br />
-                대검찰청 : (국번없이) 1301 (www.spo.go.kr)
+                대검찰청 : {`국번없이`} 1301 {`www.spo.go.kr`}
                 <br />
-                경찰청 : (국번없이) 182 (ecrm.cyber.go.kr)
+                경찰청 : {`번없이`} 182 {`ecrm.cyber.go.kr`}
                 <br />
                 회사는 정보주체의 개인정보자기결정권을 보장하고, 개인정보침해로
                 인한 상담 및 피해 구제를 위해 노력하고 있으며, 신고나 상담이
@@ -933,13 +931,13 @@ const page = () => {
               <span className="text-neutral-900 text-base font-normal font-['Pretendard'] leading-snug">
                 의 담당부서로 연락해주시기 바랍니다.
                 <br />
-                개인정보 보호법 제35조(개인정보의 열람), 제36조(개인정보의
-                정정·삭제), 제37조(개인정보의 처리정지 등)의 규정에 의한 요구에
+                개인정보 보호법 제35조{`개인정보의 열람`}, 제36조{`개인정보의
+                정정·삭제`}, 제37조{`개인정보의 처리정지 등`}의 규정에 의한 요구에
                 대 하여 공공기관의장이 행한 처분 또는 부작위로 인하여 권리 또는
                 이익의 침해를 받은 자는 행정심판법이 정하는 바에 따라 행정심판을
                 청구할 수 있습니다.
                 <br />
-                중앙행정심판위원회 : (국번없이) 110 (www.simpan.go.kr)
+                중앙행정심판위원회 : {`국번없이`} 110 {`www.simpan.go.kr`}
               </span>
             </div>
           </div>
@@ -953,8 +951,9 @@ const page = () => {
           </div>
         </div>
       </div>
+    
     </>
-  );
-};
+  )
+}
 
-export default page;
+export default Page

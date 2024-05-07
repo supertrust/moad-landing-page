@@ -48,13 +48,13 @@ const SecondSection = () => {
   return (
   
     <section className="relative bg-[#561AA4] h-[900px]  overflow-hidden">
-      <div className="ml-[135px] mt-[100px] w-[562px] h-[200px]">
+      <div className="ml-[135px] mt-[50px] w-[562px] h-[200px]">
         <h2 className=" font-bold text-white text-[68px] font-['Pretendard'] ">
           지금 옥외광고 대세는 차량 랩핑입니다
         </h2>
       </div>
 
-      <div className="absolute top-[332.5px] w-[1353px] h-[567px]  bg-white rounded-tr-2xl">
+      <div className="absolute top-[350.5px] w-[1353px] h-[567px]  bg-white rounded-tr-2xl">
         <div className="flex justify-center items-center space-x-6 mt-[150px] ">
           {CardData?.map((item) => {
             return (

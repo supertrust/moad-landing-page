@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import Head from "next/head"; // Import Head component
+
 
 import { usePathname } from "next/navigation";
 
@@ -22,12 +22,7 @@ const Nav = () => {
  
   return (
     <>
-      <Head>
-        {HeaderText.map((item) => (
-          <title>{`${ pathname === item.href}`}</title>
-        ))}
-        
-      </Head>
+      
       <div className="w-full h-60 bg-slate-100 justify-center items-center inline-flex mt-16">
         <div className="text-neutral-900 text-[32px] font-bold font-['Pretendard']">
           정책 및 약관

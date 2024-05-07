@@ -27,6 +27,8 @@ const Footer = () => {
       <div className=" border-[1px] border-[#E1E4EA] w-[100%] h-[58px] flex items-center mt-[40px]">
         <div className="flex ml-[135px]">
           {FooterListPage.map((item) => (
+        
+           
             <button key={item.id} className="mr-[24px] text-[#525866] text-[16px] font-['Pretendard'] ">
               <Link href={item.href} className="text-[#101440]">
                 {item.lable}

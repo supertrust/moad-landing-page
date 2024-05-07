@@ -57,6 +57,28 @@ body {
   margin-bottom: 0px;
   margin-top: 0;
 }
+.Cargohero-section {
+  margin-top: 120px;
+  margin-bottom: 2px;
+  background-image: url("../Assets/CargoHeroSection.svg");
+  background-size: cover;
+  background-position: center;
+  width: 1170px;
+  height: 640px;
+  border-radius: 60px;
+  position: relative;
+  transition: width 3s, cubic-bezier(0.165, 0.84, 0.44, 1) ease-in-out;
+}
+
+.Cargohero-section:hover {
+  width: 100vw;
+  height: 900px;
+  border-radius: 0;
+  margin-bottom: 0px;
+  margin-top: 0;
+}
+
+
 .dot {
   width: 8px;
   height: 8px;
@@ -69,3 +91,46 @@ body {
 }
 
 
+.tooltip {
+  position: absolute;
+  display: none; /* Hide tooltips by default */
+
+
+  border-radius: 6px;
+  animation: bounce 3s  ease-in;
+  transition: opacity 2s ease-in-out; /* Add transition for opacity */
+  opacity: 0; /* Start with opacity 0 */
+}
+
+.tooltip1 {
+  bottom: 600px; /* Position tooltip 1 at the bottom */
+  right: 200px; /* Position tooltip 1 on the right side */
+}
+
+.tooltip2 {
+  bottom: 400px; /* Position tooltip 2 at the bottom */
+  right: 500px; /* Position tooltip 2 on the left side */
+}
+
+.tooltip3 {
+  bottom: 250px; /* Position tooltip 3 at the bottom */
+  right: 150px; /* Position tooltip 3 on the right side */
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(20px); /* Animate from bottom to top */
+  }
+  60% {
+    transform: translateY(10px); /* Slight bounce */
+  }
+}
+
+/* Show tooltips when hovering over the image */
+.image-container:hover .tooltip {
+  display: block;
+  opacity: 1; /* Show tooltips with opacity 1 */
+}
