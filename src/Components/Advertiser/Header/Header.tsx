@@ -31,7 +31,7 @@ const IndexPage = () => {
   return (
     <>
       <header
-        className={`fixed p-3 left-0 right-0 z-10 ${
+        className={`fixed p-3 left-0 right-0 z-20 ${
           scrolled ? 'bg-white' : ''
         }`}>
         <div className='container  flex items-center justify-between'>

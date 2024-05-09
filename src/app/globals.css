@@ -110,6 +110,14 @@ body {
   display: block;
   opacity: 1; /* Show tooltips with opacity 1 */
 }
-.sections {
+.custom-footer {
   height: 300px !important;
+}
+.fp-slidesNav ul li a.active span {
+  background-color: white !important;
+}
+#fp-nav ul li a span,
+.fp-slidesNav ul li a span {
+  background-color: gainsboro !important;
+  z-index: 10;
 }

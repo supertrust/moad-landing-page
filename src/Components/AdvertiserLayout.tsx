@@ -31,7 +31,7 @@ const LandindLayout = () => {
             <div className='section'>
               <FormSection />
             </div>
-            <div className='section h-64 '>
+            <div className='section custom-footer '>
               <Footer />
             </div>
           </ReactFullpage.Wrapper>

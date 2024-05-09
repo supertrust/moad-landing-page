@@ -12,7 +12,7 @@ const CargoLayout = () => {
     <>
       <ReactFullpage
         navigation={true}
-        scrollHorizontally={false}
+        // scrollHorizontally={false}
         credits={{ enabled: false }}
         render={({ state, fullpageApi }) => (
           <ReactFullpage.Wrapper>
@@ -34,7 +34,7 @@ const CargoLayout = () => {
             <div className='section'>
               <FAQ />
             </div>
-            <div className='section h-64   '>
+            <div className='section custom-footer '>
               <Footer />
             </div>
           </ReactFullpage.Wrapper>
