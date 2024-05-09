@@ -1,50 +1,42 @@
-"use client";
-import Herosections from "./Advertiser/LandinPageSections/Heroscetion";
-import SecondSection from "./Advertiser/LandinPageSections/SecondSection";
-import MainContainer from "./Advertiser/LandinPageSections/MainScrolContainer";
-import CardsSection from "./Advertiser/LandinPageSections/CardsSection";
-import FormSection from "./Advertiser/LandinPageSections/FormSection";
-import Footer from "./Advertiser/Footer/Footer";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation, Scrollbar } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/mousewheel";
+'use client';
+import Herosections from './Advertiser/LandinPageSections/Heroscetion';
+import SecondSection from './Advertiser/LandinPageSections/SecondSection';
+import MainContainer from './Advertiser/LandinPageSections/MainScrolContainer';
+import CardsSection from './Advertiser/LandinPageSections/CardsSection';
+import FormSection from './Advertiser/LandinPageSections/FormSection';
+import Footer from './Advertiser/Footer/Footer';
+import ReactFullpage from '@fullpage/react-fullpage';
+
 const LandindLayout = () => {
   return (
     <>
-      <Swiper
-        direction={"vertical"}
-        pagination={{
-          clickable: true,
-        }}
-        modules={[Navigation, Pagination, Scrollbar]}
-        scrollbar={{
-          draggable: true,
-          hide: true,
-        }}
-        className="h-[900px]"
-      >
-        <SwiperSlide>
-          <Herosections />
-        </SwiperSlide>
-        
-        <SwiperSlide>
-          <SecondSection />
-        </SwiperSlide>
-      
-     
-      
-        <SwiperSlide>
-          <CardsSection />
-        </SwiperSlide>
-        <SwiperSlide>
-          <FormSection />
-        </SwiperSlide>
-      </Swiper>
-      <MainContainer />
-      <Footer/>
+      <ReactFullpage
+        navigation={true}
+        scrollHorizontally={false}
+        credits={{ enabled: false }}
+        render={({ state, fullpageApi }) => (
+          <ReactFullpage.Wrapper>
+            <div className='section'>
+              <Herosections />
+            </div>
+            <div className='section'>
+              <SecondSection />
+            </div>
+            <div className='section'>
+              <CardsSection />
+            </div>
+            <div className='section'>
+              <MainContainer />
+            </div>
+            <div className='section'>
+              <FormSection />
+            </div>
+            <div className='section h-64 '>
+              <Footer />
+            </div>
+          </ReactFullpage.Wrapper>
+        )}
+      />
     </>
   );
 };
