@@ -32,18 +32,15 @@ const FAQ = () => {
       <div className='flex  '>
         <div className='w-full h-[900px] relative bg-slate-100 '>
           <div className='left-[135px] top-[100px] absolute flex-col justify-start items-start gap-[60px] inline-flex'>
-            <div
-              className='relative
-'>
-              <h1 className="text-violet-900 text-[68px] font-bold font-['Pretendard']">
-                FAQ
-              </h1>
-            </div>
+            <h1 className="text-violet-900 text-[68px] font-bold font-['Pretendard']">
+              FAQ
+            </h1>
+
             <div className="text-neutral-900 text-[32px] font-bold font-['Pretendard'] underline">
               다른 궁금점이 있다면?
             </div>
           </div>
-          <div className='  gap-5 flex  justify-center items-center mt-[30%]'>
+          <div className='  gap-x-6 flex  justify-center items-center mt-[30%]'>
             {FaqCards.map((item, index) => {
               return (
                 <div

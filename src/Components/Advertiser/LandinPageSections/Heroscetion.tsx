@@ -1,17 +1,10 @@
-
-
 const Herosections = () => {
- 
-
   return (
     <>
-      <div className="h-[900px]">
-        <section className="relative overflow-hidden ">
-          <div
-            className="hero-section flex items-center mx-auto"
-          
-          >
-            <div className="w-[792px]">
+      <div className=''>
+        <section className='relative overflow-hidden '>
+          <div className='hero-section flex items-center mx-auto'>
+            <div className='w-[792px]'>
               <h2 className="text-[68px] font-bold text-white ms-10 font-['Pretendard'] ">
                 이젠 광고도 효율적으로! 움직이는 랩핑 광고로 주목
               </h2>

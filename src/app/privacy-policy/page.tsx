@@ -1,232 +1,71 @@
-'use client'
-import React,{useState} from 'react'
-import Nav from '@/Components/Advertiser/PagesNavbar/Nav'
-import Image from 'next/image'
-import DownIcon from '../../Assets/chevron-up.svg'
+'use client';
+import React, { useState, useRef, useEffect } from 'react';
+import Nav from '@/Components/Advertiser/PagesNavbar/Nav';
+import Image from 'next/image';
+import DownIcon from '../../Assets/chevron-up.svg';
+import Data from '../../PagesData/Data.json';
 const Page = () => {
+  console.table(Data);
   const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+      }
+    };
 
+    document.addEventListener('click', handleClickOutside);
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, [isOpen]);
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
   return (
     <>
-    <Nav/>
-    <div className="flex justify-center mt-20">
-        <div className="w-[1170px]  px-10  py-6 bg-slate-100 border border-zinc-200 flex-col justify-start items-end gap-10 inline-flex">
-          <div className="flex justify-center  items-center ">
+      <Nav />
+      <div className='flex justify-center mt-20'>
+        <div className='w-[1170px]  px-10  py-6 bg-slate-100 border border-zinc-200 flex-col justify-start items-end gap-10 inline-flex'>
+          <div className='flex justify-center  items-center ' ref={dropdownRef}>
             <div className="text-neutral-900 w-[35px]  font-medium font-['Pretendard']">
               열기
             </div>
             <div
-              className={`w-6 h-6 relative  ${isOpen ? "rotate-180" : ""}`}
-              onClick={toggleDropdown}
-            >
+              className={`w-6 h-6 relative  ${isOpen ? 'rotate-180' : ''}`}
+              onClick={toggleDropdown}>
               <Image
                 src={DownIcon}
-        
                 width={26}
-                alt="Drop-Down-icon"
+                alt='Drop-Down-icon'
                 height={26}
               />
             </div>
           </div>
           {isOpen && (
-            <div className="flex justify-center pb-10">
-              <div className=" h-[588px]  flex-col justify-center items-center inline-flex">
-                <div className="w-[1090px] h-[588px] justify-start items-start inline-flex">
-                  <div className="h-[49px] w-[363px] p-4 bg-zinc-200/opacity-50 border-l border-t border-gray-300 justify-start items-center gap-2.5 flex">
-                    <div className="text-violet-900 text-sm font-bold font-['Pretendard']">
-                      제1조. 목적
+            <div className='flex justify-center pb-10 bg-white'>
+              <div className='h-[588px] flex-col justify-center items-center inline-flex'>
+                <div
+                  className={`w-[1090px] justify-start items-start inline-flex flex-wrap`}>
+                  {Data.map((item, index) => (
+                    <div
+                      key={index}
+                      className={`h-[49px] w-[363px] p-4  border border-gray-300 justify-start items-center gap-2.5 flex 
+                      }`}>
+                      <div
+                        className={`${
+                          index === 0
+                            ? 'text-violet-900 font-bold'
+                            : 'text-neutral-900 font-normal'
+                        }   text-sm font-['Pretendard'] `}>
+                        {item.title}
+                      </div>
                     </div>
-                  </div>
-                  <div className="h-[49px] w-[363px]  p-4 bg-white border-l border-r border-t border-gray-300 justify-start items-center gap-2.5 flex">
-                    <div className="text-neutral-900 text-sm font-normal font-['Pretendard']">
-                      제2조. 개인정보 처리의 원칙
-                    </div>
-                  </div>
-                  <div className="h-[49px]  w-[363px]  p-4 bg-white border-r border-t border-gray-300 justify-start items-center gap-2.5 flex">
-                    <div className="text-neutral-900 text-sm font-normal font-['Pretendard']">
-                      제3조. 본 방침의 공개
-                    </div>
-                  </div>
-                </div>
-                <div className="w-[1090px] justify-start items-start inline-flex">
-                  <div className="h-[49px]   w-[363px]  p-4 bg-white border-l border-t border-gray-300 justify-start items-center gap-2.5 flex">
-                    <div className="text-neutral-900 text-sm font-normal font-['Pretendard']">
-                      제4조. 본 방침의 변경
-                    </div>
-                  </div>
-                  <div className="h-[49px]   w-[363px]  p-4 bg-white border-l border-r border-t border-gray-300 justify-start items-center gap-2.5 flex">
-                    <div className="text-neutral-900 text-sm font-normal font-['Pretendard']">
-                      제5조. 회원 가입을 위한 정보
-                    </div>
-                  </div>
-                  <div className="h-[49px] w-[363px]  p-4 bg-white border-r border-t border-gray-300 justify-start items-center gap-2.5 flex">
-                    <div className="text-neutral-900 text-sm font-normal font-['Pretendard']">
-                      제6조. 본인 인증을 위한 정보
-                    </div>
-                  </div>
-                </div>
-                <div className="w-[1090px] justify-start items-start inline-flex">
-                  <div className="h-[49px]  w-[363px]  p-4 bg-white border-l border-t border-b border-gray-300 justify-start items-center gap-2.5 flex">
-                    <div className="text-neutral-900 text-sm font-normal font-['Pretendard']">
-                      제7조. 법정대리인 동의를 위한 정보
-                    </div>
-                  </div>
-                  <div className="h-[49px] w-[363px]  p-4 bg-white border border-gray-300 justify-start items-center gap-2.5 flex">
-                    <div className="text-neutral-900 text-sm font-normal font-['Pretendard']">
-                      제8조. 결제 서비스를 위한 정보
-                    </div>
-                  </div>
-                  <div className="h-[49px]  w-[363px]  p-4 bg-white border-r border-t border-b border-gray-300 justify-start items-center gap-2.5 flex">
-                    <div className="text-neutral-900 text-sm font-normal font-['Pretendard']">
-                      제9조. 현금 영수증 발행을 위한 정보
-                    </div>
-                  </div>
-                </div>
-                <div className="self-stretch justify-start items-start inline-flex">
-                  <div className="h-[49px]  w-[363px]  p-4 bg-white border-l border-b border-gray-300 justify-start items-center gap-2.5 flex">
-                    <div className="text-neutral-900 text-sm font-normal font-['Pretendard']">
-                      제10조. 회사 서비스 제공을 위한 정보
-                    </div>
-                  </div>
-                  <div className="h-[49px] w-[363px]  p-4 bg-white border-l border-b border-gray-300 justify-start items-center gap-2.5 flex">
-                    <div className="text-neutral-900 text-sm font-normal font-['Pretendard']">
-                      제11조. 서비스 이용 및 부정 이용 확인을 위한 정보
-                    </div>
-                  </div>
-                  <div className="h-[49px]  w-[363px]  p-4 bg-white border-l border-r border-b border-gray-300 justify-start items-center gap-2.5 flex">
-                    <div className="text-neutral-900 text-sm font-normal font-['Pretendard']">
-                      제12조. 수집하는 개인정보 항목 및 수집방법
-                    </div>
-                  </div>
-                </div>
-                <div className="self-stretch justify-start items-start inline-flex">
-                  <div className="h-[49px] w-[363px]  p-4 bg-white border-l border-b border-gray-300 justify-start items-center gap-2.5 flex">
-                    <div className="text-neutral-900 text-sm font-normal font-['Pretendard']">
-                      제13조. 개인정보의 이용
-                    </div>
-                  </div>
-                  <div className="h-[49px] w-[363px]  p-4 bg-white border-l border-b border-gray-300 justify-start items-center gap-2.5 flex">
-                    <div className="text-neutral-900 text-sm font-normal font-['Pretendard']">
-                      제14조. 사전동의 등에 따른 개인정보의 제공
-                    </div>
-                  </div>
-                  <div className="h-[49px]  w-[363px]  p-4 bg-white border-l border-r border-b border-gray-300 justify-start items-center gap-2.5 flex">
-                    <div className="text-neutral-900 text-sm font-normal font-['Pretendard']">
-                      제15조. 개인정보의 보유 및 이용기간
-                    </div>
-                  </div>
-                </div>
-                <div className="self-stretch justify-start items-start inline-flex">
-                  <div className="h-[49px]  w-[363px]  p-4 bg-white border-l border-b border-gray-300 justify-start items-center gap-2.5 flex">
-                    <div className="text-neutral-900 text-sm font-normal font-['Pretendard']">
-                      제16조. 법령에 따른 개인정보의 보유 및 이용기간
-                    </div>
-                  </div>
-                  <div className="h-[49px]  w-[363px]  p-4 bg-white border-l border-b border-gray-300 justify-start items-center gap-2.5 flex">
-                    <div className="text-neutral-900 text-sm font-normal font-['Pretendard']">
-                      제17조. 개인정보의 파기원칙
-                    </div>
-                  </div>
-                  <div className="h-[49px]    w-[363px]  p-4 bg-white border-l border-r border-b border-gray-300 justify-start items-center gap-2.5 flex">
-                    <div className="text-neutral-900 text-sm font-normal font-['Pretendard']">
-                      제18조. 개인정보파기절차
-                    </div>
-                  </div>
-                </div>
-                <div className="self-stretch justify-start items-start inline-flex">
-                  <div className="h-[49px]  w-[363px]  p-4 bg-white border-l border-b border-gray-300 justify-start items-center gap-2.5 flex">
-                    <div className="text-neutral-900 text-sm font-normal font-['Pretendard']">
-                      제19조. 개인정보파기방법
-                    </div>
-                  </div>
-                  <div className="h-[49px]  w-[363px]  p-4 bg-white border-l border-b border-gray-300 justify-start items-center gap-2.5 flex">
-                    <div className="text-neutral-900 text-sm font-normal font-['Pretendard']">
-                      제20조. 광고성 정보의 전송 조치
-                    </div>
-                  </div>
-                  <div className="h-[49px]  w-[363px]  p-4 bg-white border-l border-r border-b border-gray-300 justify-start items-center gap-2.5 flex">
-                    <div className="text-neutral-900 text-sm font-normal font-['Pretendard']">
-                      제21조. 아동의 개인정보보호
-                    </div>
-                  </div>
-                </div>
-                <div className="self-stretch justify-start items-start inline-flex">
-                  <div className="h-[49px]  w-[363px]  p-4 bg-white border-l border-b border-gray-300 justify-start items-center gap-2.5 flex">
-                    <div className="text-neutral-900 text-sm font-normal font-['Pretendard']">
-                      제22조. 개인정보 조회 및 수집동의 철회
-                    </div>
-                  </div>
-                  <div className="h-[49px]  w-[363px]  p-4 bg-white border-l border-b border-gray-300 justify-start items-center gap-2.5 flex">
-                    <div className="text-neutral-900 text-sm font-normal font-['Pretendard']">
-                      제23조. 개인정보 정보변경 등
-                    </div>
-                  </div>
-                  <div className="h-[49px] w-[363px]  p-4 bg-white border-l border-r border-b border-gray-300 justify-start items-center gap-2.5 flex">
-                    <div className="text-neutral-900 text-sm font-normal font-['Pretendard']">
-                      제24조. 이용자의 의무
-                    </div>
-                  </div>
-                </div>
-                <div className="self-stretch justify-start items-start inline-flex">
-                  <div className="h-[49px]   w-[363px]  p-4 bg-white border-l border-b border-gray-300 justify-start items-center gap-2.5 flex">
-                    <div className="text-neutral-900 text-sm font-normal font-['Pretendard']">
-                      제25조. 회사의 개인정보 관리
-                    </div>
-                  </div>
-                  <div className="h-[49px]  w-[363px]  p-4 bg-white border-l border-b border-gray-300 justify-start items-center gap-2.5 flex">
-                    <div className="text-neutral-900 text-sm font-normal font-['Pretendard']">
-                      제26조. 삭제된 정보의 처리
-                    </div>
-                  </div>
-                  <div className="h-[49px] w-[363px]  p-4 bg-white border-l border-r border-b border-gray-300 justify-start items-center gap-2.5 flex">
-                    <div className="text-neutral-900 text-sm font-normal font-['Pretendard']">
-                      제27조. 비밀번호의 암호화
-                    </div>
-                  </div>
-                </div>
-                <div className="self-stretch justify-start items-start inline-flex">
-                  <div className="h-[49px] w-[363px]  p-4 bg-white border-l border-b border-gray-300 justify-start items-center gap-2.5 flex">
-                    <div className="text-neutral-900 text-sm font-normal font-['Pretendard']">
-                      제28조. 해킹 등에 대비한 대책
-                    </div>
-                  </div>
-                  <div className="h-[49px]  w-[363px]  p-4 bg-white border-l border-b border-gray-300 justify-start items-center gap-2.5 flex">
-                    <div className="text-neutral-900 text-sm font-normal font-['Pretendard']">
-                      제29조. 개인정보 처리 최소화 및 교육
-                    </div>
-                  </div>
-                  <div className="h-[49px]  w-[363px]  p-4 bg-white border-l border-r border-b border-gray-300 justify-start items-center gap-2.5 flex">
-                    <div className="text-neutral-900 text-sm font-normal font-['Pretendard']">
-                      제30조. 개인정보 유출 등에 대한 조치
-                    </div>
-                  </div>
-                </div>
-                <div className="self-stretch justify-start items-start inline-flex">
-                  <div className="h-[49px] w-[363px] p-4 bg-white border-l border-b border-gray-300 justify-start items-center gap-2.5 flex">
-                    <div className="text-neutral-900 text-sm font-normal font-['Pretendard']">
-                      제31조. 개인정보 유출 등에 대한 조치의 예외
-                    </div>
-                  </div>
-                  <div className="h-[49px] w-[363px]  p-4 bg-white border-l border-b border-gray-300 justify-start items-center gap-2.5 flex">
-                    <div className="text-neutral-900 text-sm font-normal font-['Pretendard']">
-                      제32조. 국외 이전 개인정보의 보호
-                    </div>
-                  </div>
-                  <div className="h-[49px]  w-[363px]  p-4 bg-white border-l border-r border-b border-gray-300 justify-start items-center gap-2.5 flex">
-                    <div className="text-neutral-900 text-sm font-normal font-['Pretendard']">
-                      제33조. 회사의 개인정보 보호 책임자 지정
-                    </div>
-                  </div>
-                </div>
-                <div className="self-stretch justify-start items-start inline-flex">
-                  <div className="h-[49px] w-[363px]  p-4 bg-white border-l border-r border-b border-gray-300 justify-start items-center gap-2.5 flex">
-                    <div className="text-neutral-900 text-sm font-normal font-['Pretendard']">
-                      제34조. 권익침해에 대한 구제방법
-                    </div>
-                  </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -234,24 +73,27 @@ const Page = () => {
         </div>
       </div>
 
-      <div className="flex justify-center mt-20">
-        <div className="w-[1170px]  flex-col justify-start items-start gap-6 inline-flex">
-          <div className="flex-col justify-start items-start gap-2 flex">
+      <div className='flex justify-center mt-20'>
+        <div className='w-[1170px]  flex-col justify-start items-start gap-6 inline-flex'>
+          <div className='flex-col justify-start items-start gap-2 flex'>
             <div className="text-neutral-900 text-xl font-medium font-['Pretendard']">
               제1조. 목적
             </div>
             <div className="w-[1170px] text-neutral-900 text-base font-normal font-['Pretendard'] leading-snug">
-
               {`주`}머스트핀테크{`이하 “회사“라고 함`}는 회사가 제공하고자 하는
-              서비스{`이하 “회사 서비스“`}를 이용하는 개인{`이하 “이용자“ 또는
-              “개인“`}의 정보{`이하 “개인정보"`}를 보호하기 위해, 개인정보보호법,
-              정보통신망 이용촉진 및 정보보호 등에 관한 법률{`이하
-              '정보통신망법'`} 등 관련 법령을 준수하고, 서비스 이용자의 개인정보
-              보호 관련한 고충을 신속하고 원활하게 처리할 수 있도록 하기 위하여
-              다음과 같이 개인정보처리방침{`이하 “본 방침"`}을 수립합니다.
+              서비스{`이하 “회사 서비스“`}를 이용하는 개인
+              {`이하 “이용자“ 또는
+              “개인“`}
+              의 정보{`이하 “개인정보"`}를 보호하기 위해, 개인정보보호법,
+              정보통신망 이용촉진 및 정보보호 등에 관한 법률
+              {`이하
+              '정보통신망법'`}{' '}
+              등 관련 법령을 준수하고, 서비스 이용자의 개인정보 보호 관련한
+              고충을 신속하고 원활하게 처리할 수 있도록 하기 위하여 다음과 같이
+              개인정보처리방침{`이하 “본 방침"`}을 수립합니다.
             </div>
           </div>
-          <div className="flex-col justify-start items-start gap-2 flex">
+          <div className='flex-col justify-start items-start gap-2 flex'>
             <div className="text-neutral-900 text-xl font-medium font-['Pretendard']">
               제2조. 개인정보 처리의 원칙
             </div>
@@ -263,7 +105,7 @@ const Page = () => {
               없이 제3자에게 제공할 수도 있습니다.
             </div>
           </div>
-          <div className="flex-col justify-start items-start gap-2 flex">
+          <div className='flex-col justify-start items-start gap-2 flex'>
             <div className="text-neutral-900 text-xl font-medium font-['Pretendard']">
               제3조. 본 방침의 공개
             </div>
@@ -276,11 +118,11 @@ const Page = () => {
               활용하여 이용자가 본 방침을 쉽게 확인할 수 있도록 합니다.
             </div>
           </div>
-          <div className="flex-col justify-start items-start gap-2 flex">
+          <div className='flex-col justify-start items-start gap-2 flex'>
             <div className="text-neutral-900 text-xl font-medium font-['Pretendard']">
               제4조. 본 방침의 변경
             </div>
-            <div className="w-[1170px]">
+            <div className='w-[1170px]'>
               <span className="text-neutral-900 text-base font-normal font-['Pretendard'] leading-snug">
                 본 방침은 개인정보 관련 법령, 지침, 고시 또는 정부나 회사
                 서비스의 정책이나 내용의 변경에 따라 개정될 수 있습니다.
@@ -309,11 +151,11 @@ const Page = () => {
               </span>
             </div>
           </div>
-          <div className="flex-col justify-start items-start gap-2 flex">
+          <div className='flex-col justify-start items-start gap-2 flex'>
             <div className="text-neutral-900 text-xl font-medium font-['Pretendard']">
               제5조. 회원 가입을 위한 정보
             </div>
-            <div className="w-[1170px]">
+            <div className='w-[1170px]'>
               <span className="text-neutral-900 text-base font-normal font-['Pretendard'] leading-snug">
                 회사는 이용자의 회사 서비스에 대한 회원가입을 위하여 다음과 같은
                 정보를 수집 합니다.
@@ -325,7 +167,7 @@ const Page = () => {
               </span>
             </div>
           </div>
-          <div className="flex-col justify-start items-start gap-2 flex">
+          <div className='flex-col justify-start items-start gap-2 flex'>
             <div className="text-neutral-900 text-xl font-medium font-['Pretendard']">
               제6조. 본인 인증을 위한 정보
             </div>
@@ -335,11 +177,11 @@ const Page = () => {
               내/외국인 여부
             </div>
           </div>
-          <div className="flex-col justify-start items-start gap-2 flex">
+          <div className='flex-col justify-start items-start gap-2 flex'>
             <div className="text-neutral-900 text-xl font-medium font-['Pretendard']">
               제7조. 법정대리인 동의를 위한 정보
             </div>
-            <div className="w-[1170px]">
+            <div className='w-[1170px]'>
               <span className="text-neutral-900 text-base font-normal font-['Pretendard'] leading-snug">
                 회사는 법정대리인의 동의가 필요한 경우 법정대리인의 동의를
                 위하여 다음과 같은 정보를 수집합니다.
@@ -352,11 +194,11 @@ const Page = () => {
               </span>
             </div>
           </div>
-          <div className="flex-col justify-start items-start gap-2 flex">
+          <div className='flex-col justify-start items-start gap-2 flex'>
             <div className="text-neutral-900 text-xl font-medium font-['Pretendard']">
               제8조. 결제 서비스를 위한 정보
             </div>
-            <div className="w-[1170px]">
+            <div className='w-[1170px]'>
               <span className="text-neutral-900 text-base font-normal font-['Pretendard'] leading-snug">
                 회사는 이용자에게 회사의 결제 서비스 제공을 위하여 다음과 같은
                 정보를 수집합니다.
@@ -368,7 +210,7 @@ const Page = () => {
               </span>
             </div>
           </div>
-          <div className="flex-col justify-start items-start gap-2 flex">
+          <div className='flex-col justify-start items-start gap-2 flex'>
             <div className="text-neutral-900 text-xl font-medium font-['Pretendard']">
               제9조. 현금 영수증 발행을 위한 정보
             </div>
@@ -381,11 +223,11 @@ const Page = () => {
               현금영수증 카드번호
             </div>
           </div>
-          <div className="flex-col justify-start items-start gap-2 flex">
+          <div className='flex-col justify-start items-start gap-2 flex'>
             <div className="text-neutral-900 text-xl font-medium font-['Pretendard']">
               제10조. 회사 서비스 제공을 위한 정보
             </div>
-            <div className="w-[1170px]">
+            <div className='w-[1170px]'>
               <span className="text-neutral-900 text-base font-normal font-['Pretendard'] leading-snug">
                 회사는 이용자에게 회사의 서비스를 제공하기 위하여 다음과 같은
                 정보를 수집합니다.
@@ -403,7 +245,6 @@ const Page = () => {
                 <br />
               </span>
               <span className="text-neutral-900 text-base font-normal font-['Pretendard'] leading-snug">
-              
                 관련 내용을 안내하고 별도 동의를 받습니다.
                 <br /> - 고객센터 : 이메일주소, 실명 변경 정보 등
                 <br /> - 이벤트 응모 및 당첨 : 이름, 전화번호, 이메일주소,
@@ -413,14 +254,15 @@ const Page = () => {
               </span>
             </div>
           </div>
-          <div className="flex-col justify-start items-start gap-2 flex">
+          <div className='flex-col justify-start items-start gap-2 flex'>
             <div className="text-neutral-900 text-xl font-medium font-['Pretendard']">
               제11조. 서비스 이용 및 부정 이용 확인을 위한 정보
             </div>
-            <div className="w-[1170px]">
+            <div className='w-[1170px]'>
               <span className="text-neutral-900 text-base font-normal font-['Pretendard'] leading-snug">
                 회사는 이용자의 서비스 이용에 따른 통계∙분석 및 부정이용의
-                확인∙분석을 위하여 다음과 같은 정보를 수집합니다. {`부정이용이란
+                확인∙분석을 위하여 다음과 같은 정보를 수집합니다.{' '}
+                {`부정이용이란
                 회원탈퇴 후 재가입, 상품구매 후 구매취소 등을 반복적으로 행하는
                 등 회사가 제공하는 할인쿠폰, 이벤트 혜택 등의 경제상 이익을
                 불·편법적으로 수취하는 행위, 이용약관 등에서 금지하고 있는 행위,
@@ -432,11 +274,11 @@ const Page = () => {
               </span>
             </div>
           </div>
-          <div className="flex-col justify-start items-start gap-2 flex">
+          <div className='flex-col justify-start items-start gap-2 flex'>
             <div className="text-neutral-900 text-xl font-medium font-['Pretendard']">
               제12조. 수집하는 개인정보 항목 및 수집방법
             </div>
-            <div className="w-[1170px]">
+            <div className='w-[1170px]'>
               <span className="text-neutral-900 text-base font-normal font-['Pretendard'] leading-snug">
                 회사는 다음과 같은 방법으로 이용자의 개인정보를 수집합니다.
                 <br />
@@ -452,11 +294,11 @@ const Page = () => {
               </span>
             </div>
           </div>
-          <div className="flex-col justify-start items-start gap-2 flex">
+          <div className='flex-col justify-start items-start gap-2 flex'>
             <div className="text-neutral-900 text-xl font-medium font-['Pretendard']">
               제13조. 개인정보의 이용
             </div>
-            <div className="w-[1170px]">
+            <div className='w-[1170px]'>
               <span className="text-neutral-900 text-base font-normal font-['Pretendard'] leading-snug">
                 회사는 개인정보를 다음 각 호의 경우에 이용합니다.
                 <br />
@@ -483,11 +325,11 @@ const Page = () => {
               </span>
             </div>
           </div>
-          <div className="flex-col justify-start items-start gap-2 flex">
+          <div className='flex-col justify-start items-start gap-2 flex'>
             <div className="text-neutral-900 text-xl font-medium font-['Pretendard']">
               제14조. 사전동의 등에 따른 개인정보의 제공
             </div>
-            <div className="w-[1170px]">
+            <div className='w-[1170px]'>
               <span className="text-neutral-900 text-base font-normal font-['Pretendard'] leading-snug">
                 회사는 개인정보 제3자 제공 금지에도 불구하고, 이용자가 사전에
                 공개하거나 다음 각호 사항에 대하여 동의한 경우에는 제3자에게
@@ -508,7 +350,7 @@ const Page = () => {
               </span>
             </div>
           </div>
-          <div className="flex-col justify-start items-start gap-2 flex">
+          <div className='flex-col justify-start items-start gap-2 flex'>
             <div className="text-neutral-900 text-xl font-medium font-['Pretendard']">
               제15조. 개인정보의 보유 및 이용기간
             </div>
@@ -521,11 +363,11 @@ const Page = () => {
               보관합니다.
             </div>
           </div>
-          <div className="flex-col justify-start items-start gap-2 flex">
+          <div className='flex-col justify-start items-start gap-2 flex'>
             <div className="text-neutral-900 text-xl font-medium font-['Pretendard']">
               제16조. 법령에 따른 개인정보의 보유 및 이용기간
             </div>
-            <div className="w-[1170px]">
+            <div className='w-[1170px]'>
               <span className="text-neutral-900 text-base font-normal font-['Pretendard'] leading-snug">
                 회사는 관계법령에 따라 다음과 같이 개인정보를 보유 및
                 이용합니다.
@@ -537,7 +379,7 @@ const Page = () => {
                 <br />
               </span>
               <span className="text-neutral-900 text-base font-normal font-['Pretendard'] leading-snug">
-                {" "}
+                {' '}
                 -계약 또는 청약철회 등에 관한 기록 : 5년
                 <br /> - 대금결제 및 재화 등의 공급에 관한 기록 : 5년
                 <br /> -소비자의 불만 또는 분쟁처리에 관한 기록 : 3년
@@ -549,7 +391,7 @@ const Page = () => {
                 <br />
               </span>
               <span className="text-neutral-900 text-base font-normal font-['Pretendard'] leading-snug">
-                {" "}
+                {' '}
                 -APP 로그 기록 자료 : 3개월
                 <br />
               </span>
@@ -558,7 +400,7 @@ const Page = () => {
                 <br />
               </span>
               <span className="text-neutral-900 text-base font-normal font-['Pretendard'] leading-snug">
-                {" "}
+                {' '}
                 -전자금융거래에 관한 기록 : 5년
                 <br />
               </span>
@@ -567,12 +409,11 @@ const Page = () => {
                 <br />
               </span>
               <span className="text-neutral-900 text-base font-normal font-['Pretendard'] leading-snug">
-            
                 -개인위치정보에 관한 기록 : 6개월
               </span>
             </div>
           </div>
-          <div className="flex-col justify-start items-start gap-2 flex">
+          <div className='flex-col justify-start items-start gap-2 flex'>
             <div className="text-neutral-900 text-xl font-medium font-['Pretendard']">
               제17조. 개인정보의 파기원칙
             </div>
@@ -582,20 +423,21 @@ const Page = () => {
               정보를 지체 없이 파기합니다.
             </div>
           </div>
-          <div className="flex-col justify-start items-start gap-2 flex">
+          <div className='flex-col justify-start items-start gap-2 flex'>
             <div className="text-neutral-900 text-xl font-medium font-['Pretendard']">
               제18조. 개인정보파기절차
             </div>
             <div className="w-[1170px] text-neutral-900 text-base font-normal font-['Pretendard'] leading-snug">
               이용자가 회원가입 등을 위해 입력한 정보는 개인정보 처리 목적이
-              달성된 후 별도의 DB로 옮겨져{`종이의 경우 별도의 서류함`} 내부 방침
-              및 기타 관련 법령에 의한 정보보호 사유에 따라{`보유 및 이용기간
-              참조`} 일정 기간 저장된 후 파기 되어집니다. 회사는 파기 사유가
-              발생한 개인정보를 개인정보보호 책임자의 승인절차를 거쳐
-              파기합니다.
+              달성된 후 별도의 DB로 옮겨져{`종이의 경우 별도의 서류함`} 내부
+              방침 및 기타 관련 법령에 의한 정보보호 사유에 따라
+              {`보유 및 이용기간
+              참조`}{' '}
+              일정 기간 저장된 후 파기 되어집니다. 회사는 파기 사유가 발생한
+              개인정보를 개인정보보호 책임자의 승인절차를 거쳐 파기합니다.
             </div>
           </div>
-          <div className="flex-col justify-start items-start gap-2 flex">
+          <div className='flex-col justify-start items-start gap-2 flex'>
             <div className="text-neutral-900 text-xl font-medium font-['Pretendard']">
               제19조. 개인정보파기방법
             </div>
@@ -605,11 +447,11 @@ const Page = () => {
               분쇄하거나 소각 등을 통하여 파기합니다.
             </div>
           </div>
-          <div className="flex-col justify-start items-start gap-2 flex">
+          <div className='flex-col justify-start items-start gap-2 flex'>
             <div className="text-neutral-900 text-xl font-medium font-['Pretendard']">
               제20조. 광고성 정보의 전송 조치
             </div>
-            <div className="w-[1170px]">
+            <div className='w-[1170px]'>
               <span className="text-neutral-900 text-base font-normal font-['Pretendard'] leading-snug">
                 회사는 전자적 전송매체를 이용하여 영리목적의 광고성 정보를
                 전송하는 경우 이용자의 명시적인 사전동의를 받습니다. 다만, 다음
@@ -642,7 +484,7 @@ const Page = () => {
                 <br />
               </span>
               <span className="text-neutral-900 text-base font-normal font-['Pretendard'] leading-snug">
-                {" "}
+                {' '}
                 1. 회사명 및 연락처
                 <br /> 2. 수신 거부 또는 수신 동의의 철회 의사표시에 관한 사항의
                 표시
@@ -655,7 +497,7 @@ const Page = () => {
                 <br />
               </span>
               <span className="text-neutral-900 text-base font-normal font-['Pretendard'] leading-snug">
-                {" "}
+                {' '}
                 1. 광고성 정보 수신자의 수신거부 또는 수신동의의 철회를
                 회피·방해하는 조치
                 <br /> 2. 숫자·부호 또는 문자를 조합하여 전화번호·전자우편주소
@@ -669,11 +511,11 @@ const Page = () => {
               </span>
             </div>
           </div>
-          <div className="flex-col justify-start items-start gap-2 flex">
+          <div className='flex-col justify-start items-start gap-2 flex'>
             <div className="text-neutral-900 text-xl font-medium font-['Pretendard']">
               제21조. 아동의 개인정보보호
             </div>
-            <div className="w-[1170px]">
+            <div className='w-[1170px]'>
               <span className="text-neutral-900 text-base font-normal font-['Pretendard'] leading-snug">
                 회사는 만 14세 미만 아동의 개인정보 보호를 위하여 만 14세 이상의
                 이용자에 한하여 회원가입을 허용합니다.
@@ -696,7 +538,7 @@ const Page = () => {
               </span>
             </div>
           </div>
-          <div className="flex-col justify-start items-start gap-2 flex">
+          <div className='flex-col justify-start items-start gap-2 flex'>
             <div className="text-neutral-900 text-xl font-medium font-['Pretendard']">
               제22조. 개인정보 조회 및 수집동의 철회
             </div>
@@ -710,7 +552,7 @@ const Page = () => {
               또는 전자우편 주소로 연락하시면 회사는 지체 없이 조치하겠습니다.
             </div>
           </div>
-          <div className="flex-col justify-start items-start gap-2 flex">
+          <div className='flex-col justify-start items-start gap-2 flex'>
             <div className="text-neutral-900 text-xl font-medium font-['Pretendard']">
               제23조. 개인정보 정보변경 등
             </div>
@@ -722,7 +564,7 @@ const Page = () => {
               제3자에게 지체 없이 통지하여 정정이 이루어지도록 하겠습니다.
             </div>
           </div>
-          <div className="flex-col justify-start items-start gap-2 flex">
+          <div className='flex-col justify-start items-start gap-2 flex'>
             <div className="text-neutral-900 text-xl font-medium font-['Pretendard']">
               제24조. 이용자의 의무
             </div>
@@ -738,7 +580,7 @@ const Page = () => {
               양도하거나 대여할 수 없습니다.
             </div>
           </div>
-          <div className="flex-col justify-start items-start gap-2 flex">
+          <div className='flex-col justify-start items-start gap-2 flex'>
             <div className="text-neutral-900 text-xl font-medium font-['Pretendard']">
               제25조. 회사의 개인정보 관리
             </div>
@@ -748,7 +590,7 @@ const Page = () => {
               필요한 기술적·관리적 보호대책을 강구하고 있습니다.
             </div>
           </div>
-          <div className="flex-col justify-start items-start gap-2 flex">
+          <div className='flex-col justify-start items-start gap-2 flex'>
             <div className="text-neutral-900 text-xl font-medium font-['Pretendard']">
               제26조. 삭제된 정보의 처리
             </div>
@@ -759,7 +601,7 @@ const Page = () => {
               처리하고 있습니다.
             </div>
           </div>
-          <div className="flex-col justify-start items-start gap-2 flex">
+          <div className='flex-col justify-start items-start gap-2 flex'>
             <div className="text-neutral-900 text-xl font-medium font-['Pretendard']">
               제27조. 비밀번호의 암호화
             </div>
@@ -769,7 +611,7 @@ const Page = () => {
               가능합니다.
             </div>
           </div>
-          <div className="flex-col justify-start items-start gap-2 flex">
+          <div className='flex-col justify-start items-start gap-2 flex'>
             <div className="text-neutral-900 text-xl font-medium font-['Pretendard']">
               제28조. 해킹 등에 대비한 대책
             </div>
@@ -789,7 +631,7 @@ const Page = () => {
               있도록 하고 있습니다.
             </div>
           </div>
-          <div className="flex-col justify-start items-start gap-2 flex">
+          <div className='flex-col justify-start items-start gap-2 flex'>
             <div className="text-neutral-900 text-xl font-medium font-['Pretendard']">
               제29조. 개인정보 처리 최소화 및 교육
             </div>
@@ -799,15 +641,16 @@ const Page = () => {
               준수를 강조하고 있습니다.
             </div>
           </div>
-          <div className="flex-col justify-start items-start gap-2 flex">
+          <div className='flex-col justify-start items-start gap-2 flex'>
             <div className="text-neutral-900 text-xl font-medium font-['Pretendard']">
               제30조. 개인정보 유출 등에 대한 조치
             </div>
-            <div className="w-[1170px]">
+            <div className='w-[1170px]'>
               <span className="text-neutral-900 text-base font-normal font-['Pretendard'] leading-snug">
-                회사는 개인정보의 분실·도난·유출{`이하 "유출 등"이라 한다`} 사실을
-                안 때에는 지체 없이 다음 각 호의 모든 사항을 해당 이용자에게
-                알리고 방송통신위원회 또는 한국인터넷진흥원에 신고합니다.
+                회사는 개인정보의 분실·도난·유출{`이하 "유출 등"이라 한다`}{' '}
+                사실을 안 때에는 지체 없이 다음 각 호의 모든 사항을 해당
+                이용자에게 알리고 방송통신위원회 또는 한국인터넷진흥원에
+                신고합니다.
                 <br />
               </span>
               <span className="text-neutral-900 text-base font-normal font-['Pretendard'] leading-snug">
@@ -823,7 +666,7 @@ const Page = () => {
               </span>
             </div>
           </div>
-          <div className="flex-col justify-start items-start gap-2 flex">
+          <div className='flex-col justify-start items-start gap-2 flex'>
             <div className="text-neutral-900 text-xl font-medium font-['Pretendard']">
               제31조. 개인정보 유출 등에 대한 조치의 예외
             </div>
@@ -833,36 +676,38 @@ const Page = () => {
               전조의 통지를 갈음하는 조치를 취할 수 있습니다.
             </div>
           </div>
-          <div className="flex-col justify-start items-start gap-2 flex">
+          <div className='flex-col justify-start items-start gap-2 flex'>
             <div className="text-neutral-900 text-xl font-medium font-['Pretendard']">
               제32조. 국외 이전 개인정보의 보호
             </div>
-            <div className="w-[1170px]">
+            <div className='w-[1170px]'>
               <span className="text-neutral-900 text-base font-normal font-['Pretendard'] leading-snug">
                 회사는 이용자의 개인정보에 관하여 개인정보보호법 등 관계 법규를
                 위반 하는 사항을 내용으로 하는 국제계약을 체결하지 않습니다.
                 <br />
-                회사는 이용자의 개인정보를 국외에 제공{`조회되는 경우를
-                포함`}ᆞ처리위탁ᆞ보관{`이하 "이전"이라 함`}하려면 이용자의 동의를
+                회사는 이용자의 개인정보를 국외에 제공
+                {`조회되는 경우를
+                포함`}
+                ᆞ처리위탁ᆞ보관{`이하 "이전"이라 함`}하려면 이용자의 동의를
                 받습니다. 다만, 본조
               </span>
               <span className="text-neutral-900 text-base font-bold font-['Pretendard'] leading-snug">
                 제3항
               </span>
               <span className="text-neutral-900 text-base font-normal font-['Pretendard'] leading-snug">
-                {" "}
+                {' '}
                 각 호의 사항 모두를 개인정보보호법 등 관계 법규에 따라
                 공개하거나 전자우편 등 대통령령으로 정하는 방법에 따라
                 이용자에게 알린 경우에는 개인정보 처리위탁ᆞ보관에 따른
                 동의절차를 거치지 아니할 수 있습니다.
                 <br />
-                회사는 본조{" "}
+                회사는 본조{' '}
               </span>
               <span className="text-neutral-900 text-base font-bold font-['Pretendard'] leading-snug">
                 제2항
               </span>
               <span className="text-neutral-900 text-base font-normal font-['Pretendard'] leading-snug">
-                {" "}
+                {' '}
                 본문에 따른 동의를 받으려면 미리 다음 각 호의 사항 모두를
                 이용자에게 고지합니다.
                 <br />
@@ -870,7 +715,8 @@ const Page = () => {
                 <br />
                 개인정보가 이전되는 국가, 이전일시 및 이전방법
                 <br />
-                개인정보를 이전받는 자의 성명{`법인인 경우 그 명칭 및 정보관리
+                개인정보를 이전받는 자의 성명
+                {`법인인 경우 그 명칭 및 정보관리
                 책임자의 연락처를 말한다`}
                 <br />
                 개인정보를 이전받는 자의 개인정보 이용목적 및 보유ᆞ이용 기간
@@ -881,7 +727,7 @@ const Page = () => {
               </span>
             </div>
           </div>
-          <div className="flex-col justify-start items-start gap-2 flex">
+          <div className='flex-col justify-start items-start gap-2 flex'>
             <div className="text-neutral-900 text-xl font-medium font-['Pretendard']">
               제33조. 회사의 개인정보 보호 책임자 지정
             </div>
@@ -901,11 +747,11 @@ const Page = () => {
               이메일: youngcha@webloom.us
             </div>
           </div>
-          <div className="flex-col justify-start items-start gap-2 flex">
+          <div className='flex-col justify-start items-start gap-2 flex'>
             <div className="text-neutral-900 text-xl font-medium font-['Pretendard']">
               제34조. 권익침해에 대한 구제방법
             </div>
-            <div className="w-[1170px]">
+            <div className='w-[1170px]'>
               <span className="text-neutral-900 text-base font-normal font-['Pretendard'] leading-snug">
                 정보주체는 개인정보침해로 인한 구제를 받기 위하여
                 개인정보분쟁조정위원회, 한국인터넷진흥원 개인정보침해신고센터
@@ -913,7 +759,8 @@ const Page = () => {
                 개인정보침해의 신고, 상담에 대하여는 아래의 기관에 문의하시기
                 바랍니다.
                 <br />
-                개인정보분쟁조정위원회 : {`국번없이`} 1833-6972 {`www.kopico.go.kr`}
+                개인정보분쟁조정위원회 : {`국번없이`} 1833-6972{' '}
+                {`www.kopico.go.kr`}
                 <br />
                 개인정보침해신고센터 : {`국번없이`} 118 {`privacy.kisa.or.kr`}
                 <br />
@@ -923,7 +770,7 @@ const Page = () => {
                 <br />
                 회사는 정보주체의 개인정보자기결정권을 보장하고, 개인정보침해로
                 인한 상담 및 피해 구제를 위해 노력하고 있으며, 신고나 상담이
-                필요한 경우{" "}
+                필요한 경우{' '}
               </span>
               <span className="text-neutral-900 text-base font-bold font-['Pretendard'] leading-snug">
                 제1항
@@ -931,17 +778,19 @@ const Page = () => {
               <span className="text-neutral-900 text-base font-normal font-['Pretendard'] leading-snug">
                 의 담당부서로 연락해주시기 바랍니다.
                 <br />
-                개인정보 보호법 제35조{`개인정보의 열람`}, 제36조{`개인정보의
-                정정·삭제`}, 제37조{`개인정보의 처리정지 등`}의 규정에 의한 요구에
-                대 하여 공공기관의장이 행한 처분 또는 부작위로 인하여 권리 또는
-                이익의 침해를 받은 자는 행정심판법이 정하는 바에 따라 행정심판을
-                청구할 수 있습니다.
+                개인정보 보호법 제35조{`개인정보의 열람`}, 제36조
+                {`개인정보의
+                정정·삭제`}
+                , 제37조{`개인정보의 처리정지 등`}의 규정에 의한 요구에 대 하여
+                공공기관의장이 행한 처분 또는 부작위로 인하여 권리 또는 이익의
+                침해를 받은 자는 행정심판법이 정하는 바에 따라 행정심판을 청구할
+                수 있습니다.
                 <br />
                 중앙행정심판위원회 : {`국번없이`} 110 {`www.simpan.go.kr`}
               </span>
             </div>
           </div>
-          <div className="flex-col justify-start items-start gap-2 flex">
+          <div className='flex-col justify-start items-start gap-2 flex'>
             <div className="text-neutral-900 text-xl font-medium font-['Pretendard']">
               부칙
             </div>
@@ -951,9 +800,8 @@ const Page = () => {
           </div>
         </div>
       </div>
-    
     </>
-  )
-}
+  );
+};
 
-export default Page
+export default Page;

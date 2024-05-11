@@ -2,27 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  font-family: 'Pretendard';
-}
-
-@layer utilities {
-}
-
 .hero-section {
   margin-top: 120px;
   margin-bottom: 2px;
@@ -45,7 +24,7 @@ body {
 }
 .Cargohero-section {
   margin-top: 120px;
-  margin-bottom: 2px;
+  /* margin-bottom: 2px; */
   background-image: url('../Assets/CargoHeroSection.svg');
   background-size: cover;
   background-position: center;
@@ -53,12 +32,12 @@ body {
   height: 640px;
   border-radius: 60px;
   position: relative;
-  transition: width 3s, cubic-bezier(0.165, 0.84, 0.44, 1) ease-in-out;
+  transition: width 2s, cubic-bezier(0.165, 0.84, 0.44, 1) ease;
 }
 
 .Cargohero-section:hover {
   width: 100vw;
-  height: 900px;
+  height: 100vh;
   border-radius: 0;
   margin-bottom: 0px;
   margin-top: 0;

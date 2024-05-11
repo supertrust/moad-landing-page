@@ -1,10 +1,10 @@
 const Herosections = () => {
   return (
     <>
-      <div className="h-[900px ]">
-        <section className="relative overflow-hidden ">
-          <div className="Cargohero-section flex items-center mx-auto">
-            <div className="w-[792px]">
+      <div className=''>
+        <section className='relative overflow-hidden '>
+          <div className='Cargohero-section flex items-center mx-auto'>
+            <div className='w-[792px]'>
               <h2 className="text-[68px] font-bold text-white ms-10 font-['Pretendard'] ">
                 화물차 기사님들의 편의와 부가수익 모드가 자신합니다
               </h2>
