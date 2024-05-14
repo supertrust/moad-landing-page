@@ -5,7 +5,6 @@ import Image from 'next/image';
 import DownIcon from '../../Assets/chevron-up.svg';
 import Data from '../../PagesData/Data.json';
 const Page = () => {
-  console.table(Data);
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -51,7 +50,7 @@ const Page = () => {
               <div className='h-[588px] flex-col justify-center items-center inline-flex'>
                 <div
                   className={`w-[1090px] justify-start items-start inline-flex flex-wrap`}>
-                  {Data.map((item, index) => (
+                  {Data?.map((item, index) => (
                     <div
                       key={index}
                       className={`h-[49px] w-[363px] p-4  border border-gray-300 justify-start items-center gap-2.5 flex 

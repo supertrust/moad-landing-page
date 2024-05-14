@@ -1,10 +1,10 @@
 'use client';
-import ScrolStepOne from '../ScrollSteps/ScrolStepOne';
+import CardDeck from '../ScrollSteps/CardDeck';
 
 const MainContainer = () => {
   return (
     <>
-      <ScrolStepOne />
+      <CardDeck />
     </>
   );
 };

@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
-import Logo from '../../../Assets/logo.svg';
+import Logo from '../../Assets/logo.svg';
 import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 const IndexPage = () => {
