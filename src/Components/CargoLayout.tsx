@@ -4,9 +4,10 @@ import FAQ from './Cargo/LandingSections/FAQ';
 import CargoSecondSection from './Cargo/LandingSections/CargoSecondSection';
 import CargoThirSection from './Cargo/LandingSections/CargoThirSection';
 import CardDeck from './Cargo/CardDeck/CargoCardDeck';
-import Footer from './Advertiser/Footer/Footer';
+
 import CargoFourthSection from './Cargo/LandingSections/CargoFourthSection';
 import ReactFullpage from '@fullpage/react-fullpage';
+import Footer from './Footer/Footer';
 const CargoLayout = () => {
   return (
     <>

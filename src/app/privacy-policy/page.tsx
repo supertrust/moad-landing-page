@@ -1,9 +1,11 @@
 'use client';
 import React, { useState, useRef, useEffect } from 'react';
-import Nav from '@/Components/Advertiser/PagesNavbar/Nav';
+import Nav from '@/Components/PagesNavbar/Nav';
 import Image from 'next/image';
 import DownIcon from '../../Assets/chevron-up.svg';
 import Data from '../../PagesData/Data.json';
+import Footer from '@/Components/Footer/Footer';
+
 const Page = () => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -46,19 +48,21 @@ const Page = () => {
             </div>
           </div>
           {isOpen && (
-            <div className='flex justify-center pb-10 bg-white'>
+            <div className='flex justify-center  bg-white'>
               <div className='h-[588px] flex-col justify-center items-center inline-flex'>
                 <div
                   className={`w-[1090px] justify-start items-start inline-flex flex-wrap`}>
                   {Data?.map((item, index) => (
                     <div
                       key={index}
-                      className={`h-[49px] w-[363px] p-4  border border-gray-300 justify-start items-center gap-2.5 flex 
+                      className={`h-[49px] w-[363px]  p-4  border border-gray-300 justify-start items-center gap-2.5 flex 
+                      ${index === 0 ? 'bg-[#101440] text-white' : 'bg-white'} 
+
                       }`}>
                       <div
                         className={`${
                           index === 0
-                            ? 'text-violet-900 font-bold'
+                            ? 'text-white '
                             : 'text-neutral-900 font-normal'
                         }   text-sm font-['Pretendard'] `}>
                         {item.title}
@@ -72,8 +76,8 @@ const Page = () => {
         </div>
       </div>
 
-      <div className='flex justify-center mt-20'>
-        <div className='w-[1170px]  flex-col justify-start items-start gap-6 inline-flex'>
+      <div className='flex justify-center mt-5'>
+        <div className='w-[1170px] py-20  flex-col justify-start items-start gap-6 inline-flex'>
           <div className='flex-col justify-start items-start gap-2 flex'>
             <div className="text-neutral-900 text-xl font-medium font-['Pretendard']">
               제1조. 목적
@@ -799,6 +803,7 @@ const Page = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

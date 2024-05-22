@@ -90,7 +90,8 @@
   opacity: 1; /* Show tooltips with opacity 1 */
 }
 .custom-footer {
-  height: 300px !important;
+  height: 375px !important;
+  background-color: #2b303b;
 }
 .fp-slidesNav ul li a.active span {
   background-color: white !important;

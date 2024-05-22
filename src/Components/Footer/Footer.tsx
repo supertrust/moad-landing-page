@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from '../../../Assets/logo.svg';
+import Logo from '../../Assets/cardLogo.svg';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -20,7 +20,7 @@ const Footer = () => {
     { id: 3, lable: '사업자 등록번호: 123-4567-8912 | 이메일: moad.co.kr' },
   ];
   return (
-    <footer className='bg-white  '>
+    <footer className='relative bg-gray-800 h-[375px] py-1'>
       <div className='flex items-center mt-[48px]'>
         <Image
           src={Logo}
@@ -28,13 +28,13 @@ const Footer = () => {
           className='w-[120px] h-[38px] ml-[135px]'
         />
       </div>
-      <div className=' border-[1px] border-[#E1E4EA] w-[100%] h-[58px] flex items-center mt-[40px]'>
+      <div className=' w-[100%] h-[58px] flex items-center mt-[40px]'>
         <div className='flex ml-[135px]'>
           {FooterListPage.map((item) => (
             <button
               key={item.id}
-              className="mr-[24px] text-[#525866] text-[16px] font-['Pretendard'] ">
-              <Link href={item.href} className='text-[#101440]'>
+              className="mr-[24px] text-gray-300  text-[16px] font-['Pretendard'] ">
+              <Link href={item.href} className='text-gray-300 '>
                 {item.lable}
               </Link>
             </button>
@@ -46,11 +46,14 @@ const Footer = () => {
           {FooterItems.map((item) => (
             <li
               key={item.id}
-              className="text-[#525866] text-[16px] font-['Pretendard'] ">
+              className="text-gray-300  text-[16px] font-['Pretendard'] ">
               {item.lable}
             </li>
           ))}
         </ul>
+      </div>
+      <div className=" ml-[135px] mt-10 text-gray-500 text-sm font-normal font-['Pretendard']">
+        © 2024 MOAD. All rights reserved.
       </div>
     </footer>
   );

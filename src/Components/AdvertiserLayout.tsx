@@ -4,8 +4,9 @@ import SecondSection from './Advertiser/LandinPageSections/SecondSection';
 import MainContainer from './Advertiser/LandinPageSections/MainScrolContainer';
 import CardsSection from './Advertiser/LandinPageSections/CardsSection';
 import FormSection from './Advertiser/LandinPageSections/FormSection';
-import Footer from './Advertiser/Footer/Footer';
+
 import ReactFullpage from '@fullpage/react-fullpage';
+import Footer from './Footer/Footer';
 
 const LandindLayout = () => {
   return (
