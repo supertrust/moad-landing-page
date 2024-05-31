@@ -5,6 +5,7 @@ import Image from 'next/image';
 import DownIcon from '../../Assets/chevron-up.svg';
 import TermsData from '../../PagesData/termsData.json';
 import Footer from '@/Components/Footer/Footer';
+import ColorNavbar from '../../Components/Navbar/ColorNavbar';
 const Page = () => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -30,6 +31,7 @@ const Page = () => {
 
   return (
     <>
+      <ColorNavbar />
       <Nav />
       {/* DrowpDown--Content */}
       <div className='flex justify-center mt-20'>

@@ -20,7 +20,7 @@ const Footer = () => {
     { id: 3, lable: '사업자 등록번호: 123-4567-8912 | 이메일: moad.co.kr' },
   ];
   return (
-    <footer className='relative bg-gray-800 h-[375px] py-1'>
+    <footer className='relative bg-gray-800  py-1'>
       <div className='flex items-center mt-[48px]'>
         <Image
           src={Logo}

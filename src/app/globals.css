@@ -43,61 +43,78 @@
   margin-top: 0;
 }
 
-.tooltip {
-  position: absolute;
-  display: none; /* Hide tooltips by default */
-
-  border-radius: 6px;
-  animation: bounce 3s ease-in;
-  transition: opacity 2s ease-in-out; /* Add transition for opacity */
-  opacity: 0; /* Start with opacity 0 */
-}
-
-.tooltip1 {
-  bottom: 600px; /* Position tooltip 1 at the bottom */
-  right: 200px; /* Position tooltip 1 on the right side */
-}
-
-.tooltip2 {
-  bottom: 400px; /* Position tooltip 2 at the bottom */
-  right: 500px; /* Position tooltip 2 on the left side */
-}
-
-.tooltip3 {
-  bottom: 250px; /* Position tooltip 3 at the bottom */
-  right: 150px; /* Position tooltip 3 on the right side */
-}
-
-@keyframes bounce {
-  0%,
-  20%,
-  50%,
-  80%,
-  100% {
-    transform: translateY(0);
-  }
-  40% {
-    transform: translateY(20px); /* Animate from bottom to top */
-  }
-  60% {
-    transform: translateY(10px); /* Slight bounce */
-  }
-}
-
-/* Show tooltips when hovering over the image */
-.image-container:hover .tooltip {
-  display: block;
-  opacity: 1; /* Show tooltips with opacity 1 */
-}
 .custom-footer {
   height: 375px !important;
   background-color: #2b303b;
 }
-.fp-slidesNav ul li a.active span {
+/* .fp-slidesNav ul li a.active span {
   background-color: white !important;
 }
 #fp-nav ul li a span,
 .fp-slidesNav ul li a span {
   background-color: gainsboro !important;
   z-index: 10;
+} */
+
+.animate__animated.animate__bounceInRight,
+.animate__bounceInLeft {
+  --animate-duration: 3s;
+}
+.animate__animated.animate__fadeInLeft,
+.animate__fadeInDown,
+.animate__fadeInRight,
+.animate__fadeInUp {
+  --animate-duration: 2s;
+}
+
+.float-animations {
+  animation-name: floating;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+.shadow-screens {
+  position: relative;
+  padding-top: 2em;
+}
+
+.shadow-image {
+  position: absolute;
+  top: 480px;
+  left: 400px;
+  transform: translateX(-50%);
+  width: 500px;
+  height: 300px;
+  background-image: url('../Assets/Truckshadow.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(15px);
+  }
+}
+/* Define the keyframes for the animation */
+@keyframes fadeInLeftScroll {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Apply this class to elements that should animate on scroll */
+.scrollAnimation {
+  animation: fadeInLeftScroll 1s ease-in-out forwards;
 }

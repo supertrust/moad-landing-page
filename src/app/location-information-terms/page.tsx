@@ -6,6 +6,7 @@ import DownIcon from '../../Assets/chevron-up.svg';
 import Nav from '@/Components/PagesNavbar/Nav';
 import Footer from '@/Components/Footer/Footer';
 import LocationData from '../../PagesData/LocationData.json';
+import ColorNavbar from '../../Components/Navbar/ColorNavbar';
 const Page = () => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -29,6 +30,7 @@ const Page = () => {
   };
   return (
     <>
+      <ColorNavbar />
       <Nav />
       <div className='flex justify-center mt-20'>
         <div className='w-[1170px]  px-10  py-6 bg-slate-100 border border-zinc-200 flex-col justify-start items-end gap-10 inline-flex'>

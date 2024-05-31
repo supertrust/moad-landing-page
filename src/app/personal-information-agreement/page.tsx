@@ -1,7 +1,7 @@
 import React from 'react';
 import Nav from '@/Components/PagesNavbar/Nav';
 import Footer from '@/Components/Footer/Footer';
-
+import ColorNavbar from '../../Components/Navbar/ColorNavbar';
 interface TableDataItem {
   id: number;
   label: string;
@@ -41,6 +41,7 @@ const Page: React.FC = () => {
 
   return (
     <>
+      <ColorNavbar />
       <Nav />
       <div className='flex justify-center mt-20'>
         <div className='w-[1170px] h-[322px] flex-col justify-start items-start gap-20 inline-flex'>

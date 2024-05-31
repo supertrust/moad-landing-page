@@ -1,46 +1,77 @@
 'use client';
-import HeroSection from '../Components/Cargo/LandingSections/HeroSection';
-import FAQ from './Cargo/LandingSections/FAQ';
-import CargoSecondSection from './Cargo/LandingSections/CargoSecondSection';
-import CargoThirSection from './Cargo/LandingSections/CargoThirSection';
-import CardDeck from './Cargo/CardDeck/CargoCardDeck';
+import React, { useState, useEffect, Suspense } from 'react';
 
-import CargoFourthSection from './Cargo/LandingSections/CargoFourthSection';
 import ReactFullpage from '@fullpage/react-fullpage';
 import Footer from './Footer/Footer';
+import SecondSection from '../Components/Cargo/cargoSections/SecondSections';
+import Header from '../Components/Cargo/cargoSections/Header';
+import ThirdSection from '../Components/Cargo/cargoSections/ThirdSection';
+import FourthSection from '../Components/Cargo/cargoSections/FourthSecction';
+import FifthSection from '../Components/Cargo/cargoSections/FifthSection';
 const CargoLayout = () => {
+  const [currentSection, setCurrentSection] = useState(0);
+  // const onClickScroll = (fullpageApi) => {
+  //   // alert('helo');
+  //   fullpageApi.moveSectionDown();
+  // };
   return (
     <>
-      <ReactFullpage
-        navigation={true}
-        credits={{ enabled: false }}
-        render={({ state, fullpageApi }) => (
-          <ReactFullpage.Wrapper>
-            <div className='section'>
-              <HeroSection />
-            </div>
-            <div className='section'>
-              <CargoSecondSection />
-            </div>
-            <div className='section'>
-              <CargoThirSection />
-            </div>
-            <div className='section'>
-              <CardDeck />
-            </div>
-            <div className='section'>
-              <CargoFourthSection />
-            </div>
-            <div className='section'>
-              <FAQ />
-            </div>
+      <Suspense fallback={<p>Loading feed...</p>}>
+        <ReactFullpage
+          scrollHorizontally={true}
+          credits={{ enabled: false }}
+          afterLoad={(origin, destination) => {
+            setCurrentSection(destination.index);
+          }}
+          render={({ state, fullpageApi }) => (
+            <ReactFullpage.Wrapper>
+              <div className='section'>
+                <Header
+                  OnScrollDown={() => {
+                    fullpageApi.moveSectionDown();
+                  }}
+                  isInView={currentSection === 0}
+                />
+              </div>
+              <div className='section'>
+                <SecondSection
+                  OnScrollDown={() => {
+                    fullpageApi.moveSectionDown();
+                  }}
+                  isInView={currentSection === 1}
+                />
+              </div>
+              <div className='section'>
+                <ThirdSection
+                  OnScrollDown={() => {
+                    fullpageApi.moveSectionDown();
+                  }}
+                  isInView={currentSection === 2}
+                />
+              </div>
+              <div className='section'>
+                <FourthSection
+                  OnScrollDown={() => {
+                    fullpageApi.moveSectionDown();
+                  }}
+                  isInView={currentSection === 3}
+                />
+              </div>
+              <div className='section'>
+                <FifthSection
+                  OnScrollDown={() => {
+                    fullpageApi.moveSectionDown();
+                  }}
+                />
+              </div>
 
-            <div className='section custom-footer '>
-              <Footer />
-            </div>
-          </ReactFullpage.Wrapper>
-        )}
-      />
+              <div className='section custom-footer '>
+                <Footer />
+              </div>
+            </ReactFullpage.Wrapper>
+          )}
+        />
+      </Suspense>
     </>
   );
 };
