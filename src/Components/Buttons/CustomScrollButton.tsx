@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import DownArrow from '../../Assets/downarrow.svg';
-export const CustomScrollButton = ({ OnScrollDown }) => {
+export const CustomScrollButton = ({ OnScrollDown } : { OnScrollDown : ()=>void}) => {
   return (
     <div
       className='w-[90%] mx-auto flex justify-between items-center'

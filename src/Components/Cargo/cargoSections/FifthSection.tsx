@@ -13,7 +13,7 @@ import ArrowsIcon from '../../../Assets/horizantalarrow.svg';
 import ColorNavbar from '../../Navbar/ColorNavbar'
 
 
-const IndexPage: React.FC = () => {
+const IndexPage: React.FC<{ OnScrollDown: () => void }> = ({ OnScrollDown }) => {
   const [isImageLoaded, setIsImageLoaded] = useState(false);
 
 
