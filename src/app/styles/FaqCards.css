@@ -2,20 +2,22 @@ body {
   overflow-x: hidden;
 }
 
+/* Container styling */
 .container {
   width: 100%;
   padding: 20px;
-  overflow: hidden; /* Hide the scrollbar and prevent horizontal scrolling */
+  overflow: hidden; /* Hide the native scrollbar */
   position: relative;
+
 }
 
+/* Scroll container styling */
 .scroll-container {
   display: flex;
   list-style: none;
-  padding: 0;
-  margin: 0;
+  padding: 0 0 20px 0;
   gap: 20px;
-  overflow-x: scroll; /* Allow horizontal scrolling */
+  overflow-x: scroll; 
   scroll-behavior: smooth;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
@@ -25,25 +27,33 @@ body {
   display: none; /* Chrome, Safari, Opera */
 }
 
-.card {
-  display: flex;
-  width: 100%; /* Ensure one card takes the full width of the container */
-}
-
-.progress-bar-container {
-  border: 1px solid #f5f7fa;
-  border-radius: 100px;
+/* Custom scrollbar container */
+.custom-scrollbar-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
   width: 100%;
   height: 15px;
-  background-color: #f5f7fa;
-  margin-top: 20px;
-  position: relative;
+  background-color: #f1f1f1;
+  overflow: hidden;
 }
 
-.progress-bar {
-  border: 1px solid #f5f7fa;
-  border-radius: 20px;
-  height: 15px;
+/* Custom scrollbar track */
+.custom-scrollbar-track {
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #f5f7fa;
+}
+
+/* Custom scrollbar thumb */
+.custom-scrollbar-thumb {
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 50px; /* Initial width of the thumb */
   background-color: #561aa4;
-  transform-origin: 0 0;
+  transition: width 0.2s ease-in-out;
+  border-radius: 50px;
 }

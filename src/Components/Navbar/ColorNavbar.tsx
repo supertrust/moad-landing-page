@@ -18,22 +18,22 @@ const IndexPage: React.FC = () => {
       id: 1,
       label: '광고주 페이지',
       icon: ArrowIcon,
-      styles: 'text-[#561AA4]',
+      styles: 'text-daisyBush-60 font-semibold',
       iconPosition: 'right',
     },
     {
       id: 2,
       label: '앱 다운로드',
       icon: PlaysIcon,
-      styles: 'bg-[#561AA4] text-white',
+      styles: 'bg-[#561AA4] text-white font-semibold',
       iconPosition: 'left',
     },
   ];
 
   return (
     <>
-      <nav className='absolute top-0 left-0 right-0 w-full'>
-        <div className='w-[90%] mx-auto flex justify-between items-center py-3'>
+      <nav className='  z-[40] w-full px-4 md:px-6 lg:px-10 xl:px-28'>
+        <div className='container mx-auto flex justify-between items-center'>
           <div className='logo'>
             <Image src={Logo} alt='Logo' className='h-12' />
           </div>
@@ -54,7 +54,7 @@ const IndexPage: React.FC = () => {
                   <Image
                     src={button.icon}
                     alt={`${button.label} icon`}
-                    className='h-5 w-5'
+                    className='h-5 w-5 z-[1000]'
                   />
                 )}
               </button>

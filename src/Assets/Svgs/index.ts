@@ -1,0 +1,7 @@
+export { default as TextMoad } from './TextMoad'
+export { default as TextCargo } from './TextCargo'
+export { default as SecondMobileSvg } from './SecondMobileSvg'
+export { default as DownArrow } from './DownArrow'
+export { default as MobileOne } from './MobileOne'
+export { default as MobileTwo } from './MobileTwo'
+export { default as MobileThree } from './MobileThree'

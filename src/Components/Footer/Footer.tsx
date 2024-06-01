@@ -20,39 +20,39 @@ const Footer = () => {
     { id: 3, lable: '사업자 등록번호: 123-4567-8912 | 이메일: moad.co.kr' },
   ];
   return (
-    <footer className='relative bg-gray-800  py-1'>
-      <div className='flex items-center mt-[48px]'>
+    <footer className='relative px-4 md:px-6 lg:px-10 xl:px-28 h-[22rem] flex flex-col justify-center py-1'>
+      <div className='flex items-center mb-10'>
         <Image
           src={Logo}
           alt='Logo'
-          className='w-[120px] h-[38px] ml-[135px]'
+          className='w-[120px] '
         />
       </div>
-      <div className=' w-[100%] h-[58px] flex items-center mt-[40px]'>
-        <div className='flex ml-[135px]'>
+      <div className=' w-[100%] mb-4 flex items-start '>
+        <div className='flex gap-6'>
           {FooterListPage.map((item) => (
             <button
               key={item.id}
-              className="mr-[24px] text-gray-300  text-[16px] font-['Pretendard'] ">
-              <Link href={item.href} className='text-gray-300 '>
+              className=" text-[16px] font-['Pretendard'] ">
+              <Link href={item.href} className='text-gray-30 '>
                 {item.lable}
               </Link>
             </button>
           ))}
         </div>
       </div>
-      <div className='mt-[40px]'>
-        <ul className='ml-[135px]'>
+      <div className=''>
+        <ul className='space-y-2'>
           {FooterItems.map((item) => (
             <li
               key={item.id}
-              className="text-gray-300  text-[16px] font-['Pretendard'] ">
+              className="text-gray-30  text-[16px] font-['Pretendard'] ">
               {item.lable}
             </li>
           ))}
         </ul>
       </div>
-      <div className=" ml-[135px] mt-10 text-gray-500 text-sm font-normal font-['Pretendard']">
+      <div className="  mt-10 text-gray-50 text-sm font-normal font-['Pretendard']">
         © 2024 MOAD. All rights reserved.
       </div>
     </footer>

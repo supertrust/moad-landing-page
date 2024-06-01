@@ -1,31 +1,20 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
-
 import MainBackground from '../../../Assets/MaibBG.png';
 import CargoImage from '../../../Assets/NewTruck.svg';
 import PlaysIcon from '../../../Assets/play.svg';
 import 'animate.css';
-
-import TextMoad from '../../../Assets/Moad.svg';
-import TextCargo from '../../../Assets/CargoApp.svg';
 import WhiteNavbar from '../../Navbar/WhiteNavbar';
-
 import { CustomScrollButton } from '@/Components/Buttons/CustomScrollButton';
+import { TextCargo, TextMoad } from '@/Assets/Svgs';
 
 const IndexPage: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
   OnScrollDown,
   isInView,
 }) => {
   const [isImageLoaded, setIsImageLoaded] = useState(false);
-  const [animate, setAnimate] = useState(false);
-  useEffect(() => {
-    if (isInView) {
-      setAnimate(true);
-    } else {
-      setAnimate(false);
-    }
-  }, [isInView]);
+
   const handleImageLoad = () => {
     setIsImageLoaded(true);
   };
@@ -33,40 +22,36 @@ const IndexPage: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
   return (
     <>
       <header
-        className=' h-[100vh] bg-cover bg-center'
+        className=' h-[100vh] overflow-hidden  relative bg-cover bg-center'
         style={{
           backgroundImage: `url(${MainBackground.src})`,
         }}>
         <WhiteNavbar />
-
-        <div className='flex flex-col justify-center  '>
-          {isImageLoaded && isInView && (
-            <>
-              <div className=''>
-                <Image
-                  className=' absolute top-[110px] left-[419px] animate__animated animate__fadeInLeft z-[1]'
-                  src={TextMoad}
-                  alt='Moad--Text'
-                />
+        <div className='flex  relative w-full h-full flex-1 flex-col justify-center  '>
+          {isInView && (
+            <div className='absolute h-full  top-10 w-full left-0 flex flex-col justify-between items-center'>
+              <div className='relative h-[80%]  flex flex-col items-center '>
+                <div className={`max-w-[35.44rem]  max-h-[7rem] ${isImageLoaded ? "animate__animated animate__fadeInLeft" : "invisible"}  z-50`}>
+                  <TextMoad />
+                </div>
+                <div className='shadow-screens -translate-y-10  z-20 '>
+                  <Image
+                    onLoad={handleImageLoad}
+                    alt='Cargo--image'
+                    src={CargoImage}
+                    className={`${isImageLoaded ? "opacity-100 duration-500 ease-linear float-animations " : "invisible opacity-0"} `}
+                  />
+                </div>
+                <div className='-translate-y-20 z-10'>
+                  <div className={` max-w-[71.25rem]  max-h-[7rem] ${isImageLoaded ? "animate__animated animate__fadeInRight" : "invisible"} `}>
+                    <TextCargo />
+                  </div>
+                </div>
               </div>
-              <div className=' '>
-                <Image
-                  className='absolute bottom-[120px] left-[150px] animate__animated animate__fadeInRight z-[1] '
-                  src={TextCargo}
-                  alt='Moad--Text'
-                />
-              </div>
-            </>
+            </div>
           )}
-          <div className='shadow-screens  '>
-            <Image
-              onLoad={handleImageLoad}
-              alt='Cargo--image'
-              src={CargoImage}
-              className='float-animations absolute top-[200px] left-[474px] z-[20]  '
-            />
-            <div className='shadow-image'></div>
-          </div>
+          <div className={`shadow-image ${isImageLoaded ? "opacity-100 duration-500 ease-linear " : "invisible opacity-0"}`}></div>
+
         </div>
         <div className='w-[90%] mx-auto flex justify-between items-center '>
           <div className='flex w-[198px] absolute bottom-[20px] justify-center items-center space-x-2 bg-[#561AA4] text-white px-4 py-2 rounded'>

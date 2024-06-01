@@ -2,6 +2,32 @@
 @tailwind components;
 @tailwind utilities;
 
+html,
+body,
+#root {
+	font-size: calc(100vw / 1440 * 16);
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	overflow: hidden;
+	scroll-behavior: smooth;
+	@media screen and (max-width: 1200px) {
+		font-size: calc(100vw / 1200 * 16);
+	}
+
+	@media screen and (max-width: 950px) {
+		font-size: calc(100vw / 950 * 16);
+	}
+
+	@media screen and (max-width: 768px) {
+		font-size: calc(100vw / 768 * 16);
+	}
+
+	@media screen and (max-width: 485px) {
+		font-size: calc(100vw / 485 * 16);
+	}
+}
+
 .hero-section {
   margin-top: 120px;
   margin-bottom: 2px;
@@ -44,9 +70,10 @@
 }
 
 .custom-footer {
-  height: 375px !important;
-  background-color: #2b303b;
+  height: 22rem !important;
+  background-color: #0E121B;
 }
+/* .fp-slidesNav ul li a.active span {
 /* .fp-slidesNav ul li a.active span {
   background-color: white !important;
 }
@@ -67,6 +94,10 @@
   --animate-duration: 2s;
 }
 
+.animate__fadeIn {
+  --animate-duration: 4s;
+}
+
 .float-animations {
   animation-name: floating;
   animation-duration: 3s;
@@ -76,12 +107,12 @@
 
 .shadow-screens {
   position: relative;
-  padding-top: 2em;
+  /* padding-top: 2em; */
 }
 
 .shadow-image {
   position: absolute;
-  top: 480px;
+  top: 300px;
   left: 400px;
   transform: translateX(-50%);
   width: 500px;
@@ -118,3 +149,5 @@
 .scrollAnimation {
   animation: fadeInLeftScroll 1s ease-in-out forwards;
 }
+
+
