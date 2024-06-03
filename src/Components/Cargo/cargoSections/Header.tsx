@@ -15,6 +15,7 @@ const IndexPage: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
 }) => {
   const [isImageLoaded, setIsImageLoaded] = useState(false);
 
+
   const handleImageLoad = () => {
     setIsImageLoaded(true);
   };
@@ -29,18 +30,19 @@ const IndexPage: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
         <WhiteNavbar />
         <div className='flex  relative w-full h-full flex-1 flex-col justify-center  '>
           {isInView && (
-            <div className='absolute h-full  top-10 w-full left-0 flex flex-col justify-between items-center'>
-              <div className='relative h-[80%]  flex flex-col items-center '>
+            <div className='absolute h-full  mb-8 w-full left-0 flex flex-col justify-between items-center'>
+              <div className='relative h-full justify-center  flex flex-col items-center '>
                 <div className={`max-w-[35.44rem]  max-h-[7rem] ${isImageLoaded ? "animate__animated animate__fadeInLeft" : "invisible"}  z-50`}>
                   <TextMoad />
                 </div>
-                <div className='shadow-screens -translate-y-10  z-20 '>
+                <div className='shadow-screens relative -translate-y-10  z-20 '>
                   <Image
                     onLoad={handleImageLoad}
                     alt='Cargo--image'
                     src={CargoImage}
                     className={`${isImageLoaded ? "opacity-100 duration-500 ease-linear float-animations " : "invisible opacity-0"} `}
                   />
+                  <div className={`shadow-image ${isImageLoaded ? "opacity-100 duration-500 ease-linear " : "invisible opacity-0"}`}></div>
                 </div>
                 <div className='-translate-y-20 z-10'>
                   <div className={` max-w-[71.25rem]  max-h-[7rem] ${isImageLoaded ? "animate__animated animate__fadeInRight" : "invisible"} `}>
@@ -50,7 +52,6 @@ const IndexPage: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
               </div>
             </div>
           )}
-          <div className={`shadow-image ${isImageLoaded ? "opacity-100 duration-500 ease-linear " : "invisible opacity-0"}`}></div>
 
         </div>
         <div className='w-[90%] mx-auto flex justify-between items-center '>

@@ -72,7 +72,7 @@ const IndexPage: React.FC = () => {
             className='absolute right-0 bottom-0'
           />
         </div>
-        <div className=' space-y-6 mt-6'>
+        <div className=' space-y-6 mt-[5%] flex flex-col justify-between'>
           <div className='px-4 md:px-6 lg:px-10 xl:px-28 flex-col justify-start items-start gap-2 inline-flex'>
             <div className="text-daisyBush-60 text-3xl font-extrabold font-Pretendard  leading-9">
               자주하는 질문
