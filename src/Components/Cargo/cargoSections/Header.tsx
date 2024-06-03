@@ -26,6 +26,7 @@ const IndexPage: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
         className=' h-[100vh] overflow-hidden  relative bg-cover bg-center'
         style={{
           backgroundImage: `url(${MainBackground.src})`,
+          zIndex: 0,
         }}>
         <WhiteNavbar />
         <div className='flex  relative w-full h-full flex-1 flex-col justify-center  '>
@@ -55,7 +56,7 @@ const IndexPage: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
 
         </div>
         <div className='w-[90%] mx-auto flex justify-between items-center '>
-          <div className='flex w-[198px] absolute bottom-[20px] justify-center items-center space-x-2 bg-[#561AA4] text-white px-4 py-2 rounded'>
+          <div className='flex w-auto max-w-[200px] absolute bottom-[20px] justify-center items-center space-x-2 bg-[#561AA4] text-white px-4 py-2 rounded'>
             <Image alt='icon' src={PlaysIcon} />
             <span className='font-bold text-xl'>앱 다운로드</span>
           </div>

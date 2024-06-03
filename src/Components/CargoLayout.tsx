@@ -4,7 +4,7 @@ import ReactFullpage from '@fullpage/react-fullpage';
 import Footer from './Footer/Footer';
 import { FifthSection, FourthSection, Header, SecondSection, ThirdSection } from './Cargo/cargoSections';
 
-const CargoLayout = () => {
+const CargoLayout= () => {
   const [currentSection, setCurrentSection] = useState(0);
   return (
     <>
@@ -12,9 +12,9 @@ const CargoLayout = () => {
         <ReactFullpage
           scrollHorizontally={true}
           credits={{ enabled: false }}
-          scrollingSpeed={1000}
+          scrollingSpeed={500}
           fitToSection={true}
-          fitToSectionDelay={1000} 
+          fitToSectionDelay={1000}
           afterLoad={(origin, destination) => {
             setCurrentSection(destination.index);
           }}

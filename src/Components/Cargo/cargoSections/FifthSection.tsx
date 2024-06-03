@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import "../../../app/styles/FaqCards.css";
 import { motion, useScroll, useTransform } from "framer-motion";
 import Image from 'next/image';
@@ -10,6 +10,8 @@ import ColorNavbar from '../../Navbar/ColorNavbar';
 
 const IndexPage: React.FC = () => {
   const [isImageLoaded, setIsImageLoaded] = useState(false);
+  const scrollContainerRef = useRef<HTMLDivElement>(null);
+  const scrollbarThumbRef = useRef<HTMLDivElement>(null);
 
   const handleImageLoad = () => {
     setIsImageLoaded(true);
@@ -48,31 +50,55 @@ const IndexPage: React.FC = () => {
         </span>
     },
   ];
-  const scrollContainerRef = useRef<HTMLDivElement>(null);
-  const scrollbarThumbRef = useRef<HTMLDivElement>(null);
 
   const handleScroll = () => {
     if (scrollContainerRef.current && scrollbarThumbRef.current) {
       const { scrollLeft, scrollWidth, clientWidth } = scrollContainerRef.current;
       const scrollPercentage = scrollLeft / (scrollWidth - clientWidth);
       const thumbWidth = clientWidth * scrollPercentage;
-      scrollbarThumbRef.current.style.width = `${thumbWidth + 50}px`;
+      scrollbarThumbRef.current.style.width = `${thumbWidth + 10}px`;
     }
   };
+
+  const handleArrowClick = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({ left: 300, behavior: 'smooth' });
+    }
+  };
+
+  const handleScrollbarClick = (e: React.MouseEvent) => {
+    if (scrollContainerRef.current && scrollbarThumbRef.current) {
+      const { offsetX } = e.nativeEvent;
+      const { clientWidth, scrollWidth } = scrollContainerRef.current;
+      const newScrollLeft = (offsetX / clientWidth) * scrollWidth;
+      scrollContainerRef.current.scrollTo({ left: newScrollLeft, behavior: 'smooth' });
+    }
+  };
+
+  useEffect(() => {
+    const scrollContainer = scrollContainerRef.current;
+    if (scrollContainer) {
+      scrollContainer.addEventListener('scroll', handleScroll);
+      return () => {
+        scrollContainer.removeEventListener('scroll', handleScroll);
+      };
+    }
+  }, []);
+
   return (
     <>
       <section className=' h-[100vh] z-50 pb-8 relative  overflow-hidden bg-[#EEEFF3]'>
         <ColorNavbar />
 
-        <div className='z-0'>
+        <div className='-z-10'>
           <Image
             src={SectionBackground}
             onLoad={handleImageLoad}
             alt='Section--Background'
-            className='absolute right-0 bottom-0'
+            className='absolute right-0 -z-10 bottom-0'
           />
         </div>
-        <div className=' space-y-6 mt-[5%] flex flex-col justify-between'>
+        <div className=' space-y-6 z-50 mt-[5%] flex flex-col justify-between'>
           <div className='px-4 md:px-6 lg:px-10 xl:px-28 flex-col justify-start items-start gap-2 inline-flex'>
             <div className="text-daisyBush-60 text-3xl font-extrabold font-Pretendard  leading-9">
               자주하는 질문
@@ -81,8 +107,8 @@ const IndexPage: React.FC = () => {
               <div className=" text-gray-60 text-2xl font-bold font-Pretendard underline">
                 다른 질문이 있으신가요
               </div>
-              <div>
-                <Image src={ArrowsIcon} alt='Arrow--icon' className='h-5 w-5' />
+              <div onClick={handleArrowClick} className='z-[1000]'>
+                <Image src={ArrowsIcon} alt='Arrow--icon' className='h-5 w-5 cursor-pointer' />
               </div>
             </div>
           </div>
@@ -105,7 +131,7 @@ const IndexPage: React.FC = () => {
                   </div>
                 ))}
               </div>
-              <div className="custom-scrollbar-container">
+              <div className="custom-scrollbar-container" onClick={handleScrollbarClick}>
                 <div className="custom-scrollbar-track">
                   <div ref={scrollbarThumbRef} className="custom-scrollbar-thumb"></div>
                 </div>

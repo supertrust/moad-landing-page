@@ -3,6 +3,7 @@ import Image from 'next/image';
 import Logo from '../../Assets/logo.svg';
 import PlaysIcon from '../../Assets/play.svg';
 import ArrowIcon from '../../Assets/arrow.svg';
+import Link from 'next/link';
 
 interface Button {
   id: number;
@@ -10,6 +11,7 @@ interface Button {
   icon?: any;
   styles: string;
   iconPosition: 'left' | 'right';
+  link: string
 }
 
 const IndexPage: React.FC = () => {
@@ -20,6 +22,7 @@ const IndexPage: React.FC = () => {
       icon: ArrowIcon,
       styles: 'text-daisyBush-60 font-semibold',
       iconPosition: 'right',
+      link: "/advertiser"
     },
     {
       id: 2,
@@ -27,6 +30,7 @@ const IndexPage: React.FC = () => {
       icon: PlaysIcon,
       styles: 'bg-[#561AA4] text-white font-semibold',
       iconPosition: 'left',
+      link: ""
     },
   ];
 
@@ -34,14 +38,15 @@ const IndexPage: React.FC = () => {
     <>
       <nav className='  z-[40] w-full px-4 md:px-6 lg:px-10 xl:px-28'>
         <div className='container mx-auto flex justify-between items-center'>
-          <div className='logo'>
+          <Link href='/' className='logo'>
             <Image src={Logo} alt='Logo' className='h-12' />
-          </div>
+          </Link>
           <div className='flex justify-center space-x-4'>
             {buttonsConfig.map((button) => (
-              <button
+              <Link key={button.id} href={button.link}>            
+               <button
                 key={button.id}
-                className={`py-2 px-4 rounded flex items-center space-x-2  ${button.styles}`}>
+                className={`py-2 px-4 rounded cursor-pointer flex items-center space-x-2  ${button.styles}`}>
                 {button.iconPosition === 'left' && (
                   <Image
                     src={button.icon}
@@ -58,6 +63,7 @@ const IndexPage: React.FC = () => {
                   />
                 )}
               </button>
+              </Link>
             ))}
           </div>
         </div>
