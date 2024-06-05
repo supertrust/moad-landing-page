@@ -1,12 +1,13 @@
 'use client'
-import React,{useState} from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import Truckimage from '../../../Assets/truck.svg'
 import Busimage from '../../../Assets/bus.svg'
 import Carimage from '../../../Assets/car.svg'
+import CardsSection from "./CardsSection";
 
 const SecondSection = () => {
-  
+
   const CardData = [
     {
       id: 1,
@@ -46,54 +47,54 @@ const SecondSection = () => {
     },
   ];
   return (
-  
-    <section className="relative bg-[#561AA4] h-[900px]  overflow-hidden">
-      <div className="ml-[135px] mt-[50px] w-[562px] h-[200px]">
-        <h2 className=" font-bold text-white text-[68px] font-['Pretendard'] ">
-          지금 옥외광고 대세는 차량 랩핑입니다
+    <div className=" justify-between w-screen min-w-full gap-8 flex flex-col items-start  bg-[#561AA4] h-screen  overflow-hidden">
+      <div className="flex w-full px-4 md:px-8 lg:px-20 xl:px-32 mt-16">
+        <h2 className=" font-bold text-white text-6xl leading-normal font-Pretendard ">
+          지금 옥외광고 대세는 <br /> 차량 랩핑입니다
         </h2>
       </div>
 
-      <div className="absolute top-[350.5px] w-[1353px] h-[567px]  bg-white rounded-tr-2xl">
-        <div className="flex justify-center items-center space-x-6 mt-[150px] ">
+      <div className="bg-white flex flex-col gap-10 justify-between h-[60%] w-[90%] py-8 rounded-tr-[50px]">
+        <div className="flex justify-between px-4 md:px-8 lg:px-20 xl:px-32  items-center flex-1 space-x-6  ">
           {CardData?.map((item) => {
             return (
               <div
-                className="w-[238px]   overflow-hidden"
+                className="  overflow-hidden flex flex-col gap-4"
                 key={item.id}
               >
-                <div className=" h-16  text-[20px] flex items-center justify-center text-[#0E121B] font-bold font-['Pretendard'] ">
+                <h3 className=" text-xl flex items-center justify-center text-[#0E121B] font-bold font-Pretendard ">
                   {item.headText}
+                </h3>
+
+                <div className="bg-[#F5F7FA] p-4 h-[9rem] px-12 mx-auto  flex justify-center items-center rounded-[16px]">
+                  <Image
+                    src={item?.ImgSrc?.src}
+                    width={180}
+                    height={70}
+                    className=" object-cover mx-auto"
+                    alt='cad-image'
+                  />
+
                 </div>
 
-                <div className="bg-[#F5F7FA] w-[238px] h-[155px] mx-auto mt-4  flex justify-center items-center rounded-[16px]">
-                    <Image
-                      src={item?.ImgSrc?.src}
-                      width={160}
-                      height={74}
-                      className=" object-cover mx-auto"
-                      alt='cad-image'
-                    />
-  
-                </div>
-
-                <div className="p-4 ">
+                <div className=" ">
                   <div className="flex justify-center items-center space-x-2">
-                    <p className="text-[#717784]  text-[20px] font-['Pretendard'] ">{item.CardText_1}</p>
-                    <span className="text-[#561AA4] text-[42px] font-bold">{item.CardPercentage_1}</span>
+                    <p className="text-[#717784]  text-lg font-Pretendard ">{item.CardText_1}</p>
+                    <span className="text-[#561AA4] text-3xl font-bold">{item.CardPercentage_1}</span>
                   </div>
                   <div className="flex justify-center items-center space-x-2">
-                    <p className="text-[#717784] text-[20px] font-['Pretendard'] ">{item.cardText_2}</p>
-                    <span className="text-[#561AA4] text-[42px]  font-bold">{item.Cardpercentage_2}</span>
+                    <p className="text-[#717784] text-lg font-Pretendard ">{item.cardText_2}</p>
+                    <span className="text-[#561AA4] text-3xl  font-bold">{item.Cardpercentage_2}</span>
                   </div>
                 </div>
               </div>
-            );
+            )
           })}
         </div>
+        <p className="px-4 text-base md:px-8 lg:px-20 xl:px-32 text-text-grayChateu">출처 OAAA와 Nielsen</p>
       </div>
-      
-    </section>
+
+    </div>
   );
 };
 

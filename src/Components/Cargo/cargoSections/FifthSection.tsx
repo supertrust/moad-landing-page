@@ -87,7 +87,7 @@ const IndexPage: React.FC = () => {
 
   return (
     <>
-      <section className=' h-[100vh] z-50 pb-8 relative  overflow-hidden bg-[#EEEFF3]'>
+      <section className=' h-[100vh] z-50 pb-8 relative  overflow-y-hidden bg-[#EEEFF3]'>
         <ColorNavbar />
 
         <div className='-z-10'>

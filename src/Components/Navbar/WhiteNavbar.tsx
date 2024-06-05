@@ -37,8 +37,8 @@ const IndexPage: React.FC = () => {
 
   return (
     <>
-      <nav className='z-[500] w-full px-4 md:px-6 lg:px-10 xl:px-28'>
-        <div className='w-[90%] mx-auto flex justify-between items-center py-3'>
+      <nav className='  z-[40] w-full px-4 md:px-6 lg:px-10 xl:px-28'>
+        <div className='container mx-auto flex justify-between items-center'>
           <Link href="/" className='logo'>
             <Image src={Logo} alt='Logo' className='h-12' />
           </Link>

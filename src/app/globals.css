@@ -9,7 +9,9 @@ body,
 	margin: 0;
 	padding: 0;
 	height: 100%;
-	overflow: hidden;
+	display: flex;
+  align-items: center;
+  justify-content: center;
 	scroll-behavior: smooth;
 	@media screen and (max-width: 1200px) {
 		font-size: calc(100vw / 1200 * 16);
@@ -28,29 +30,51 @@ body,
 	}
 }
 
+
+/* section{ */
+  /* height:100%; */
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* flex-direction: column; */
+/* } */
+
+.fp-is-overflow>.fp-overflow {
+  overflow-y: auto;
+  height: 100vh;
+
+}
+
 .hero-section {
-  margin-top: 120px;
-  margin-bottom: 2px;
   background-image: url('../Assets/HeroSection.png');
   background-size: cover;
-  background-position: center;
-  width: 1170px;
-  height: 640px;
+  background-position: bottom;
+  width: 60vw;
+  height: 450px;
   border-radius: 60px;
   position: relative;
-  transition: width 3s, cubic-bezier(0.165, 0.84, 0.44, 1) ease-in-out;
+  transition: all 0.5s linear;
+  overflow: visible;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
 }
 
 .hero-section:hover {
   width: 100vw;
-  height: 900px;
+  height: 100vh;
   border-radius: 0;
-  margin-bottom: 0px;
   margin-top: 0;
 }
+
+/* .fp-is-overflow>.fp-overflow{ */
+  /* overflow: hidden; */
+  /* overflow-y: hidden; */
+/* } */
+
 .Cargohero-section {
   margin-top: 120px;
-  /* margin-bottom: 2px; */
   background-image: url('../Assets/CargoHeroSection.svg');
   background-size: cover;
   background-position: center;
@@ -73,15 +97,6 @@ body,
   height: 22rem !important;
   background-color: #0E121B;
 }
-/* .fp-slidesNav ul li a.active span {
-/* .fp-slidesNav ul li a.active span {
-  background-color: white !important;
-}
-#fp-nav ul li a span,
-.fp-slidesNav ul li a span {
-  background-color: gainsboro !important;
-  z-index: 10;
-} */
 
 .animate__animated.animate__bounceInRight,
 .animate__bounceInLeft {
@@ -107,7 +122,6 @@ body,
 
 .shadow-screens {
   position: relative;
-  /* padding-top: 2em; */
 }
 
 .shadow-image {
@@ -152,3 +166,14 @@ body,
 }
 
 
+
+.color-white {
+  background-color: white !important;
+}
+
+.fp-table {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  width: 100vw !important;
+}
