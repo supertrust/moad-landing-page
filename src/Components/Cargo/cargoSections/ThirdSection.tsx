@@ -1,12 +1,10 @@
 import React from 'react';
 import Image from 'next/image';
 import { CustomScrollButton } from '@/Components/Buttons/CustomScrollButton';
-
 import 'animate.css';
 import ThirdBgSections from '../../../Assets/thirdsectionbg.png';
 import WhiteUnion from '../../../Assets/whiteUnion.svg';
 import WhiteNavbar from '../../Navbar/WhiteNavbar'
-import { MobileOne, MobileTwo, MobileThree } from '@/Assets/Svgs';
 
 const IndexPage: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
   OnScrollDown,

@@ -1,7 +1,6 @@
 'use client';
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 import "../../../app/styles/FaqCards.css";
-import { motion, useScroll, useTransform } from "framer-motion";
 import Image from 'next/image';
 import 'animate.css';
 import SectionBackground from '../../../Assets/lastsection.png';
@@ -9,13 +8,9 @@ import ArrowsIcon from '../../../Assets/horizantalarrow.svg';
 import ColorNavbar from '../../Navbar/ColorNavbar';
 
 const IndexPage: React.FC = () => {
-  const [isImageLoaded, setIsImageLoaded] = useState(false);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const scrollbarThumbRef = useRef<HTMLDivElement>(null);
 
-  const handleImageLoad = () => {
-    setIsImageLoaded(true);
-  };
 
   const FaqCards = [
     {
@@ -87,13 +82,11 @@ const IndexPage: React.FC = () => {
 
   return (
     <>
-      <section className=' h-[100vh] z-50 pb-8 relative  overflow-y-hidden bg-[#EEEFF3]'>
+      <div className=' h-[100vh] z-50 pb-8 relative  overflow-y-hidden bg-[#EEEFF3]'>
         <ColorNavbar />
-
         <div className='-z-10'>
           <Image
             src={SectionBackground}
-            onLoad={handleImageLoad}
             alt='Section--Background'
             className='absolute right-0 -z-10 bottom-0'
           />
@@ -139,7 +132,7 @@ const IndexPage: React.FC = () => {
             </div>
           </div>
         </div>
-      </section>
+      </div>
     </>
   );
 };

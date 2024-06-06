@@ -31,7 +31,7 @@ const IndexPage: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
         <WhiteNavbar />
         <div className='flex  relative w-full h-full flex-1 flex-col justify-center  '>
           {isInView && (
-            <div className='absolute h-full  mb-8 w-full left-0 flex flex-col justify-between items-center'>
+            <div className='absolute h-full top-0 -translate-y-10  mb-8 w-full left-0 flex flex-col justify-between items-center'>
               <div className='relative h-full justify-center  flex flex-col items-center '>
                 <div className={`max-w-[35.44rem]  max-h-[7rem] ${isImageLoaded ? "animate__animated animate__fadeInLeft" : "invisible"}  z-50`}>
                   <TextMoad />

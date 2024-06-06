@@ -6,6 +6,15 @@ import { FifthSection, FourthSection, Header, SecondSection, ThirdSection } from
 
 const CargoLayout= () => {
   const [currentSection, setCurrentSection] = useState(0);
+
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+      setIsMounted(true)
+  }, [])
+
+  if (!isMounted) return null
+  
   return (
     <>
       <Suspense fallback={<p>Loading feed...</p>}>

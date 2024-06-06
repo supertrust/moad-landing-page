@@ -1,7 +1,4 @@
-import Image from 'next/image';
-import DownArrow from '../../../Assets/downarrow.svg';
 import SectionBackground from '../../../Assets/SecondSectionBg.png';
-import SecondMobileIcon from '../../../Assets/SecondMobile.svg';
 import ColorNavbar from '../../Navbar/ColorNavbar';
 import { CustomScrollButton } from '@/Components/Buttons/CustomScrollButton';
 import { useEffect, useState } from 'react';

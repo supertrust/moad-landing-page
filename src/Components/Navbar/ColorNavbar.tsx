@@ -14,7 +14,7 @@ interface Button {
   link: string
 }
 
-const IndexPage: React.FC = () => {
+const ColorNavbar: React.FC = () => {
   const buttonsConfig: Button[] = [
     {
       id: 1,
@@ -36,8 +36,8 @@ const IndexPage: React.FC = () => {
 
   return (
     <>
-      <nav className='  z-[40] w-full px-4 md:px-6 lg:px-10 xl:px-28'>
-        <div className='container mx-auto flex justify-between items-center'>
+      <nav className='z-[40] w-full px-4 md:px-6 lg:px-10 xl:px-28'>
+        <div className='container  mx-auto flex justify-between items-center'>
           <Link href='/' className='logo'>
             <Image src={Logo} alt='Logo' className='h-12' />
           </Link>
@@ -72,4 +72,4 @@ const IndexPage: React.FC = () => {
   );
 };
 
-export default IndexPage;
+export default ColorNavbar;

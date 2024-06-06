@@ -1,9 +1,7 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
-import DownArrow from '../../../Assets/downarrow.svg';
 import SectionBackground from '../../../Assets/BlurTruck.svg';
-
 import SecondMobileIcon from '../../../Assets/Mobiletooltip.svg';
 import WhiteNavbar from '../../Navbar/WhiteNavbar';
 import { CustomScrollButton } from '@/Components/Buttons/CustomScrollButton';

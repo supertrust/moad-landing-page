@@ -27,7 +27,7 @@ const FormField: React.FC<FormFieldProps> = ({
             </label>
             {type === 'textarea' ? (
                 <textarea
-                    className="shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    className="shadow appearance-none border border-[#99A0AE] rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-daisyBush-60 focus:shadow-outline"
                     id={name}
                     placeholder={placeholder}
                     {...register}
@@ -36,7 +36,7 @@ const FormField: React.FC<FormFieldProps> = ({
             ) : (
                 <input
                     type={type}
-                    className="shadow appearance-none border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+                    className="shadow appearance-none border border-[#99A0AE] rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-daisyBush-60 focus:shadow-outline"
                     id={name}
                     placeholder={placeholder}
                     {...register}
