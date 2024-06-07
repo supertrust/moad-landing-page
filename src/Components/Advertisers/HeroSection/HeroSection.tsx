@@ -1,14 +1,12 @@
 'use client';
 import React, { useState } from 'react';
 import Image from 'next/image';
-import MainBackground from '../../../Assets/MaibBG.png';
 import CargoImage from '../../../Assets/NewTruck.svg';
 import PlaysIcon from '../../../Assets/play.svg';
 // import AdvertText from '/assets/svgs/ADVERTISEMENT.svg';
 import 'animate.css';
 import WhiteNavbar from '../../Navbar/WhiteNavbar';
 import { CustomScrollButton } from '@/Components/Buttons/CustomScrollButton';
-import ServiceBackground from '../../../Assets/thirdsectionbg.png'
 
 const AdvertHeroSection: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
     OnScrollDown,
@@ -24,7 +22,7 @@ const AdvertHeroSection: React.FC<{ OnScrollDown: () => void; isInView: boolean 
     return (
         <>
             <header
-                className='pt-4 h-[100vh] overflow-hidden bg-daisyBush-60  relative bg-cover '
+                className=' h-[100vh] overflow-hidden bg-daisyBush-60  relative bg-cover '
                 style={{
                     backgroundImage: `url(/assets/images/bg-2.png)`,
                     zIndex: 0,

@@ -30,7 +30,7 @@ const AdvertisingPlatforms: React.FC<{ OnScrollDown: () => void; isInView: boole
         },
     ];
     return (
-        <div className="relative z-40  pt-4 h-screen bg-daisyBush-60 bg-center bg-contain  bg-no-repeat  overflow-hidden flex flex-col items-start" style={{
+        <div className="relative z-40 h-screen bg-daisyBush-60 bg-center bg-contain  bg-no-repeat  overflow-hidden flex flex-col items-start" style={{
             backgroundImage: `url(${ServiceBackground.src})`,
             zIndex: 0,
         }}>

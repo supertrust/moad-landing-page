@@ -46,7 +46,7 @@ const IndexPage: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
                       <div className='animate__animated animate__fadeInRight rounded-md absolute  top-[100px] -right-4  bg-daisyBush-60 text-lg text-white  px-4 py-2 text-center z-50 font-semibold'>
                         {`다들 오늘 운행은 어떠셨나요?`}
                       </div>
-                      <div className='animate__animated animate__fadeInLeft rounded-md absolute  top-[250px] left-[10px]  bg-daisyBush-40 text-lg text-white px-4 py-2 font-semibold  text-center z-50'>
+                      <div className='animate__animated animate__fadeInLeft rounded-md absolute  top-[250px] left-[-30px]  bg-daisyBush-40 text-lg text-white px-4 py-2 font-semibold  text-center z-50'>
                         {`꽃이 많이 폈네요! 꽃 보고 가세요~~`}
                       </div>
                       <div className='animate__animated animate__fadeInUp  rounded-md absolute  top-[350px] -right-4   bg-[#EEEFF3] text-lg text-gray-100 font-semibold   px-4 py-2  text-center z-50'>

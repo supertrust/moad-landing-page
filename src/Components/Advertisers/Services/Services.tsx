@@ -56,7 +56,7 @@ const Services: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
 
     return (
         <div
-            className='pt-4 h-[100vh] overflow-hidden bg-[#EEEFF3]  relative bg-cover bg-center'
+            className=' h-[100vh] overflow-hidden bg-[#EEEFF3]  relative bg-cover bg-center'
             style={{
                 backgroundImage: `url(${ServiceBackground.src})`,
 

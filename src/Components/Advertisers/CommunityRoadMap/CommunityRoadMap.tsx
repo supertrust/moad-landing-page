@@ -34,7 +34,7 @@ const CommunityRoadMap: React.FC<{ OnScrollDown: () => void; isInView: boolean }
 
     return (
         <>
-            <section className='overflow-hidden pt-4 h-screen bg-[#101440]'>
+            <section className='overflow-hidden h-screen bg-[#101440]'>
                 <WhiteNavbar />
                 <div className='h-full grid grid-cols-2 relative gap-16 items-center pb-10 px-4 md:px-6 lg:px-10 xl:px-28'>
                     <div className='relative h-full'>
@@ -75,7 +75,6 @@ const CommunityRoadMap: React.FC<{ OnScrollDown: () => void; isInView: boolean }
                         ))}
                     </div>
                     <div className='relative flex z-10  '>
-                        {isInView && (
                             <div className='animate__animated animate__fadeIn  h-full flex'>
                                 <div className='flex-col justify-center items-start gap-2 inline-flex'>
                                     <h2 className="text-daisyBush-40 text-3xl font-extrabold font-Pretendard">
@@ -97,7 +96,7 @@ const CommunityRoadMap: React.FC<{ OnScrollDown: () => void; isInView: boolean }
                                     </div>
                                 </div>
                             </div>
-                        )}
+                        
                     </div>
 
                     <div className='absolute -z-0 right-0 bottom-20 w-[600.50px]'>

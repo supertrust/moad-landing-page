@@ -28,11 +28,11 @@ const ContactSection = () => {
     };
 
     return (
-        <div className="pt-4 bg-[#F2F5F8] h-screen  overflow-hidden bg-center bg-cover" style={{ background: `url(${ContactBackground.src})`}}>
+        <div className=" bg-[#F2F5F8] h-screen  overflow-hidden bg-center bg-cover" style={{ background: `url(${ContactBackground.src})`}}>
             <ColorNavbar />
             <section className="relative">
 
-                <div className="grid grid-cols-2 py-5 justify-between w-full px-4 md:px-6 lg:px-10 xl:px-28 z-20 ">
+                <div className="grid grid-cols-2 pb-5 pt-3 justify-between w-full px-4 md:px-6 lg:px-10 xl:px-28 z-20 ">
                     <div className="">
                         <h2 className=" font-bold text-daisyBush-60  text-[2.25rem] font-Pretendard ">
                             Contact us

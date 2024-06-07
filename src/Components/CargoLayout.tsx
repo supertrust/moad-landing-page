@@ -11,6 +11,7 @@ const CargoLayout= () => {
 
   useEffect(() => {
       setIsMounted(true)
+      setCurrentSection(0)
   }, [])
 
   if (!isMounted) return null

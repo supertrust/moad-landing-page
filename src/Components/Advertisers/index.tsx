@@ -15,17 +15,27 @@ const AdvertisersPage = () => {
 
     useEffect(() => {
         setIsMounted(true)
+        setCurrentSection(0)
     }, [])
 
     if (!isMounted) return null
-
+    console.log(currentSection,'adver')
     return (
         <>
             <Suspense fallback={<p>Loading feed...</p>}>
                 <ReactFullpage
-                    lazyLoading={true}
-                    scrollHorizontally={true}
-                    credits={{ enabled: false }}
+                scrollHorizontally={true}
+                credits={{ enabled: false }}
+                scrollingSpeed={500}
+                fitToSection={true}
+                fitToSectionDelay={1000}
+                afterLoad={(origin, destination) => {
+                  setCurrentSection(destination.index);
+                }}
+                onLeave={(origin, destination, direction) => {
+                  setCurrentSection(destination.index);
+                }
+                }
                     render={({ state, fullpageApi }) => (
                         <ReactFullpage.Wrapper>
                             <div className='section'>
