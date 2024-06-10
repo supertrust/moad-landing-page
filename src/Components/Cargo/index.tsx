@@ -1,21 +1,21 @@
 'use client';
 import React, { useState, useEffect, Suspense } from 'react';
 import ReactFullpage from '@fullpage/react-fullpage';
-import Footer from './Footer/Footer';
-import { FifthSection, FourthSection, Header, SecondSection, ThirdSection } from './Cargo/cargoSections';
+import { FifthSection, FourthSection, Header, SecondSection, ThirdSection } from './cargoSections';
+import Footer from '../Footer/Footer';
 
-const CargoLayout= () => {
+const CargoLayout = () => {
   const [currentSection, setCurrentSection] = useState(0);
 
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-      setIsMounted(true)
-      setCurrentSection(0)
+    setIsMounted(true)
+    setCurrentSection(0)
   }, [])
 
   if (!isMounted) return null
-  
+
   return (
     <>
       <Suspense fallback={<p>Loading feed...</p>}>
@@ -43,7 +43,7 @@ const CargoLayout= () => {
                 />
               </div>
               <div className='section'>
-                <SecondSection
+                <SecondSection 
                   OnScrollDown={() => {
                     fullpageApi.moveSectionDown();
                   }}

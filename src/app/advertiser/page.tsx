@@ -3,9 +3,7 @@ import AdvertisersPage from '@/Components/Advertisers';
 
 const Page = () => {
   return (
-    <>
       <AdvertisersPage />
-    </>
   );
 };
 

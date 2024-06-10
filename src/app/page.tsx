@@ -1,10 +1,8 @@
-import CargoLayout from '@/Components/CargoLayout';
+import LandingPage from '@/Components/Cargo';
 
 export default function Home() {
 
   return (
-    <>
-      <CargoLayout />
-    </>
+    <LandingPage />
   );
 }
