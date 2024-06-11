@@ -23,7 +23,7 @@ const IndexPage: React.FC = () => {
       icon: ArrowIcon,
       styles: 'text-white font-semibold',
       iconPosition: 'right',
-      link: "/advertiser"
+      link: "/advertisers"
     },
     {
       id: 2,

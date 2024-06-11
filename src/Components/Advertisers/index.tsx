@@ -7,7 +7,6 @@ import CommunityRoadMap from './CommunityRoadMap/CommunityRoadMap';
 import Footer from '../Footer/Footer';
 import AdvertisingPlatforms from './AdvertisingPlatforms/AdvertisingPlatforms';
 import ContactSection from './Contact/Contact';
-// import { FifthSection, FourthSection, Header, SecondSection, ThirdSection } from './Cargo/cargoSections';
 
 const AdvertisersPage = () => {
     const [currentSection, setCurrentSection] = useState(0);
@@ -19,23 +18,23 @@ const AdvertisersPage = () => {
     }, [])
 
     if (!isMounted) return null
-    console.log(currentSection,'adver')
+    console.log(currentSection, 'adver')
     return (
         <>
             <Suspense fallback={<p>Loading feed...</p>}>
                 <ReactFullpage
-                scrollHorizontally={true}
-                credits={{ enabled: false }}
-                scrollingSpeed={500}
-                fitToSection={true}
-                fitToSectionDelay={1000}
-                afterLoad={(origin, destination) => {
-                  setCurrentSection(destination.index);
-                }}
-                onLeave={(origin, destination, direction) => {
-                  setCurrentSection(destination.index);
-                }
-                }
+                    scrollHorizontally={true}
+                    credits={{ enabled: false }}
+                    scrollingSpeed={500}
+                    fitToSection={true}
+                    fitToSectionDelay={1000}
+                    afterLoad={(origin, destination) => {
+                        setCurrentSection(destination.index);
+                    }}
+                    onLeave={(origin, destination, direction) => {
+                        setCurrentSection(destination.index);
+                    }
+                    }
                     render={({ state, fullpageApi }) => (
                         <ReactFullpage.Wrapper>
                             <div className='section'>
@@ -75,7 +74,7 @@ const AdvertisersPage = () => {
                                 />
                             </div>
                             <div className='section custom-footer '>
-                                <Footer />
+                                <Footer page='advertisers' />
                             </div>
                         </ReactFullpage.Wrapper>
                     )}

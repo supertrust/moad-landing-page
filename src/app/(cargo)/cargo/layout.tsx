@@ -13,11 +13,11 @@ export default function OthersLayout({
         <div className='flex flex-col justify-start  w-full overflow-auto'>
             <ColorNavbar />
             <div className='px-4 md:px-6 lg:px-10 xl:px-28 '>
-                <Nav />
+                <Nav page='cargo'/>
                 {children}
             </div>
             <div className='custom-footer '>
-                <Footer />
+                <Footer page='cargo'/>
             </div>
         </div>
     );

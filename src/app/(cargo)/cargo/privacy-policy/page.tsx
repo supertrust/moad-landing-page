@@ -1,13 +1,13 @@
 'use client';
 import React from 'react';
-import Data from '../../../PagesData/Data.json';
 import { DropDownReveal } from '@/Components/PoliciesAndTerms';
+import { privacyData } from '@/PagesData/cargo';
 
 const Page = () => {
 
   return (
-    <div className='flex flex-col gap-4'>
-      < DropDownReveal data={Data} />
+    <div className='flex flex-col'>
+      < DropDownReveal data={privacyData} page='cargo'/>
       <div className='flex flex-col justify-center '>
         <div className='w-full py-20  flex-col justify-start items-start gap-6 inline-flex'>
           <div className='flex-col justify-start items-start gap-2 flex'>

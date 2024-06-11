@@ -1,14 +1,14 @@
 /* eslint-disable react/no-unescaped-entities */
 'use client';
 import React from 'react';
-import TermsData from '../../../PagesData/termsData.json';
+import TermsData from '../../../../PagesData/termsData.json';
 import { DropDownReveal } from '@/Components/PoliciesAndTerms';
 
 const Page = () => {
 
   return (
     <div className='flex w-full flex-col justify-center '>
-      < DropDownReveal data={TermsData} />
+      < DropDownReveal data={TermsData} page='advertisers'/>
       <div className='flex justify-center mt-5 text-gray-100'>
         <ul className='list-decimal  pl-4 py-20 flex-col justify-start items-start gap-6 inline-flex'>
           <li className='flex-col  justify-start items-start gap-2 flex'>

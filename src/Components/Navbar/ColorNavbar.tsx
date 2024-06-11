@@ -22,7 +22,7 @@ const ColorNavbar: React.FC = () => {
       icon: ArrowIcon,
       styles: 'text-daisyBush-60 font-semibold',
       iconPosition: 'right',
-      link: "/advertiser"
+      link: "/advertisers"
     },
     {
       id: 2,

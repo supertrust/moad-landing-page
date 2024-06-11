@@ -71,7 +71,7 @@ const CargoLayout = () => {
                 />
               </div>
               <div className='section custom-footer '>
-                <Footer />
+                <Footer page='cargo'/>
               </div>
             </ReactFullpage.Wrapper>
           )}
