@@ -36,24 +36,6 @@ const Nav = ({ page }: Props) => {
       name: '면책서'
     },
     {
-      id: 1,
-      label: '정책 및 약관',
-      href: '/privacy-policy',
-      name: '개인정보 처리방침'
-    },
-    {
-      id: 2,
-      label: '서비스 이용약관',
-      href: '/terms-of-services',
-      name: '서비스 이용약관'
-    },
-    {
-      id: 3,
-      label: '위치정보 수집약관',
-      href: '/location-information-terms',
-      name: '면책서'
-    },
-    {
       id: 4,
       label: '개인정보 수집 및 이용동의',
       href: '/personal-information-agreement',
