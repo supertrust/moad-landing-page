@@ -1,9 +1,8 @@
+import { SecondMobileSvg } from '@/Assets/Svgs';
+import { CustomScrollButton } from '@/Components/Buttons/CustomScrollButton';
+import 'animate.css'; // Ensure animate.css is imported
 import SectionBackground from '../../../Assets/SecondSectionBg.png';
 import ColorNavbar from '../../Navbar/ColorNavbar';
-import { CustomScrollButton } from '@/Components/Buttons/CustomScrollButton';
-import { useEffect, useState } from 'react';
-import 'animate.css'; // Ensure animate.css is imported
-import { SecondMobileSvg } from '@/Assets/Svgs';
 
 const IndexPage: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
   OnScrollDown,

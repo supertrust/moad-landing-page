@@ -178,6 +178,10 @@ body,
   width: 100vw !important;
 }
 
+.fp-watermark{
+  display : none!important;
+}
+
 @keyframes moveUpDown {
   0%, 100% {
     transform: translateY(0);

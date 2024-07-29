@@ -18,7 +18,7 @@ const AdvertisersPage = () => {
     }, [])
 
     if (!isMounted) return null
-    console.log(currentSection, 'adver')
+
     return (
         <>
             <Suspense fallback={<p>Loading feed...</p>}>
