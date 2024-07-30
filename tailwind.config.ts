@@ -9,6 +9,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      scale: {
+        '-1': '-1',
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
@@ -66,6 +69,11 @@ const config: Config = {
         },
       }
     },
+    variants: {
+      extend: {
+        scale: ['hover', 'focus'],
+      }
+    },  
   },
   plugins: [],
 };

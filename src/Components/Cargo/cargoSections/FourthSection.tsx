@@ -30,26 +30,27 @@ const IndexPage: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
     <>
       <section className='overflow-hidden h-[100vh]  bg-[#101440]'>
         <WhiteNavbar />
-        <div className='grid grid-cols-2 h-full relative gap-16 items-center pb-10 px-4 md:px-6 lg:px-10 xl:px-28'>
+        <div className='md:grid flex-col-reverse z-50 flex md:grid-cols-2 h-full relative md:gap-16 items-center pb-10 px-4 md:px-6 lg:px-10 xl:px-28'>
           {
             <>
               <div className='flex items-start relative w-full justify-end'>
-                <div className='relative mt-10'>
+                <div className='relative block h-[46rem] w-[33rem] md:mt-10'>
                   <Image
-                    src={SecondMobileIcon}
+                    src="/assets/svgs/thirdmobile-desktop.svg"
                     alt='Mobile--screen'
                     className=' w-[500px] h-[600px] '
                     onLoad={handleImageLoad}
+                    fill
                   />
                   {isImageLoaded && isInView && (
                     <>
-                      <div className='animate__animated animate__fadeInRight rounded-md absolute  top-[100px] -right-4  bg-daisyBush-60 text-lg text-white  px-4 py-2 text-center z-50 font-semibold'>
+                      <div className='animate__animated animate__fadeInRight rounded-md absolute  top-[100px] right-8  bg-daisyBush-60 text-lg text-white  px-4 py-2 text-center z-50 font-semibold'>
                         {`다들 오늘 운행은 어떠셨나요?`}
                       </div>
-                      <div className='animate__animated animate__fadeInLeft rounded-md absolute  top-[250px] left-[-30px]  bg-daisyBush-40 text-lg text-white px-4 py-2 font-semibold  text-center z-50'>
+                      <div className='animate__animated animate__fadeInLeft rounded-md absolute  top-[250px]  left-4  bg-daisyBush-40 text-lg text-white px-4 py-2 font-semibold  text-center z-50'>
                         {`꽃이 많이 폈네요! 꽃 보고 가세요~~`}
                       </div>
-                      <div className='animate__animated animate__fadeInUp  rounded-md absolute  top-[350px] -right-4   bg-[#EEEFF3] text-lg text-gray-100 font-semibold   px-4 py-2  text-center z-50'>
+                      <div className='animate__animated animate__fadeInUp  rounded-md absolute  top-[350px] right-8   bg-[#EEEFF3] text-lg text-gray-100 font-semibold   px-4 py-2  text-center z-50'>
                         {`364km 운행기록 인증합니다!!`}
                       </div>
                     </>
@@ -60,13 +61,13 @@ const IndexPage: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
           }
 
           {isInView && (
-            <div className='animate__animated  animate__fadeIn z-[1]'>
-              <div className='flex-col justify-start items-start gap-2 inline-flex'>
-                <h2 className="text-daisyBush-40 text-3xl font-extrabold font-Pretendard">
+            <div className='animate__animated  animate__fadeIn '>
+              <div className='flex-col justify-start  items-start gap-2 flex'>
+                <h2 className="text-daisyBush-40 text-3xl mb-4 font-extrabold font-Pretendard">
                   커뮤니티도 모드에서 이용해 보세요.
                 </h2>
-                <div className="w-[502px] h-[196px] text-gray-20 text-xl font-bold font-Pretendard leading-9">
-                  <p>
+                <div className="md:w-[502px] md:h-[196px] text-gray-20 text-xl font-bold font-Pretendard leading-9">
+                  <p className=''>
                     좋은 정보, 좋은 업체 찾기 번거로우셨죠?
                   </p>
                   <p>
@@ -83,10 +84,11 @@ const IndexPage: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
             </div>
           )}
 
-          <div className='absolute right-0 bottom-20 w-[600.50px]'>
+          <div className='absolute left-0 md:left-auto md:right-0 bottom-20 w-[200px] md:w-[600.50px]'>
             <Image
               onLoad={handleImageLoad}
               alt='blur-truck'
+              className='transform scale-x-[-1] md:scale-x-100'
               src={SectionBackground}
             />
           </div>

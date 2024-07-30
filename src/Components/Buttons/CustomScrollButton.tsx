@@ -7,11 +7,11 @@ interface Props {
 export const CustomScrollButton = ({ OnScrollDown, color = "#99A0AE" }: Props) => {
   return (
     <div
-      className='w-full z-50 cursor-pointer mx-auto flex justify-between items-center'
+      className='w-full z-50 cursor-pointer  justify-center  items-center'
       onClick={OnScrollDown}>
-      <div className='flex flex-col justify-center items-center absolute bottom-[20px] left-[50%]'>
-        <span style={{color}} className={`font-[500] text-[${color}]`}>Scroll Down</span>
-        <DownArrow color={color}/>
+      <div className='flex flex-col justify-center items-center min-w-[6rem] absolute bottom-[20px] left-[50%] -translate-x-1/2 w-auto'>
+        <span style={{ color }} className={`font-[500] text-[${color}] w-auto flex-nowrap`}>Scroll Down</span>
+        <DownArrow color={color} />
       </div>
     </div>
   );

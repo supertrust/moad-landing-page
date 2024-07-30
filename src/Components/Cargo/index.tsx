@@ -43,7 +43,7 @@ const CargoLayout = () => {
                 />
               </div>
               <div className='section'>
-                <SecondSection 
+                <SecondSection
                   OnScrollDown={() => {
                     fullpageApi.moveSectionDown();
                   }}
@@ -62,16 +62,21 @@ const CargoLayout = () => {
                 <FourthSection
                   OnScrollDown={() => {
                     fullpageApi.moveSectionDown();
+                    fullpageApi.moveTo(0)
                   }}
                   isInView={currentSection === 3}
                 />
               </div>
               <div className='section'>
                 <FifthSection
+                  setCurrentSection={setCurrentSection}
+                  OnScrollDown={() => {
+                    fullpageApi.moveTo(1)
+                  }}
                 />
               </div>
-              <div className='section custom-footer '>
-                <Footer page='cargo'/>
+              <div className='section  custom-footer '>
+                <Footer page='cargo' />
               </div>
             </ReactFullpage.Wrapper>
           )}

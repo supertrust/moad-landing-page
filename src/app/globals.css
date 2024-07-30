@@ -94,8 +94,16 @@ body,
 }
 
 .custom-footer {
-  height: 22rem !important;
+  height: 35rem !important;
   background-color: #0E121B;
+
+}
+
+@media (min-width: 640px) {
+  .custom-footer {
+    height: 22rem !important;
+    background-color: #0E121B;
+  }
 }
 
 .animate__animated.animate__bounceInRight,
@@ -212,3 +220,13 @@ body,
 
 
 
+.slick-slider {
+  button.slick-next:before {
+      content: url("/assets/svgs/chevron-right.svg");
+      scale: 0.5;
+  }
+  button.slick-prev:before {
+      content: url('/assets/svgs/chevron-left-svgrepo-com (1).svg');
+      scale: 0.5;
+  }
+ }

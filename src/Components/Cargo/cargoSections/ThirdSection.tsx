@@ -5,11 +5,48 @@ import 'animate.css';
 import ThirdBgSections from '../../../Assets/thirdsectionbg.png';
 import WhiteUnion from '../../../Assets/whiteUnion.svg';
 import WhiteNavbar from '../../Navbar/WhiteNavbar'
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
+function NextSlideArrow(props: any) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className="arrow-btn prev"
+      onClick={onClick}
+    >
+      <Image src='/assets/svgs/chevron-right.svg' alt='left-arrow' height={20} width={20} style={{ display: "block" }} />
+    </div>
+  );
+}
+
+function PrevSlideArrow(props: any) {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className="arrow-btn next"
+      onClick={onClick}>
+      <Image src='/assets/svgs/chevron-left-svgrepo-com (1).svg' alt='left-arrow' height={20} width={20} style={{ display: "block" }} />
+    </div>
+  );
+}
 
 const IndexPage: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
   OnScrollDown,
   isInView,
 }) => {
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    arrows: true,
+    customArrow: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+
+  };
 
   const cards = [
     {
@@ -36,7 +73,7 @@ const IndexPage: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
 
   return (
     <section
-      className=' bg-daisyBush-60 relative h-[100vh] px-10 overflow-hidden bg-cover bg-center'
+      className=' bg-daisyBush-60 relative h-[100vh] md:px-10 overflow-hidden bg-cover bg-center'
       style={{
         backgroundImage: `url(${ThirdBgSections.src})`,
       }}>
@@ -55,7 +92,7 @@ const IndexPage: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
             </div>
           </div>
         </div>
-        <div className='flex-1 flex-grow flex items-center h-full w-full -translate-y-24'>
+        <div className='hidden md:flex flex-1 flex-grow items-center h-full w-full -translate-y-24'>
           <div className='grid w-full grid-cols-3 p-10 justify-start gap-8 '>
             {cards.map((item) => (
               <div
@@ -91,6 +128,41 @@ const IndexPage: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
               </div>
             ))}
           </div>
+        </div>
+        <div className='mt-20 px-8 md:hidden'>
+          <Slider {...settings}>
+            {
+              cards.map((item) => (
+                <div
+                  key={item.id}
+                  className={`flex flex-col gap-4 justify-center items-center group transition-transform duration-500 ease-in-out
+          `}
+                >
+                  <div className='flex justify-center'>
+
+                    <div className="relative block  h-[400px] w-[200px]">
+                      <Image src={item.image} fill alt={item.title} />
+                    </div>
+                  </div>
+                  <div className='flex justify-center mt-4'>
+                    <div className="w-[250px] py-6 px-6 bg-[#101440] bg-opacity-50 z-[1000] rounded-[20px] flex flex-col items-center justify-center">
+                      <div className="flex justify-center items-center gap-x-1 ">
+                        <Image
+                          src={WhiteUnion}
+                          className=""
+                          alt={`list-${item.id + 1}`}
+                        />
+                        <span className="text-gray-20 font-bold">{item.title}</span>
+                      </div>
+                      <div className="text-center text-gray-0 text-sm font-bold font-Pretendard pt-1">
+                        {item.description}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              ))
+            }
+          </Slider>
         </div>
       </div>
       <CustomScrollButton OnScrollDown={OnScrollDown} />

@@ -6,8 +6,13 @@ import 'animate.css';
 import SectionBackground from '../../../Assets/lastsection.png';
 import ArrowsIcon from '../../../Assets/horizantalarrow.svg';
 import ColorNavbar from '../../Navbar/ColorNavbar';
+import { ScrollToTop } from '@/Assets/Svgs';
 
-const IndexPage: React.FC = () => {
+interface Props {
+  setCurrentSection: React.Dispatch<React.SetStateAction<number>>
+  OnScrollDown: () => void;
+}
+const IndexPage: React.FC<Props> = ({ setCurrentSection, OnScrollDown }) => {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const scrollbarThumbRef = useRef<HTMLDivElement>(null);
 
@@ -80,6 +85,10 @@ const IndexPage: React.FC = () => {
     }
   }, []);
 
+  const handleScrollToTop = () => {
+    OnScrollDown();
+  };
+
   return (
     <>
       <div className=' h-[100vh] z-50 pb-8 relative  overflow-y-hidden bg-[#EEEFF3]'>
@@ -91,8 +100,8 @@ const IndexPage: React.FC = () => {
             className='absolute right-0 -z-10 bottom-0'
           />
         </div>
-        <div className=' space-y-6 z-50 mt-[5%] flex flex-col justify-between'>
-          <div className='px-4 md:px-6 lg:px-10 xl:px-28 flex-col justify-start items-start gap-2 inline-flex'>
+        <div className=' space-y-6 h-full z-50 mt-[10%] md:mt-[5%] flex flex-col gap-8'>
+          <div className='px-4 md:px-6 lg:px-10 xl:px-28 flex-col justify-start items-start gap-4 inline-flex'>
             <div className="text-daisyBush-60 text-3xl font-extrabold font-Pretendard  leading-9">
               자주하는 질문
             </div>
@@ -105,8 +114,8 @@ const IndexPage: React.FC = () => {
               </div>
             </div>
           </div>
-          <div className='px-4 md:pl-6 lg:pl-10 xl:pl-28'>
-            <div className="container max-w-full w-full ">
+          <div className=' md:pl-6 flex flex-col justify-start flex-1  lg:pl-10 xl:pl-28'>
+            <div className="container max-w-full w-full flex items-center mt-20 md:mt-4">
               <div ref={scrollContainerRef} className="scroll-container gap-8" onScroll={handleScroll}>
                 {FaqCards.map((item, index) => (
                   <div key={index} className="bg-white p-5 rounded-3xl border-2">
@@ -124,12 +133,22 @@ const IndexPage: React.FC = () => {
                   </div>
                 ))}
               </div>
-              <div className="custom-scrollbar-container" onClick={handleScrollbarClick}>
+              <div className="custom-scrollbar-container px-4" onClick={handleScrollbarClick}>
                 <div className="custom-scrollbar-track">
-                  <div ref={scrollbarThumbRef} className="custom-scrollbar-thumb"></div>
+                  <div ref={scrollbarThumbRef} className="custom-scrollbar-thumb">
+                  </div>
                 </div>
               </div>
+
+
             </div>
+          </div>
+          <div className='z-50 absolute right-8 bottom-16' onClick={() => {
+            handleScrollToTop()
+
+          }
+          }>
+            <ScrollToTop />
           </div>
         </div>
       </div>

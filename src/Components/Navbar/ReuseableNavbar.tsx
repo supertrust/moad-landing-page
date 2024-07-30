@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { Logo } from '@/Assets/Svgs';
+import { HamburgerIcon, Logo } from '@/Assets/Svgs';
 
 interface Props {
     color?: string;
@@ -26,6 +26,9 @@ const IndexPage = ({ color, buttonsConfig }: Props) => {
                                 </Link>
                             ))
                         }
+                    </div>
+                    <div className='flex md:hidden'>
+                        <HamburgerIcon color={color !== "#fff" ? "#561AA4" : color} />
                     </div>
                 </div>
             </nav>

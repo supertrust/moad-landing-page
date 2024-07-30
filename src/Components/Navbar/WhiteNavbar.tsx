@@ -3,6 +3,7 @@ import Logo from '../../Assets/cardLogo.svg';
 import PlayIcon from '../../Assets/ColorPlay.svg';
 import ArrowIcon from '../../Assets/WhiteVector.svg';
 import Link from 'next/link';
+import { HamburgerIcon } from '@/Assets/Svgs';
 
 // Extend the Button interface to include an optional icon property
 interface Button {
@@ -21,7 +22,7 @@ const IndexPage: React.FC = () => {
       id: 1,
       label: '광고주 페이지',
       icon: ArrowIcon,
-      styles: 'text-white font-semibold',
+      styles: 'text-white underline font-normal',
       iconPosition: 'right',
       link: "/advertisers"
     },
@@ -29,7 +30,7 @@ const IndexPage: React.FC = () => {
       id: 2,
       label: '앱 다운로드',
       icon: PlayIcon,
-      styles: 'bg-white text-daisyBush-60 font-semibold',
+      styles: 'bg-white text-daisyBush-60 font-semibold hidden md:flex',
       iconPosition: 'left',
       link: ''
     },
@@ -37,16 +38,16 @@ const IndexPage: React.FC = () => {
 
   return (
     <>
-      <nav className='  z-[40] w-full px-4 md:px-6 lg:px-10 xl:px-28'>
-        <div className='container mx-auto flex justify-between items-center'>
+      <nav className='  z-[40] w-full px-0 md:px-6 lg:px-10 xl:px-28'>
+        <div className='px-4 container mx-auto flex justify-between items-center'>
           <Link href="/" className='logo'>
             <Image src={Logo} alt='Logo' className='h-12' />
           </Link>
-          <div className='flex justify-center space-x-4'>
+          <div className='justify-center flex items-center md:space-x-4'>
             {buttonsConfig.map((button) => (
-              <Link key={button.id} href={button.link}>
+              <Link key={button.id} href={button.link} className='items-center flex'>
                 <button
-                  className={`py-2 px-4 rounded flex cursor-pointer items-center space-x-2 ${button.styles}`}>
+                  className={`py-2 md:px-4 rounded flex cursor-pointer items-center space-x-1 ${button.styles}`}>
                   {button.iconPosition === 'left' && (
                     <Image
                       src={button.icon}

@@ -28,7 +28,7 @@ const Footer = ({ bgColor, type = 'dark', page = 'cargo' }: Props) => {
     { id: 3, lable: '사업자 등록번호: 123-4567-8912 | 이메일: moad.co.kr' },
   ];
   return (
-    <footer style={{ backgroundColor: bgColor ? bgColor : '' }} className='relative px-4 md:px-6 lg:px-10 xl:px-28 h-[22rem] flex flex-col justify-center py-1'>
+    <footer style={{ backgroundColor: bgColor ? bgColor : '' }} className='relative px-4 md:px-6 lg:px-10 xl:px-28 h-full  flex flex-col justify-center py-1'>
       <div className='flex items-center mb-8'>
         <Link href='/' >
           <Image
@@ -38,28 +38,30 @@ const Footer = ({ bgColor, type = 'dark', page = 'cargo' }: Props) => {
           />
         </Link>
       </div>
-      <div className=' w-[100%] mb-4 flex items-start '>
-        <div className='flex gap-6'>
-          {FooterListPage.map((item) => (
-            <button
-              key={item.id}
-              className=" text-[16px] font-Pretendard ">
-              <Link href={`/${page}${item.href}`} className={` ${type === 'dark' ? 'text-gray-30' : 'text-gray-60'} `}>
-                {item.lable}
-              </Link>
-            </button>
-          ))}
+      <div className='flex flex-col-reverse md:flex-col gap-8 md:gap-4'>
+        <div className=' w-[100%] mb-4 flex items-start '>
+          <div className='flex flex-col md:flex-row gap-4'>
+            {FooterListPage.map((item) => (
+              <button
+                key={item.id}
+                className=" text-[16px] text-start font-Pretendard ">
+                <Link href={`/${page}${item.href}`} className={` ${type === 'dark' ? 'text-gray-30' : 'text-gray-60'} `}>
+                  {item.lable}
+                </Link>
+              </button>
+            ))}
+          </div>
         </div>
+        <ul className='space-y-2 mt-4'>
+          {FooterItems.map((item) => (
+            <li
+              key={item.id}
+              className={` ${type === 'dark' ? 'text-gray-30' : 'text-gray-60'}  text-[16px] font-Pretendard `}>
+              {item.lable}
+            </li>
+          ))}
+        </ul>
       </div>
-      <ul className='space-y-2 mt-4'>
-        {FooterItems.map((item) => (
-          <li
-            key={item.id}
-            className={` ${type === 'dark' ? 'text-gray-30' : 'text-gray-60'}  text-[16px] font-Pretendard `}>
-            {item.lable}
-          </li>
-        ))}
-      </ul>
       <div className="  mt-10 text-gray-50 text-sm font-normal font-Pretendard">
         © 2024 MOAD. All rights reserved.
       </div>

@@ -3,11 +3,14 @@ import { CustomScrollButton } from '@/Components/Buttons/CustomScrollButton';
 import 'animate.css'; // Ensure animate.css is imported
 import SectionBackground from '../../../Assets/SecondSectionBg.png';
 import ColorNavbar from '../../Navbar/ColorNavbar';
+import Image from 'next/image';
+import { useMediaQuery } from '@/hooks';
 
 const IndexPage: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
   OnScrollDown,
   isInView,
 }) => {
+  const isMobile = useMediaQuery('(max-width: 768px)');
 
   const sectionStyle = {
     background: `url(${SectionBackground.src}) center center / cover no-repeat, #EEEFF3`
@@ -15,32 +18,40 @@ const IndexPage: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
 
   return (
     <section
-      className=' h-[100vh] bg-cover overflow-hidden bg-center opacity-100'
+      className=' h-[100vh]  bg-cover overflow-hidden bg-center opacity-100'
       style={sectionStyle}>
       <ColorNavbar />
-      <div className='grid mb-8 grid-cols-2 h-full justify-center lg:px-10 xl:px-28 items-center'>
-        {isInView && (
-          <div className={`h-full w-full  max-h-[37.5rem] max-w-[37.5rem] ${isInView ? 'animate__animated animate__fadeInLeft' : ''
-            }`}>
-            <SecondMobileSvg />
-          </div>
-        )}
-        <div className={`relative ${isInView ? "animate__animated  animate__fadeIn" : "hidden"} h-full flex items-center`}>
-          <div className=' flex-col justify-start items-start gap-4 mb-20 inline-flex'>
-            <div className="text-daisyBush-60  text-3xl font-extrabold font-Pretendard leading-9">
-              화물차 기사님들의 편의와 부가수익,
-              <br />
-              모드가 자신합니다
+      <div className='flex items-center flex-col justify-center h-full'>
+        <div className='grid mb-8  md:grid-cols-2 md:gap-8 justify-center px-8 lg:px-10 xl:px-28 items-center'>
+          {isInView && (
+            <div className={`h-[446px] w-[375px] md:h-[40rem] md:w-[40rem] xl:h-[44rem] xl:w-[59rem] ${isInView ? 'animate__animated animate__fadeInLeft' : ''
+              }`}>
+              {
+                isMobile ?
+                  <Image src='/assets/svgs/secondmobile-mob.svg' alt='mobile-img' fill />
+                  :
+                  <Image src='/assets/svgs/secondmobile-desktop.svg' alt='mobile-img' fill />
+              }
+              {/* <SecondMobileSvg /> */}
             </div>
-            <div className="text-text-trout text-xl font-bold font-Pretendard leading-6">
-              화물차 기사님들의 편의와 부가수익 창출을 위한 고민,
-              <br />
-              모드가 대신 했습니다.
+          )}
+          <div className={`relative ${isInView ? "animate__animated  animate__fadeIn" : "hidden"} h-full justify-center flex items-center`}>
+            <div className=' flex-col justify-start items-center gap-4 mb-20 inline-flex'>
+              <div className="text-daisyBush-60  text-3xl font-extrabold font-Pretendard leading-9">
+                화물차 기사님들의 편의와 부가수익,
+                <br />
+                모드가 자신합니다
+              </div>
+              <div className="text-text-trout text-xl font-bold font-Pretendard leading-6">
+                화물차 기사님들의 편의와 부가수익 창출을 위한 고민,
+                <br />
+                모드가 대신 했습니다.
+              </div>
             </div>
           </div>
         </div>
-      </div>
 
+      </div>
       <CustomScrollButton OnScrollDown={OnScrollDown} color='#101440' />
     </section>
   );

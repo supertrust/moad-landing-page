@@ -4,6 +4,7 @@ import Logo from '../../Assets/logo.svg';
 import PlaysIcon from '../../Assets/play.svg';
 import ArrowIcon from '../../Assets/arrow.svg';
 import Link from 'next/link';
+import { HamburgerIcon } from '@/Assets/Svgs';
 
 interface Button {
   id: number;
@@ -28,7 +29,7 @@ const ColorNavbar: React.FC = () => {
       id: 2,
       label: '앱 다운로드',
       icon: PlaysIcon,
-      styles: 'bg-[#561AA4] text-white font-semibold',
+      styles: 'bg-[#561AA4] text-white font-semibold hidden md:flex',
       iconPosition: 'left',
       link: ""
     },
@@ -36,33 +37,32 @@ const ColorNavbar: React.FC = () => {
 
   return (
     <>
-      <nav className='z-[40] w-full px-4 md:px-6 lg:px-10 xl:px-28'>
-        <div className='container  mx-auto flex justify-between items-center'>
-          <Link href='/' className='logo'>
+      <nav className='  z-[40] w-full px-0 md:px-6 lg:px-10 xl:px-28'>
+        <div className='px-4 container mx-auto flex justify-between items-center'>
+          <Link href="/" className='logo'>
             <Image src={Logo} alt='Logo' className='h-12' />
           </Link>
-          <div className='flex justify-center space-x-4'>
+          <div className='justify-center flex items-center md:space-x-4'>
             {buttonsConfig.map((button) => (
-              <Link key={button.id} href={button.link}>            
-               <button
-                key={button.id}
-                className={`py-2 px-4 rounded cursor-pointer flex items-center space-x-2  ${button.styles}`}>
-                {button.iconPosition === 'left' && (
-                  <Image
-                    src={button.icon}
-                    alt={`${button.label} icon`}
-                    className='h-5 w-5'
-                  />
-                )}
-                <span>{button.label}</span>
-                {button.iconPosition === 'right' && (
-                  <Image
-                    src={button.icon}
-                    alt={`${button.label} icon`}
-                    className='h-5 w-5 z-[1000]'
-                  />
-                )}
-              </button>
+              <Link key={button.id} href={button.link} className='items-center flex'>
+                <button
+                  className={`py-2 md:px-4 rounded flex cursor-pointer items-center space-x-1  ${button.styles}`}>
+                  {button.iconPosition === 'left' && (
+                    <Image
+                      src={button.icon}
+                      alt={`${button.label} icon`}
+                      className='h-5 w-5'
+                    />
+                  )}
+                  <span>{button.label}</span>
+                  {button.iconPosition === 'right' && (
+                    <Image
+                      src={button.icon}
+                      alt={`${button.label} icon`}
+                      className='h-8 w-8'
+                    />
+                  )}
+                </button>
               </Link>
             ))}
           </div>
