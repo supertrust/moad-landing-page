@@ -38,12 +38,12 @@ const ContactSection = ({ OnScrollDown }: Props) => {
     }
 
     return (
-        <div className=" bg-[#F2F5F8] h-[100vh]  overflow-hidden bg-center bg-cover" >
+        <div className=" bg-[#F2F5F8] h-[100vh] w-full overflow-hidden bg-center bg-cover" >
             <div className="">
-                <ColorNavbar />
+                <ColorNavbar page="advertisers" />
             </div>
-            <section className="relative mt-16">
-                <div className="flex flex-col md:grid md:grid-cols-2  pt-3 justify-between w-full px-4 md:px-6 lg:px-10 xl:px-28 z-20 ">
+            <section className="relative w-full mt-16">
+                <div className="flex flex-col md:grid lg:grid-cols-2   pt-3  w-full px-4 md:px-16 lg:px-10 xl:px-28 z-20 ">
                     <div className="">
                         <h2 className=" font-bold text-daisyBush-60  text-[2.25rem] font-Pretendard ">
                             Contact us
@@ -53,7 +53,7 @@ const ContactSection = ({ OnScrollDown }: Props) => {
                         </p>
                     </div>
                     <div className=" w-full z-40 pb-6 mb-20">
-                        <form onSubmit={handleSubmit(onSubmit)} className="mt-8 w-full md:max-w-[35rem]">
+                        <form onSubmit={handleSubmit(onSubmit)} className="mt-8 w-full  lg:max-w-[35rem]">
                             <FormField
                                 type="text"
                                 label="기업명*"

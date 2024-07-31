@@ -16,11 +16,14 @@ const Services: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
 }) => {
     const settings = {
         dots: true,
-        infinite: true,
+        infinite: false,
         speed: 500,
         arrows: true,
-        slidesToShow: 1,
+        slidesToShow: 1.0002,
         slidesToScroll: 1,
+        centerMode: true,  // Centers the active slide
+        centerPadding: "10px",
+        className: "center",
     };
     const CardData = [
         {
@@ -70,19 +73,19 @@ const Services: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
                 zIndex: 0,
             }}>
             <div className="">
-                <ColorNavbar />
+                <ColorNavbar page="advertisers" />
             </div>
 
-            <div className='mt-40  px-8 z-50 md:hidden'>
-                <Slider {...settings}>
+            <div className='mt-40  px-2 z-50 md:hidden slider-container'>
+                <Slider {...settings} className="space-x-4">
                     {
                         CardData?.map((item, index) => {
                             return (
                                 <div
-                                    className={`bg-white w-[70%] z-50 rounded-2xl  shadow-xl p-4  flex flex-col gap-2`}
+                                    className={`bg-white z-50 rounded-2xl h-[23rem] mr-4 shadow-xl p-4  flex flex-col gap-2`}
                                     key={item.id}
                                 >
-                                    <h3 className=" text-xl flex items-center justify-center text-[#0E121B] font-bold font-Pretendard ">
+                                    <h3 className=" text-xl mb-2 flex items-center justify-center text-[#0E121B] font-bold font-Pretendard ">
                                         {item.headText}
                                     </h3>
 
@@ -97,7 +100,7 @@ const Services: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
 
                                     </div>
 
-                                    <div className="flex justify-between items-center gap-4 ">
+                                    <div className="flex mt-4 justify-between items-center gap-4 ">
                                         <div className="flex flex-col justify-center items-center space-x-2">
                                             <p className="text-[#717784]  text-lg font-Pretendard ">{item.CardText_1}</p>
                                             <span className="text-[#561AA4] text-3xl font-bold">{item.CardPercentage_1}</span>
@@ -126,7 +129,7 @@ const Services: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
                 </div>
 
 
-                <div className={`hidden md:grid grid-cols-2 -translate-y-4 justify-start  pl-0 max-w-[100%] px-8 items-start  gap-6  `}>
+                <div className={`hidden md:grid grid-cols-2 -translate-y-12 justify-start  pl-0 max-w-[100%] px-8 items-start  gap-6  `}>
                     {CardData?.map((item, index) => {
                         return (
                             <div

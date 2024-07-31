@@ -31,7 +31,7 @@ const FormField: React.FC<FormFieldProps> = ({
                     id={name}
                     placeholder={placeholder}
                     {...register}
-                    rows={15}
+                    rows={10}
                 />
             ) : (
                 <input

@@ -37,9 +37,9 @@ const CommunityRoadMap: React.FC<{ OnScrollDown: () => void; isInView: boolean }
             <section className='overflow-hidden relative h-full bg-[#101440]'>
 
 
-                <WhiteNavbar />
+                <WhiteNavbar page="advertisers" />
 
-                <div className='flex md:items-center h-full'>
+                <div className='flex justify-center md:items-center h-full'>
                     <div className='h-fit md:h-full mb-16 md:justify-center grid grid-cols-1 mt-40  md:grid-cols-2 relative gap-8 md:gap-16 md:items-center pb-10 px-4 md:px-6 lg:px-10 xl:px-28'>
                         <div className=' h-[380px] z-10 items-start md:hidden '>
                             <div className='animate__animated animate__fadeIn  flex'>

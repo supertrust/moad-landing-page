@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import CargoImage from '../../../Assets/NewTruck.svg';
 import PlaysIcon from '../../../Assets/play.svg';
-// import AdvertText from '/assets/svgs/ADVERTISEMENT.svg';
 import 'animate.css';
 import WhiteNavbar from '../../Navbar/WhiteNavbar';
 import { CustomScrollButton } from '@/Components/Buttons/CustomScrollButton';
@@ -30,8 +29,7 @@ const AdvertHeroSection: React.FC<{ OnScrollDown: () => void; isInView: boolean 
                     zIndex: 0,
                 }}>
                 <div className="">
-
-                    <WhiteNavbar />
+                    <WhiteNavbar page="advertisers" />
                 </div>
                 <div className='flex    px-8  relative w-full h-full flex-1 flex-col justify-center  '>
                     {isInView && (

@@ -16,15 +16,19 @@ interface Button {
   link: string;
 }
 
-const IndexPage: React.FC = () => {
+interface Props {
+  page?: string;
+}
+
+const IndexPage = ({ page }: Props) => {
   const buttonsConfig: Button[] = [
     {
       id: 1,
-      label: '광고주 페이지',
+      label: page === "advertisers" ? "화물주 페이지" : '광고주 페이지',
       icon: ArrowIcon,
       styles: 'text-white underline font-normal',
       iconPosition: 'right',
-      link: "/advertisers"
+      link: page === 'advertisers' ? "/" : "/advertisers"
     },
     {
       id: 2,

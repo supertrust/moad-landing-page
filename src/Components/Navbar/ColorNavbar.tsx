@@ -15,15 +15,20 @@ interface Button {
   link: string
 }
 
-const ColorNavbar: React.FC = () => {
+interface Props {
+  page?: string;
+}
+
+
+const ColorNavbar = ({ page }: Props) => {
   const buttonsConfig: Button[] = [
     {
       id: 1,
-      label: '광고주 페이지',
+      label: page === "advertisers" ? "화물주 페이지" : '광고주 페이지',
       icon: ArrowIcon,
-      styles: 'text-daisyBush-60 font-semibold',
+      styles: 'text-daisyBush-60 underline font-normal',
       iconPosition: 'right',
-      link: "/advertisers"
+      link: page === 'advertisers' ? "/" : "/advertisers"
     },
     {
       id: 2,
