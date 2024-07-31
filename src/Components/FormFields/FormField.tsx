@@ -21,7 +21,7 @@ const FormField: React.FC<FormFieldProps> = ({
 }) => {
 
     return (
-        <div className={`mb-6 ${className}`}>
+        <div className={`mb-6 w-full ${className}`}>
             <label htmlFor={name} className="block text-gray-100 text-sm font-bold mb-2">
                 {label}
             </label>
@@ -31,7 +31,7 @@ const FormField: React.FC<FormFieldProps> = ({
                     id={name}
                     placeholder={placeholder}
                     {...register}
-                    rows={8}
+                    rows={15}
                 />
             ) : (
                 <input

@@ -71,6 +71,9 @@ const AdvertisersPage = () => {
                             </div>
                             <div className='section'>
                                 <ContactSection
+                                    OnScrollDown={() => {
+                                        fullpageApi.moveTo(1)
+                                    }}
                                 />
                             </div>
                             <div className='section custom-footer '>

@@ -14,7 +14,7 @@ const AdvertisingPlatforms: React.FC<{ OnScrollDown: () => void; isInView: boole
             id: 1,
             title: '맞춤형 광고의 자유',
             text: <span>원하시는 시간과 장소에서 적합한 화물차 톤수를 <br /> 선택하여 효과적인 광고를 진행하세요.</span>,
-            background:  Image1.src
+            background: Image1.src
         },
         {
             id: 2,
@@ -35,18 +35,18 @@ const AdvertisingPlatforms: React.FC<{ OnScrollDown: () => void; isInView: boole
             zIndex: 0,
         }}>
             <WhiteNavbar />
-            <div className="flex px-20 xl:px-25 flex-1 flex-col justify-center gap-32 ">
-                <div className="flex flex-col gap-4 items-start">
-                    <h2 className=" font-extrabold text-white text-[2.5rem] font-Pretendard ">
+            <div className="flex items-center px-8 md:px-20 xl:px-25 flex-1 flex-col justify-center w-full gap-12 md:gap-32 ">
+                <div className="flex w-full  flex-col gap-4 items-start">
+                    <h2 className=" font-extrabold text-white text-2xl md:text-4xl font-Pretendard ">
                         광고주를 위한 광고 플랫폼
                     </h2>
-                    <p className="text-gray-20 font-bold text-2xl">광고주를 위한 세가지 서비스를 약속합니다.</p>
+                    <p className="text-gray-20 font-bold text-base md:text-2xl">광고주를 위한 세가지 서비스를 약속합니다.</p>
                 </div>
-                <div className="grid grid-cols-3 justify-center items-center w-full flex-wrap gap-4 ">
+                <div className="grid md:grid-cols-3  md:justify-center items-center w-full flex-wrap gap-4 ">
                     {cardsData?.map((item) => {
                         return (
                             <div
-                                className={`relative max-w-[25rem] h-[12.8rem] py-4 px-4 gap-4 border-1 border-gray-100 rounded-[20px] flex flex-col justify-center  hover:text-gray-20 group transition-all duration-300 ease-in-out bg-white bg-center bg-cover`}
+                                className={`relative w-full  md:max-w-[25rem] h-[12.8rem] py-4 px-4 gap-4 border-1 border-gray-100 rounded-[20px] flex flex-col justify-center  hover:text-gray-20 group transition-all duration-300 ease-in-out bg-white bg-center bg-cover`}
                                 key={item.id}
                             >
 

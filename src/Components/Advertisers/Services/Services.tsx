@@ -6,13 +6,22 @@ import Busimage from '../../../Assets/new-bus.svg'
 import Carimage from '../../../Assets/new-car.svg'
 import Truckimage from '../../../Assets/new-truck.svg'
 import ServiceBackground from '../../../Assets/SecondSectionBg.png'
-
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const Services: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
     OnScrollDown,
     isInView,
 }) => {
-
+    const settings = {
+        dots: true,
+        infinite: true,
+        speed: 500,
+        arrows: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+    };
     const CardData = [
         {
             id: 1,
@@ -60,20 +69,64 @@ const Services: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
 
                 zIndex: 0,
             }}>
-            <ColorNavbar />
-            <div className="items-start justify-center px-4 md:px-8 lg:px-20 xl:px-32  w-screen min-w-full gap-8 grid grid-cols-2  h-screen  overflow-hidden">
-                <div className="flex flex-col justify-center  h-full w-full">
-                    <h2 className=" font-bold text-daisyBush-60  text-[36px] leading-normal font-Pretendard ">
+            <div className="">
+                <ColorNavbar />
+            </div>
+
+            <div className='mt-40  px-8 z-50 md:hidden'>
+                <Slider {...settings}>
+                    {
+                        CardData?.map((item, index) => {
+                            return (
+                                <div
+                                    className={`bg-white w-[70%] z-50 rounded-2xl  shadow-xl p-4  flex flex-col gap-2`}
+                                    key={item.id}
+                                >
+                                    <h3 className=" text-xl flex items-center justify-center text-[#0E121B] font-bold font-Pretendard ">
+                                        {item.headText}
+                                    </h3>
+
+                                    <div className="bg-[#F5F7FA] p-4 flex justify-center items-center rounded-[16px] w-[100%]">
+                                        <Image
+                                            src={item?.ImgSrc?.src}
+                                            width={400}
+                                            height={300}
+                                            className=" object-cover "
+                                            alt='cad-image'
+                                        />
+
+                                    </div>
+
+                                    <div className="flex justify-between items-center gap-4 ">
+                                        <div className="flex flex-col justify-center items-center space-x-2">
+                                            <p className="text-[#717784]  text-lg font-Pretendard ">{item.CardText_1}</p>
+                                            <span className="text-[#561AA4] text-3xl font-bold">{item.CardPercentage_1}</span>
+                                        </div>
+                                        <div className="flex flex-col justify-center items-center space-x-2">
+                                            <p className="text-[#717784] text-lg font-Pretendard ">{item.cardText_2}</p>
+                                            <span className="text-[#561AA4] text-3xl  font-bold">{item.Cardpercentage_2}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            )
+                        })
+                    }
+                </Slider>
+            </div>
+            <div className="md:items-center md:justify-center mt-16  px-8 md:mt-0  lg:px-20 xl:px-32 flex flex-col-reverse  w-screen min-w-full gap-8 md:grid grid-cols-2  h-screen  overflow-hidden">
+                <div className="flex flex-col md:justify-center  h-full w-full">
+                    <h2 className=" font-bold text-daisyBush-60  text-2xl md:text-4xl leading-normal font-Pretendard ">
                         효율적이고 경제적인 <br />
                         브랜드 인지도 상승 솔루션!
                     </h2>
-                    <p className="text-gray-60 font-bold mt-4 text-[24px]">
+                    <p className="text-gray-60 font-bold mt-4 text-base md:text-2xl">
                         고정된 광고판보다 <br /> 더 넓은 도달 범위를 자랑하는 랩핑 광고, <br />
                         한 번의 투자로 장기간 지속되는 광고 효과를 누려보세요!
                     </p>
                 </div>
 
-                <div className={`grid grid-cols-2 -translate-y-4 justify-start p-10 pl-0 max-w-[100%] px-8 items-start  gap-6  `}>
+
+                <div className={`hidden md:grid grid-cols-2 -translate-y-4 justify-start  pl-0 max-w-[100%] px-8 items-start  gap-6  `}>
                     {CardData?.map((item, index) => {
                         return (
                             <div

@@ -45,10 +45,9 @@ const IndexPage: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
                   />
                   <div className={`shadow-image ${isImageLoaded ? "opacity-100 duration-500 ease-linear " : "invisible opacity-0"}`}></div>
                 </div>
-                <div className='-translate-y-20 z-10'>
+                <div className='-translate-y-14 z-10'>
                   <div className={`  text-white  ${isImageLoaded ? "animate__animated animate__fadeInRight" : "invisible"} `}>
                     <TextCargo />
-
                   </div>
                 </div>
               </div>
@@ -57,12 +56,13 @@ const IndexPage: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
 
         </div>
         <div className=' mx-auto flex  justify-between items-center '>
-          <div className='w-full px-8  md:w-auto md:max-w-[350px] bottom-40 absolute md:bottom-[20px]'>
+          <div className='w-full px-8  md:w-auto md:max-w-[350px]  bottom-36 absolute md:bottom-[20px]'>
             <div className='flex w-full justify-center items-center space-x-2 bg-[#561AA4] text-white px-8 py-4 rounded-xl border border-white'>
               <Image alt='icon' src={PlaysIcon} />
               <span className='font-bold text-xl'>앱 다운로드</span>
             </div>
           </div>
+
           <CustomScrollButton OnScrollDown={OnScrollDown} />
         </div>
       </header>

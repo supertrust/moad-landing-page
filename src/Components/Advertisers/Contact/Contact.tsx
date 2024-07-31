@@ -3,16 +3,22 @@ import { useForm } from "react-hook-form";
 import { useState } from 'react'
 import FormField from "@/Components/FormFields/FormField";
 import { ColorNavbar } from "@/Components/Navbar";
-import { RightArrow, SubmitIcon } from "@/Assets/Svgs";
+import { RightArrow, ScrollToTop, SubmitIcon } from "@/Assets/Svgs";
 import Image from "next/image";
 import ContactBackground from '@/Assets/contactbg.svg'
+import ContactBg from '/assets/images/AD_Contact BG.png'
 interface FormData {
     기업명: string;
     전화번호: string;
     문의내용: string;
+
+
+}
+interface Props {
+    OnScrollDown: () => void;
 }
 
-const ContactSection = () => {
+const ContactSection = ({ OnScrollDown }: Props) => {
     const [isHovered, setIsHovered] = useState(false);
     const {
         register,
@@ -27,12 +33,17 @@ const ContactSection = () => {
         reset();
     };
 
-    return (
-        <div className=" bg-[#F2F5F8] h-screen  overflow-hidden bg-center bg-cover" style={{ background: `url(${ContactBackground.src})`}}>
-            <ColorNavbar />
-            <section className="relative">
+    const handleScrollToTop = () => {
+        OnScrollDown()
+    }
 
-                <div className="grid grid-cols-2 pb-5 pt-3 justify-between w-full px-4 md:px-6 lg:px-10 xl:px-28 z-20 ">
+    return (
+        <div className=" bg-[#F2F5F8] h-[100vh]  overflow-hidden bg-center bg-cover" >
+            <div className="">
+                <ColorNavbar />
+            </div>
+            <section className="relative mt-16">
+                <div className="flex flex-col md:grid md:grid-cols-2  pt-3 justify-between w-full px-4 md:px-6 lg:px-10 xl:px-28 z-20 ">
                     <div className="">
                         <h2 className=" font-bold text-daisyBush-60  text-[2.25rem] font-Pretendard ">
                             Contact us
@@ -41,8 +52,8 @@ const ContactSection = () => {
                             다른 질문이 있으신가요? <RightArrow />
                         </p>
                     </div>
-                    <div className=" ">
-                        <form onSubmit={handleSubmit(onSubmit)} className="mt-8 max-w-[35rem]">
+                    <div className=" w-full z-40 pb-6 mb-20">
+                        <form onSubmit={handleSubmit(onSubmit)} className="mt-8 w-full md:max-w-[35rem]">
                             <FormField
                                 type="text"
                                 label="기업명*"
@@ -75,7 +86,7 @@ const ContactSection = () => {
                                     onMouseOver={() => setIsHovered(true)}
                                     onMouseOut={() => setIsHovered(false)}
                                     type="submit"
-                                    className="bg-daisyBush-60 text-xl text-white px-8 py-2 rounded-xl w-full  focus:outline-none flex items-center gap-3 justify-center  font-Pretendard group hover:bg-[#EEEFF3] hover:text-daisyBush-60 hover:shadow-xl transition duration-500 ease-in-out hover:border-daisyBush-60 border font-bold"
+                                    className="bg-daisyBush-60 text-xl text-white px-8 py-4 rounded-xl w-full  focus:outline-none flex items-center gap-3 justify-center  font-Pretendard group hover:bg-[#EEEFF3] hover:text-daisyBush-60 hover:shadow-xl transition duration-500 ease-in-out hover:border-daisyBush-60 border font-bold"
                                 >
                                     <SubmitIcon color={isHovered ? "#561AA4" : "#fff"} />
                                     문의하기
@@ -85,6 +96,20 @@ const ContactSection = () => {
                     </div>
                 </div>
             </section>
+            <div className='md:hidden z-50 absolute right-8 bottom-6' onClick={() => {
+                handleScrollToTop()
+
+            }
+            }>
+                <ScrollToTop />
+            </div>
+            <div className='absolute -z-0 left-0 bottom-0 w-full'>
+                <Image
+                    alt='blur-truck'
+                    src={ContactBackground}
+                    className='-z-10'
+                />
+            </div>
         </div>
     );
 };

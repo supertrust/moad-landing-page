@@ -9,28 +9,6 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-function NextSlideArrow(props: any) {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className="arrow-btn prev"
-      onClick={onClick}
-    >
-      <Image src='/assets/svgs/chevron-right.svg' alt='left-arrow' height={20} width={20} style={{ display: "block" }} />
-    </div>
-  );
-}
-
-function PrevSlideArrow(props: any) {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className="arrow-btn next"
-      onClick={onClick}>
-      <Image src='/assets/svgs/chevron-left-svgrepo-com (1).svg' alt='left-arrow' height={20} width={20} style={{ display: "block" }} />
-    </div>
-  );
-}
 
 const IndexPage: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
   OnScrollDown,
@@ -38,32 +16,30 @@ const IndexPage: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
 }) => {
 
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     arrows: true,
-    customArrow: true,
     slidesToShow: 1,
     slidesToScroll: 1,
-
   };
 
   const cards = [
     {
       id: 1,
-      image: '/assets/images/mobile-one.png',
+      image: '/assets/images/Cargo_3p Step1.png',
       title: 'Step-1',
       description: '광고 리스트에서 기사님들의 조건에 맞는 광고를 확인하세요.',
     },
     {
       id: 2,
-      image: '/assets/images/mobile-two.png',
+      image: '/assets/images/Cargo_3p Step2.png',
       title: 'Step-2',
       description: '마음에 드는 광고 선택 후,의뢰하기를 눌러주세요.',
     },
     {
       id: 3,
-      image: '/assets/images/mobile-three.png',
+      image: '/assets/images/Cargo_3p Step3.png',
       title: 'Step-3',
       description:
         '광고 의뢰가 더 궁금하시다면?채팅으로 쉽게 알아볼 수 있어요.',
@@ -109,7 +85,7 @@ const IndexPage: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
            flex flex-col gap-4 justify-center items-center group transition-transform duration-500 ease-in-out
          `}
               >
-                <div className="relative block  h-[200px] w-[100px] group-hover:-translate-y-20 group-hover:scale-[1.7] duration-500 ease-in-out">
+                <div className="relative block  h-[17.5rem] w-[8.5rem] group-hover:-translate-y-28 group-hover:scale-[1.7] duration-500 ease-in-out">
                   <Image src={item.image} fill alt={item.title} />
                 </div>
                 <div className="w-[250px] py-4 px-6 bg-[#101440] bg-opacity-50  group-hover:bg-opacity-100 z-[1000] rounded-[20px] flex flex-col items-center justify-center group-hover:scale-125 duration-500 ease-in-out">
