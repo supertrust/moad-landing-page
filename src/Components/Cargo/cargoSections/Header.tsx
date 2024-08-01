@@ -8,6 +8,7 @@ import 'animate.css';
 import WhiteNavbar from '../../Navbar/WhiteNavbar';
 import { CustomScrollButton } from '@/Components/Buttons/CustomScrollButton';
 import { TextCargo, TextMoad } from '@/Assets/Svgs';
+import Link from 'next/link';
 
 const IndexPage: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
   OnScrollDown,
@@ -50,17 +51,21 @@ const IndexPage: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
                     <TextCargo />
                   </div>
                 </div>
+                <Link href="#" className='flex md:hidden w-full justify-center items-center space-x-2 bg-[#561AA4] text-white px-8 py-4 rounded-xl border border-white'>
+                  <Image alt='icon' src={PlaysIcon} />
+                  <span className='font-bold text-xl'>앱 다운로드</span>
+                </Link>
               </div>
             </div>
           )}
 
         </div>
         <div className=' mx-auto flex  justify-between items-center '>
-          <div className='w-full px-8  md:w-auto md:max-w-[350px]  bottom-36 absolute md:bottom-[20px]'>
-            <div className='flex w-full justify-center items-center space-x-2 bg-[#561AA4] text-white px-8 py-4 rounded-xl border border-white'>
+          <div className='w-full px-8 hidden md:block md:w-auto md:max-w-[350px]  absolute md:bottom-[20px]'>
+            <Link href="#" className='flex w-full justify-center items-center space-x-2 bg-[#561AA4] text-white px-8 py-4 rounded-xl border border-white'>
               <Image alt='icon' src={PlaysIcon} />
               <span className='font-bold text-xl'>앱 다운로드</span>
-            </div>
+            </Link>
           </div>
 
           <CustomScrollButton OnScrollDown={OnScrollDown} />

@@ -38,7 +38,7 @@ const ContactSection = ({ OnScrollDown }: Props) => {
     }
 
     return (
-        <div className=" bg-[#F2F5F8] h-[100vh] w-full overflow-hidden bg-center bg-cover" >
+        <div className=" bg-[#F2F5F8] h-[100vh] w-full overflow-x-hidden overflow-y-scroll bg-center bg-cover" >
             <div className="">
                 <ColorNavbar page="advertisers" />
             </div>
@@ -51,6 +51,7 @@ const ContactSection = ({ OnScrollDown }: Props) => {
                         <p className="font-bold flex items-center gap-4 text-bunting-50 text-[1.75rem] underline font-Pretendard ">
                             다른 질문이 있으신가요? <RightArrow />
                         </p>
+
                     </div>
                     <div className=" w-full z-40 pb-6 mb-20">
                         <form onSubmit={handleSubmit(onSubmit)} className="mt-8 w-full  lg:max-w-[35rem]">

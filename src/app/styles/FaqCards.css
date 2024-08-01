@@ -8,7 +8,6 @@ body {
   padding: 20px;
   overflow: hidden; /* Hide the native scrollbar */
   position: relative;
-
 }
 
 /* Scroll container styling */
@@ -17,7 +16,7 @@ body {
   list-style: none;
   padding: 0 0 20px 0;
   gap: 20px;
-  overflow-x: scroll; 
+  overflow-x: scroll;
   scroll-behavior: smooth;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
@@ -53,8 +52,7 @@ body {
   position: absolute;
   left: 0;
   height: 100%;
-  width: 50px; /* Initial width of the thumb */
+  width: 50px;
   background-color: #561aa4;
-  transition: width 0.2s ease-in-out;
   border-radius: 50px;
 }

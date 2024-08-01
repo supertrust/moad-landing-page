@@ -39,33 +39,26 @@ const CommunityRoadMap: React.FC<{ OnScrollDown: () => void; isInView: boolean }
 
                 <WhiteNavbar page="advertisers" />
 
-                <div className='flex justify-center md:items-center h-full'>
-                    <div className='h-fit md:h-full mb-16 md:justify-center grid grid-cols-1 mt-40  md:grid-cols-2 relative gap-8 md:gap-16 md:items-center pb-10 px-4 md:px-6 lg:px-10 xl:px-28'>
-                        <div className=' h-[380px] z-10 items-start md:hidden '>
+                <div className='flex justify-center items-center h-[80%] flex-1 md:h-full'>
+                    <div className='h-fit md:h-full mb-16 md:justify-center grid grid-cols-1  md:grid-cols-2 relative gap-8 md:gap-16 md:items-center pb-10 px-4 md:px-6 lg:px-10 xl:px-28'>
+                        <div className=' h-[21.9rem] z-10 items-start md:hidden '>
                             <div className='animate__animated animate__fadeIn  flex'>
-                                <div className='flex-col w-full md:justify-center items-start gap-2 inline-flex'>
+                                <div className='flex-col w-full md:justify-center items-start gap-4 inline-flex'>
                                     <h2 className="text-daisyBush-40 text-3xl font-extrabold font-Pretendard">
-                                        커뮤니티도 모드에서 이용해 보세요.
+                                        광고 효과는 확실하게,<br />관리도 간편하게
                                     </h2>
                                     <div className="w-[502px] text-gray-20 text-xl font-bold font-Pretendard leading-9">
+
                                         <p>
-                                            좋은 정보, 좋은 업체 찾기 번거로우셨죠?
+                                            간편한 관리 시스템으로 관리하실 수 있도록 <br /> 모드가 준비했어요
                                         </p>
-                                        <p>
-                                            다른 화물차 기사님들과 앱 내에 커뮤니티 기능으로
-                                        </p>
-                                        <p>
-                                            편하게 소통하세요!
-                                        </p>
-                                        <p className='text-sm mt-4 font-Pretendard font-normal'>
-                                            추후 업데이트 예정입니다
-                                        </p>
+
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div className='relative h-full z-50 flex '>
+                        <div className='relative mt-12 h-full z-50 flex '>
                             {stepsData.map((item) => (
                                 <div key={item.id} className={`absolute z-50 top-0 left-0 w-full h-full transition-opacity duration-1000 ease-in-out ${item.step === currentStep ? 'opacity-100' : 'opacity-0'}`}>
                                     <div className='flex relative justify-center h-full items-center flex-col gap-4'>
@@ -106,21 +99,14 @@ const CommunityRoadMap: React.FC<{ OnScrollDown: () => void; isInView: boolean }
                             <div className='animate__animated animate__fadeIn  flex'>
                                 <div className='flex-col w-full md:justify-center items-start gap-2 inline-flex'>
                                     <h2 className="text-daisyBush-40 text-3xl font-extrabold font-Pretendard">
-                                        커뮤니티도 모드에서 이용해 보세요.
+                                        광고 효과는 확실하게,<br />관리도 간편하게
                                     </h2>
                                     <div className="w-[502px] text-gray-20 text-xl font-bold font-Pretendard leading-9">
+
                                         <p>
-                                            좋은 정보, 좋은 업체 찾기 번거로우셨죠?
+                                            간편한 관리 시스템으로 관리하실 수 있도록 <br /> 모드가 준비했어요
                                         </p>
-                                        <p>
-                                            다른 화물차 기사님들과 앱 내에 커뮤니티 기능으로
-                                        </p>
-                                        <p>
-                                            편하게 소통하세요!
-                                        </p>
-                                        <p className='text-sm mt-4 font-Pretendard font-normal'>
-                                            추후 업데이트 예정입니다
-                                        </p>
+
                                     </div>
                                 </div>
                             </div>

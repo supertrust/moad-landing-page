@@ -7,6 +7,7 @@ import 'animate.css';
 import WhiteNavbar from '../../Navbar/WhiteNavbar';
 import { CustomScrollButton } from '@/Components/Buttons/CustomScrollButton';
 import { useMediaQuery } from '@/hooks';
+import Link from 'next/link';
 
 const AdvertHeroSection: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
     OnScrollDown,
@@ -66,28 +67,35 @@ const AdvertHeroSection: React.FC<{ OnScrollDown: () => void; isInView: boolean 
 
                                                 />
                                                 :
+
                                                 <Image
                                                     onLoad={handleImageLoad}
                                                     alt='Cargo--image'
-                                                    src={'/assets/images/ADVERTISEMENT.svg'}
+                                                    src={'/assets/svgs/ADVERTISEMENT (4).svg'}
                                                     width={1296}
                                                     height={116}
+                                                    className='z-50'
 
                                                 />
                                         }
                                     </div>
                                 </div>
+                                <Link href="https://advertiser.moad.live/login" className='flex w-full md:hidden justify-center items-center space-x-2 bg-bunting-60 text-white px-8 py-4 rounded-xl border border-white'>
+                                    <Image alt='icon' src={PlaysIcon} />
+                                    <span className='font-bold text-xl'>앱 다운로드</span>
+                                </Link>
                             </div>
                         </div>
+
                     )}
 
                 </div>
-                <div className=' mx-auto flex  justify-between items-center '>
-                    <div className='w-full px-8  md:w-auto md:max-w-[350px]  bottom-36 absolute md:bottom-[20px]'>
-                        <div className='flex w-full justify-center items-center space-x-2 bg-bunting-60 text-white px-8 py-4 rounded-xl border border-white'>
+                <div className=' mx-auto flex z-50 justify-between items-center '>
+                    <div className='w-full hidden md:block px-8 z-50 md:w-auto md:max-w-[350px] absolute bottom-6 left-8  '>
+                        <Link href="https://advertiser.moad.live/login" className='flex w-full justify-center items-center space-x-2 bg-bunting-60 text-white px-8 py-4 rounded-xl border border-white'>
                             <Image alt='icon' src={PlaysIcon} />
                             <span className='font-bold text-xl'>앱 다운로드</span>
-                        </div>
+                        </Link>
                     </div>
                     <CustomScrollButton OnScrollDown={OnScrollDown} color='#99A0AE' />
                 </div>

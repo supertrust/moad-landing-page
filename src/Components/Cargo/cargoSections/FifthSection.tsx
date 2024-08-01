@@ -71,7 +71,7 @@ const IndexPage: React.FC<Props> = ({ setCurrentSection, OnScrollDown }) => {
       const { offsetX } = e.nativeEvent;
       const { clientWidth, scrollWidth } = scrollContainerRef.current;
       const newScrollLeft = (offsetX / clientWidth) * scrollWidth;
-      scrollContainerRef.current.scrollTo({ left: newScrollLeft, behavior: 'smooth' });
+      scrollContainerRef.current.scrollTo({ left: newScrollLeft });
     }
   };
 
@@ -122,7 +122,7 @@ const IndexPage: React.FC<Props> = ({ setCurrentSection, OnScrollDown }) => {
                     <div className=" w-full space-y-10 min-w-[22rem]  max-h-[20rem] h-auto  ">
                       <div>
                         <span className="text-daisyBush-60 font-bold">0{item.id}</span>
-                        <h3 className="text-bunting-60 h-8 mb-12 text-[20px] font-bold font-Pretendard  mt-1">
+                        <h3 className="text-bunting-60 h-8 mb-12 text-xl font-bold font-Pretendard  mt-1">
                           {item.head}
                         </h3>
                       </div>

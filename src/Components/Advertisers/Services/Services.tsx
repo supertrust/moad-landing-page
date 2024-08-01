@@ -15,11 +15,11 @@ const Services: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
     isInView,
 }) => {
     const settings = {
-        dots: true,
+        // dots: true,
         infinite: false,
         speed: 500,
         arrows: true,
-        slidesToShow: 1.0002,
+        slidesToShow: 1.2,
         slidesToScroll: 1,
         centerMode: true,  // Centers the active slide
         centerPadding: "10px",
@@ -82,7 +82,7 @@ const Services: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
                         CardData?.map((item, index) => {
                             return (
                                 <div
-                                    className={`bg-white z-50 rounded-2xl h-[23rem] mr-4 shadow-xl p-4  flex flex-col gap-2`}
+                                    className={`bg-white z-50 rounded-2xl h-auto border-2 border-[#C5C6CF]  mr-4 shadow-xl p-4  flex flex-col gap-2`}
                                     key={item.id}
                                 >
                                     <h3 className=" text-xl mb-2 flex items-center justify-center text-[#0E121B] font-bold font-Pretendard ">
