@@ -30,12 +30,12 @@ const AdvertisingPlatforms: React.FC<{ OnScrollDown: () => void; isInView: boole
         },
     ];
     return (
-        <div className="relative z-40 h-screen bg-daisyBush-60 bg-center bg-contain  bg-no-repeat  overflow-hidden flex flex-col items-start" style={{
+        <div className="relative z-40 h-screen bg-daisyBush-60 bg-center bg-cover  bg-no-repeat  overflow-hidden flex flex-col items-start" style={{
             backgroundImage: `url(${ServiceBackground.src})`,
             zIndex: 0,
         }}>
             <WhiteNavbar page="advertisers" />
-            <div className="flex items-center px-8 md:px-20 xl:px-25 flex-1 flex-col justify-center w-full gap-12 md:gap-32 ">
+            <div className="flex items-center px-8 md:px-20 xl:px-25 flex-1 flex-col pt-[5dvh] md:pt-0 md:justify-center w-full gap-6 md:gap-32 ">
                 <div className="flex w-full  flex-col gap-4 items-start">
                     <h2 className=" font-extrabold text-white text-2xl md:text-4xl font-Pretendard ">
                         광고주를 위한 광고 플랫폼
@@ -46,7 +46,7 @@ const AdvertisingPlatforms: React.FC<{ OnScrollDown: () => void; isInView: boole
                     {cardsData?.map((item) => {
                         return (
                             <div
-                                className={`relative w-full  lg:max-w-[25rem] h-[12.8rem] py-4 px-4 gap-4 border-1 border-gray-100 rounded-[20px] flex flex-col justify-center  hover:text-gray-20 group transition-all duration-300 ease-in-out bg-white bg-center bg-cover`}
+                                className={`relative w-full  lg:max-w-[25rem] max-h-[12.8rem] py-4 px-4 gap-4 border-1 border-gray-100 rounded-[20px] flex flex-col justify-center  hover:text-gray-20 group transition-all duration-300 ease-in-out bg-white bg-center bg-cover`}
                                 key={item.id}
                             >
 

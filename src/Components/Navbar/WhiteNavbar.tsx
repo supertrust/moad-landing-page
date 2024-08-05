@@ -18,9 +18,10 @@ interface Button {
 
 interface Props {
   page?: string;
+  section?: string;
 }
 
-const IndexPage = ({ page }: Props) => {
+const IndexPage = ({ page, section }: Props) => {
   const buttonsConfig: Button[] = [
     {
       id: 1,
@@ -32,9 +33,9 @@ const IndexPage = ({ page }: Props) => {
     },
     {
       id: 2,
-      label: '앱 다운로드',
-      icon: PlayIcon,
-      styles: 'bg-white text-daisyBush-60 font-semibold hidden md:flex',
+      label: section === "hero" ? "웹 페이지로" : '앱 다운로드',
+      icon: section === "hero" ? null : PlayIcon,
+      styles: 'bg-white text-daisyBush-60 rounded-lg font-semibold hidden md:flex',
       iconPosition: 'left',
       link: ''
     },
@@ -42,17 +43,17 @@ const IndexPage = ({ page }: Props) => {
 
   return (
     <>
-      <nav className='  z-[40] w-full px-0 md:px-6 lg:px-10 xl:px-28'>
+      <nav className='  z-50 mb-3 w-full px-0 md:px-6 lg:px-10 xl:px-28'>
         <div className='px-4 container mx-auto flex justify-between items-center'>
-          <Link href="/" className='logo'>
+          <Link href={!page ? '/' : `/${page}`} className='logo'>
             <Image src={Logo} alt='Logo' className='h-12' />
           </Link>
           <div className='justify-center flex items-center md:space-x-4'>
             {buttonsConfig.map((button) => (
               <Link key={button.id} href={button.link} className='items-center flex'>
                 <button
-                  className={`py-2 md:px-4 rounded flex cursor-pointer items-center space-x-1 ${button.styles}`}>
-                  {button.iconPosition === 'left' && (
+                  className={`py-1.5 md:px-4 flex cursor-pointer text-base items-center space-x-1 ${button.styles}`}>
+                  {button.iconPosition === 'left' && button.icon && (
                     <Image
                       src={button.icon}
                       alt={`${button.label} icon`}
@@ -64,7 +65,7 @@ const IndexPage = ({ page }: Props) => {
                     <Image
                       src={button.icon}
                       alt={`${button.label} icon`}
-                      className='h-5 w-5'
+                      className='h-3 w-3'
                     />
                   )}
                 </button>

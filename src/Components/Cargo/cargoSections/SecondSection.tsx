@@ -24,7 +24,7 @@ const IndexPage: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
       <div className='flex items-center flex-col justify-center h-full'>
         <div className='grid mb-8  md:grid-cols-2 md:gap-8 justify-center px-8 lg:px-10 xl:px-28 items-center'>
           {isInView && (
-            <div className={`h-[446px] w-[375px] md:h-[40rem] md:w-[40rem] xl:h-[44rem] xl:w-[59rem] ${isInView ? 'animate__animated animate__fadeInLeft' : ''
+            <div className={`h-[446px] w-[375px] md:h-[40rem] md:w-[40rem]  xl:w-[59rem] ${isInView ? 'animate__animated animate__fadeInLeft' : ''
               }`}>
               {
                 isMobile ?

@@ -11,13 +11,13 @@ export default function OthersLayout({
 }>) {
     return (
         <div className='flex flex-col justify-start  w-full overflow-auto'>
-            <ColorNavbar />
+            <ColorNavbar page='advertisers' />
             <div className='px-4 md:px-6 lg:px-10 xl:px-28 '>
-                <Nav page='advertisers'/>
+                <Nav page='advertisers' />
                 {children}
             </div>
-            <div className='custom-footer '>
-                <Footer page='advertisers'/>
+            <div className='custom-footer'>
+                <Footer page='advertisers' />
             </div>
         </div>
     );

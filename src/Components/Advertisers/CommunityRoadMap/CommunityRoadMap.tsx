@@ -3,12 +3,14 @@ import Image from 'next/image';
 import SectionBackground from '../../../Assets/BlurTruck.svg';
 import WhiteNavbar from '../../Navbar/WhiteNavbar';
 import { CustomScrollButton } from '@/Components/Buttons/CustomScrollButton';
+import { useMediaQuery } from '@/hooks';
 
 const CommunityRoadMap: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
     OnScrollDown,
     isInView,
 }) => {
     const [currentStep, setCurrentStep] = useState(1);
+    const isMobile = useMediaQuery('(max-width: 768px)');
 
     const stepsData = [
         {
@@ -39,7 +41,7 @@ const CommunityRoadMap: React.FC<{ OnScrollDown: () => void; isInView: boolean }
 
                 <WhiteNavbar page="advertisers" />
 
-                <div className='flex justify-center items-center h-[80%] flex-1 md:h-full'>
+                <div className='flex justify-center items-center h-[70%] flex-1 md:h-full'>
                     <div className='h-fit md:h-full mb-16 md:justify-center grid grid-cols-1  md:grid-cols-2 relative gap-8 md:gap-16 md:items-center pb-10 px-4 md:px-6 lg:px-10 xl:px-28'>
                         <div className=' h-[21.9rem] z-10 items-start md:hidden '>
                             <div className='animate__animated animate__fadeIn  flex'>
@@ -58,17 +60,19 @@ const CommunityRoadMap: React.FC<{ OnScrollDown: () => void; isInView: boolean }
                             </div>
                         </div>
 
-                        <div className='relative mt-12 h-full z-50 flex '>
+                        <div className='relative mt-6 h-full z-50 flex '>
                             {stepsData.map((item) => (
                                 <div key={item.id} className={`absolute z-50 top-0 left-0 w-full h-full transition-opacity duration-1000 ease-in-out ${item.step === currentStep ? 'opacity-100' : 'opacity-0'}`}>
                                     <div className='flex relative justify-center h-full items-center flex-col gap-4'>
-                                        <Image
-                                            src={item.image}
-                                            alt='Mobile--screen'
-                                            className='object-cover z-50'
-                                            width={500}
-                                            height={500}
-                                        />
+                                        <div>
+                                            <Image
+                                                src={item.image}
+                                                alt='Mobile--screen'
+                                                className='object-cover z-50'
+                                                width={isMobile ? 330 : 400}
+                                                height={isMobile ? 257 : 400}
+                                            />
+                                        </div>
                                         <div className='bg-[#EEEFF34D]/30 w-[16rem] rounded-[1.25rem] p-4'>
                                             <div className='flex justify-center items-center gap-2'>
                                                 <Image

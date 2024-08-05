@@ -42,9 +42,9 @@ const ContactSection = ({ OnScrollDown }: Props) => {
             <div className="">
                 <ColorNavbar page="advertisers" />
             </div>
-            <section className="relative w-full mt-16">
-                <div className="flex flex-col md:grid lg:grid-cols-2   pt-3  w-full px-4 md:px-16 lg:px-10 xl:px-28 z-20 ">
-                    <div className="">
+            <section className="relative h-full md:h-auto md:items-center flex w-full">
+                <div className="flex flex-col md:justify-center md:grid lg:grid-cols-2  pt-3  w-full px-4 md:px-16 lg:px-10 xl:px-28 z-20 ">
+                    <div className="z-50">
                         <h2 className=" font-bold text-daisyBush-60  text-[2.25rem] font-Pretendard ">
                             Contact us
                         </h2>
@@ -53,7 +53,7 @@ const ContactSection = ({ OnScrollDown }: Props) => {
                         </p>
 
                     </div>
-                    <div className=" w-full z-40 pb-6 mb-20">
+                    <div className=" w-full mt-[3dvh] md:mt-0 z-40 pb-6 h-full md:h-auto flex-1 overflow-y-scroll">
                         <form onSubmit={handleSubmit(onSubmit)} className="mt-8 w-full  lg:max-w-[35rem]">
                             <FormField
                                 type="text"
@@ -75,6 +75,7 @@ const ContactSection = ({ OnScrollDown }: Props) => {
                             />
                             <FormField
                                 type="textarea"
+                                rows={8}
                                 label="문의내용*"
                                 name="문의내용"
                                 placeholder="문의하실 내용을 기입해 주세요."

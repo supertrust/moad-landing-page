@@ -8,6 +8,8 @@ interface FormFieldProps {
     className?: string;
     errors?: any;
     register?: any;
+    rows?: number;
+
 }
 
 const FormField: React.FC<FormFieldProps> = ({
@@ -18,6 +20,8 @@ const FormField: React.FC<FormFieldProps> = ({
     className = '',
     errors,
     register,
+    rows,
+    ...others
 }) => {
 
     return (
@@ -31,7 +35,8 @@ const FormField: React.FC<FormFieldProps> = ({
                     id={name}
                     placeholder={placeholder}
                     {...register}
-                    rows={10}
+                    {...others}
+                    rows={rows}
                 />
             ) : (
                 <input
@@ -39,6 +44,7 @@ const FormField: React.FC<FormFieldProps> = ({
                     className="shadow appearance-none border border-[#99A0AE] rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-daisyBush-60 focus:shadow-outline"
                     id={name}
                     placeholder={placeholder}
+                    {...others}
                     {...register}
                 />
             )}

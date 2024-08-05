@@ -34,7 +34,7 @@ const ColorNavbar = ({ page }: Props) => {
       id: 2,
       label: '앱 다운로드',
       icon: PlaysIcon,
-      styles: 'bg-[#561AA4] text-white font-semibold hidden md:flex',
+      styles: 'bg-[#561AA4] rounded-lg text-white font-semibold hidden md:flex',
       iconPosition: 'left',
       link: ""
     },
@@ -42,16 +42,16 @@ const ColorNavbar = ({ page }: Props) => {
 
   return (
     <>
-      <nav className='  z-[40] w-full px-0 md:px-6 lg:px-10 xl:px-28'>
+      <nav className='  z-50 mb-3 w-full px-0 md:px-6 lg:px-10 xl:px-28'>
         <div className='px-4 container mx-auto flex justify-between items-center'>
-          <Link href="/" className='logo'>
+          <Link href={!page ? '/' : `/${page}`} className='logo'>
             <Image src={Logo} alt='Logo' className='h-12' />
           </Link>
           <div className='justify-center flex items-center md:space-x-4'>
             {buttonsConfig.map((button) => (
               <Link key={button.id} href={button.link} className='items-center flex'>
                 <button
-                  className={`py-2 md:px-4 rounded flex cursor-pointer items-center space-x-1  ${button.styles}`}>
+                  className={`py-1.5 md:px-4 flex cursor-pointer items-center  ${button.styles}`}>
                   {button.iconPosition === 'left' && (
                     <Image
                       src={button.icon}
@@ -64,7 +64,7 @@ const ColorNavbar = ({ page }: Props) => {
                     <Image
                       src={button.icon}
                       alt={`${button.label} icon`}
-                      className='h-8 w-8'
+                      className='h-5 w-5'
                     />
                   )}
                 </button>

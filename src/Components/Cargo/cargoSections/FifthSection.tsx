@@ -100,7 +100,7 @@ const IndexPage: React.FC<Props> = ({ setCurrentSection, OnScrollDown }) => {
             className='absolute right-0 -z-10 bottom-0'
           />
         </div>
-        <div className=' space-y-6 h-full z-50 mt-[10%] md:mt-[5%] flex flex-col gap-8'>
+        <div className=' space-y-6 h-full z-50 mt-[10%] md:mt-0 flex flex-col '>
           <div className='px-4 md:px-6 lg:px-10 xl:px-28 flex-col justify-start items-start gap-4 inline-flex'>
             <div className="text-daisyBush-60 text-3xl font-extrabold font-Pretendard  leading-9">
               자주하는 질문
@@ -122,7 +122,7 @@ const IndexPage: React.FC<Props> = ({ setCurrentSection, OnScrollDown }) => {
                     <div className=" w-full space-y-10 min-w-[22rem]  max-h-[20rem] h-auto  ">
                       <div>
                         <span className="text-daisyBush-60 font-bold">0{item.id}</span>
-                        <h3 className="text-bunting-60 h-8 mb-12 text-xl font-bold font-Pretendard  mt-1">
+                        <h3 className="text-bunting-60 h-8 mb-6 text-xl font-bold font-Pretendard  mt-1">
                           {item.head}
                         </h3>
                       </div>

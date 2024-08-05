@@ -29,20 +29,19 @@ const IndexPage: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
       id: 1,
       image: '/assets/images/Cargo_3p Step1.png',
       title: 'Step-1',
-      description: '광고 리스트에서 기사님들의 조건에 맞는 광고를 확인하세요.',
+      description: <span>광고 리스트에서 기사님들의 <br /> 조건에 맞는 광고를 확인하세요.</span>,
     },
     {
       id: 2,
       image: '/assets/images/Cargo_3p Step2.png',
       title: 'Step-2',
-      description: '마음에 드는 광고 선택 후,의뢰하기를 눌러주세요.',
+      description: <span>마음에 드는 광고 선택 후, <br /> 의뢰하기를 눌러주세요.</span>,
     },
     {
       id: 3,
       image: '/assets/images/Cargo_3p Step3.png',
       title: 'Step-3',
-      description:
-        '광고 의뢰가 더 궁금하시다면?채팅으로 쉽게 알아볼 수 있어요.',
+      description: <span>광고 의뢰가 더 궁금하시다면? <br />채팅으로 쉽게 알아볼 수 있어요.</span>,
     },
   ];
 
@@ -54,22 +53,22 @@ const IndexPage: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
         backgroundImage: `url(${ThirdBgSections.src})`,
       }}>
       <WhiteNavbar />
-      <div className='relative h-full w-full flex flex-col gap-4  px-4 md:px-6 lg:px-10 xl:px-28 mt-[4%]'>
-        <div className='flex flex-col justify-between'>
-          <div className=' w-[375px]  flex-col gap-4 justify-start items-start inline-flex'>
-            <div className="text-gray-0 text-2xl font-extrabold font-Pretendard ">
+      <div className='relative h-full  w-full flex flex-col gap-4  px-4 md:px-6 lg:px-10 xl:px-28'>
+        <div className='flex flex-col justify-center'>
+          <div className='   flex-col gap-4 justify-start items-start inline-flex'>
+            <div className="text-gray-0 text-2xl md:text-4xl font-extrabold font-Pretendard ">
               화물차 랩핑으로
               <br />
               사업을 확장시키세요
             </div>
-            <div className="text-gray-20 text-lg font-bold font-Pretendard">
+            <div className="text-gray-20 text-lg md:text-2xl font-bold font-Pretendard">
               광고 의뢰의 번거로움을 이제 뒤로하고, <br /> 손쉬운 절차로 화물차 랩핑을
               시작하세요
             </div>
           </div>
         </div>
-        <div className='hidden md:flex flex-1 flex-grow items-center h-full w-full -translate-y-24'>
-          <div className='grid w-full grid-cols-3 p-10 justify-start gap-8 '>
+        <div className='hidden md:flex items-center h-full w-full -translate-y-16'>
+          <div className='grid w-full grid-cols-3 px-10 justify-start gap-8 '>
             {cards.map((item) => (
               <div
                 key={item.id}
@@ -85,10 +84,10 @@ const IndexPage: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
            flex flex-col gap-4 justify-center items-center group transition-transform duration-500 ease-in-out
          `}
               >
-                <div className="relative block  h-[17.5rem] w-[8.5rem] group-hover:-translate-y-28 group-hover:scale-[1.7] duration-500 ease-in-out">
+                <div className="relative block  h-[17.5rem] w-[8.5rem] group-hover:-translate-y-28 group-hover:scale-[1.5] duration-500 ease-in-out">
                   <Image src={item.image} fill alt={item.title} />
                 </div>
-                <div className="w-[250px] py-4 px-6 bg-[#101440] bg-opacity-50  group-hover:bg-opacity-100 z-[1000] rounded-[20px] flex flex-col items-center justify-center group-hover:scale-125 duration-500 ease-in-out">
+                <div className="w-[15.75rem] py-4 px-6 bg-[#101440] bg-opacity-50  group-hover:bg-opacity-100 z-[1000] rounded-[20px] flex flex-col items-center justify-center group-hover:scale-125 duration-500 ease-in-out">
                   <div className="flex justify-center items-center gap-x-1 ">
                     <Image
                       src={WhiteUnion}

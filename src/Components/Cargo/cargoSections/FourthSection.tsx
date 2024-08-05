@@ -34,23 +34,23 @@ const IndexPage: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
           {
             <>
               <div className='flex items-start relative w-full justify-end'>
-                <div className='relative block h-[46rem] w-[33rem] md:mt-10'>
+                <div className='relative block  h-[46rem] w-[33rem]'>
                   <Image
                     src="/assets/svgs/thirdmobile-desktop.svg"
                     alt='Mobile--screen'
-                    className=' w-[500px] h-[600px] '
+                    className=' '
                     onLoad={handleImageLoad}
                     fill
                   />
                   {isImageLoaded && isInView && (
                     <>
-                      <div className='animate__animated animate__fadeInRight rounded-md absolute  top-[100px] right-8  bg-daisyBush-60 text-lg text-white  px-4 py-2 text-center z-50 font-semibold'>
+                      <div className='animate__animated animate__fadeInRight rounded-md absolute  top-[6.25rem] right-8  bg-daisyBush-60 text-lg text-white  px-4 py-2 text-center z-50 font-semibold'>
                         {`다들 오늘 운행은 어떠셨나요?`}
                       </div>
-                      <div className='animate__animated animate__fadeInLeft rounded-md absolute  top-[250px]  left-4  bg-daisyBush-40 text-lg text-white px-4 py-2 font-semibold  text-center z-50'>
+                      <div className='animate__animated animate__fadeInLeft rounded-md absolute  top-[15.625rem]  left-4  bg-daisyBush-40 text-lg text-white px-4 py-2 font-semibold  text-center z-50'>
                         {`꽃이 많이 폈네요! 꽃 보고 가세요~~`}
                       </div>
-                      <div className='animate__animated animate__fadeInUp  rounded-md absolute  top-[350px] right-8   bg-[#EEEFF3] text-lg text-gray-100 font-semibold   px-4 py-2  text-center z-50'>
+                      <div className='animate__animated animate__fadeInUp  rounded-md absolute  top-[24.875rem] right-8   bg-[#EEEFF3] text-lg text-gray-100 font-semibold   px-4 py-2  text-center z-50'>
                         {`364km 운행기록 인증합니다!!`}
                       </div>
                     </>
@@ -62,7 +62,7 @@ const IndexPage: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
 
           {isInView && (
             <div className='animate__animated  animate__fadeIn '>
-              <div className='flex-col justify-start  items-start gap-2 flex'>
+              <div className='flex-col justify-start  z-50 items-start gap-2 flex'>
                 <h2 className="text-daisyBush-40 text-3xl mb-4 font-extrabold font-Pretendard">
                   커뮤니티도 모드에서 이용해 보세요.
                 </h2>

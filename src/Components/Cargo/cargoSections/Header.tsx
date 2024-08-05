@@ -33,25 +33,28 @@ const IndexPage: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
         <div className='flex  px-8 relative w-full h-full flex-1 flex-col justify-center  '>
           {isInView && (
             <div className='absolute h-full top-0 -translate-y-10  mb-8 w-full left-0 flex flex-col justify-between items-center'>
-              <div className='relative px-8 h-full justify-center  flex flex-col items-center '>
+              <div className='relative px-8 h-full justify-center gap-4  flex flex-col items-center '>
                 <div className={`md:max-w-[35.44rem]  max-h-[7rem] ${isImageLoaded ? "animate__animated animate__fadeInLeft" : "invisible"}  z-50`}>
                   <TextMoad />
                 </div>
                 <div className='shadow-screens relative -translate-y-10  z-20 '>
-                  <Image
-                    onLoad={handleImageLoad}
-                    alt='Cargo--image'
-                    src={CargoImage}
-                    className={`${isImageLoaded ? "opacity-100 duration-500 ease-linear float-animations " : "invisible opacity-0"} `}
-                  />
+                  <div className='px-8 block relative h-[15rem] w-[23rem] '>
+                    <Image
+                      onLoad={handleImageLoad}
+                      alt='Cargo--image'
+                      src="/assets/svgs/CargoImage.svg"
+                      className={`${isImageLoaded ? "opacity-100 duration-500 ease-linear float-animations " : "invisible opacity-0"} `}
+                      fill
+                    />
+                  </div>
                   <div className={`shadow-image ${isImageLoaded ? "opacity-100 duration-500 ease-linear " : "invisible opacity-0"}`}></div>
                 </div>
                 <div className='-translate-y-14 z-10'>
-                  <div className={`  text-white  ${isImageLoaded ? "animate__animated animate__fadeInRight" : "invisible"} `}>
+                  <div className={`max-w-[1172px]  text-white  ${isImageLoaded ? "animate__animated animate__fadeInRight" : "invisible"} `}>
                     <TextCargo />
                   </div>
                 </div>
-                <Link href="#" className='flex md:hidden w-full justify-center items-center space-x-2 bg-[#561AA4] text-white px-8 py-4 rounded-xl border border-white'>
+                <Link href="#" className='flex -translate-y-8 md:hidden w-full justify-center items-center space-x-2 bg-[#561AA4] text-white px-8 py-4 rounded-xl border border-white'>
                   <Image alt='icon' src={PlaysIcon} />
                   <span className='font-bold text-xl'>앱 다운로드</span>
                 </Link>

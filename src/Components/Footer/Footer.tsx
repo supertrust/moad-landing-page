@@ -23,28 +23,28 @@ const Footer = ({ bgColor, type = 'dark', page = 'cargo' }: Props) => {
     },
   ];
   const FooterItems = [
-    { id: 1, lable: '상호: 모드 | 대표자: 차주헌' },
-    { id: 2, lable: '주소: 서울특별시 강남구 대치동 890-12' },
-    { id: 3, lable: '사업자 등록번호: 123-4567-8912 | 이메일: moad.co.kr' },
+    { id: 1, lable: '상호: (주)머스트핀테크 | 대표자: 차주헌' },
+    { id: 2, lable: '주소: 서울특별시 강남구 테헤란로 418 다봉타워빌딩 11층 1115호 1116호' },
+    { id: 3, lable: '사업자 등록번호: 312-88-01481 | 이메일: cs@moad.co.kr' },
   ];
   return (
-    <footer style={{ backgroundColor: bgColor ? bgColor : '' }} className='relative px-4 md:px-6 lg:px-10 xl:px-28 h-full  flex flex-col justify-center py-1'>
+    <footer style={{ backgroundColor: bgColor ? bgColor : '' }} className='relative px-4 md:px-6 lg:px-10 xl:px-28 h-full  flex flex-col justify-center py-6'>
       <div className='flex items-center mb-8'>
         <Link href='/' >
           <Image
             src={type === 'dark' ? Logo : LogoLight}
             alt='Logo'
-            className='w-[120px] '
+            className='w-16 md:w-30 '
           />
         </Link>
       </div>
       <div className='flex flex-col-reverse md:flex-col gap-8 md:gap-4'>
-        <div className=' w-[100%] mb-4 flex items-start '>
+        <div className=' w-[100%] flex items-start '>
           <div className='flex flex-col md:flex-row gap-4'>
             {FooterListPage.map((item) => (
               <button
                 key={item.id}
-                className=" text-[16px] text-start font-Pretendard ">
+                className="text-sm md:text-base  text-start font-Pretendard ">
                 <Link href={`/${page}${item.href}`} className={` ${type === 'dark' ? 'text-gray-30' : 'text-gray-60'} `}>
                   {item.lable}
                 </Link>
@@ -56,7 +56,7 @@ const Footer = ({ bgColor, type = 'dark', page = 'cargo' }: Props) => {
           {FooterItems.map((item) => (
             <li
               key={item.id}
-              className={` ${type === 'dark' ? 'text-gray-30' : 'text-gray-60'}  text-[16px] font-Pretendard `}>
+              className={` ${type === 'dark' ? 'text-gray-30' : 'text-gray-60'}  text-sm md:text-base  font-Pretendard `}>
               {item.lable}
             </li>
           ))}
