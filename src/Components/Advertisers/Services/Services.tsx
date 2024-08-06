@@ -72,7 +72,7 @@ const Services: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
 
                 zIndex: 0,
             }}>
-            <div className="">
+            <div className="z-40">
                 <ColorNavbar page="advertisers" />
             </div>
             <div className="h-full mt-[10vh] md:mt-0">
@@ -134,7 +134,7 @@ const Services: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
                         {CardData?.map((item, index) => {
                             return (
                                 <div
-                                    className={`bg-white max-w-[100%] rounded-2xl  shadow-xl p-4 overflow-hidden flex flex-col gap-2 ${index % 2 === 0 ? 'move-up-down ' : 'move-down-up '}`}
+                                    className={`bg-white max-w-[100%] rounded-2xl z-50  shadow-xl p-4 overflow-hidden flex flex-col gap-2 ${index % 2 === 0 ? 'move-up-down ' : 'move-down-up '}`}
                                     key={item.id}
                                 >
                                     <h3 className=" text-xl flex items-center justify-center text-[#0E121B] font-bold font-Pretendard ">

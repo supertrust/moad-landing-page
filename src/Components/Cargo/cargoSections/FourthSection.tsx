@@ -84,7 +84,7 @@ const IndexPage: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
             </div>
           )}
 
-          <div className='absolute left-0 md:left-auto md:right-0 bottom-20 w-[200px] md:w-[600.50px]'>
+          <div className='absolute -z-0 left-0 md:left-auto md:right-0 bottom-20 w-[200px] md:w-[600.50px]'>
             <Image
               onLoad={handleImageLoad}
               alt='blur-truck'

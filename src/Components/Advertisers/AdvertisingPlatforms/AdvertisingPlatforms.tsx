@@ -1,5 +1,4 @@
 import { WhiteNavbar } from "@/Components/Navbar";
-import ServiceBackground from '../../../Assets/bg-4.png'
 import { CustomScrollButton } from "@/Components/Buttons/CustomScrollButton";
 import Image1 from '../../../Assets/image-1.jpeg'
 import Image2 from '../../../Assets/image-2.jpeg'
@@ -30,8 +29,8 @@ const AdvertisingPlatforms: React.FC<{ OnScrollDown: () => void; isInView: boole
         },
     ];
     return (
-        <div className="relative z-40 h-screen bg-daisyBush-60 bg-center bg-cover  bg-no-repeat  overflow-hidden flex flex-col items-start" style={{
-            backgroundImage: `url(${ServiceBackground.src})`,
+        <div className="relative z-40 h-screen bg-center bg-cover  bg-no-repeat  overflow-hidden flex flex-col items-start" style={{
+            backgroundImage: `url(/assets/svgs/Ad_BG.svg)`,
             zIndex: 0,
         }}>
             <WhiteNavbar page="advertisers" />

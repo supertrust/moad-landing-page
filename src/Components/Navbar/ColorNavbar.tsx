@@ -44,7 +44,7 @@ const ColorNavbar = ({ page }: Props) => {
     <>
       <nav className='  z-50 mb-3 w-full px-0 md:px-6 lg:px-10 xl:px-28'>
         <div className='px-4 container mx-auto flex justify-between items-center'>
-          <Link href={!page ? '/' : `/${page}`} className='logo'>
+          <Link href={!page ? '/#' : `/${page}#`} className='logo'>
             <Image src={Logo} alt='Logo' className='h-12' />
           </Link>
           <div className='justify-center flex items-center md:space-x-4'>
