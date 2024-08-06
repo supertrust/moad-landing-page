@@ -61,7 +61,7 @@ const IndexPage: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
           }
 
           {isInView && (
-            <div className='animate__animated  animate__fadeIn '>
+            <div className='animate__animated z-50 animate__fadeIn '>
               <div className='flex-col justify-start  z-50 items-start gap-2 flex'>
                 <h2 className="text-daisyBush-40 text-3xl mb-4 font-extrabold font-Pretendard">
                   커뮤니티도 모드에서 이용해 보세요.
