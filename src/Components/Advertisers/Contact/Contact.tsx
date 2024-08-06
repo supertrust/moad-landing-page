@@ -38,7 +38,7 @@ const ContactSection = ({ OnScrollDown }: Props) => {
     }
 
     return (
-        <div className=" bg-[#F2F5F8] h-[100vh] w-full overflow-x-hidden overflow-y-scroll bg-center bg-cover" >
+        <div className=" bg-[#F2F5F8] h-[100vh] w-full overflow-x-hidden overflow-y-hidden bg-center bg-cover" >
             <div className="">
                 <ColorNavbar page="advertisers" />
             </div>
