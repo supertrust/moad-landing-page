@@ -41,39 +41,38 @@ const IndexPage = ({ page, section }: Props) => {
   ];
 
   return (
-    <>
-      <nav className='  z-40 mb-3 w-full px-0 md:px-6 lg:px-10 xl:px-28'>
-        <div className='px-4 container mx-auto flex justify-between items-center'>
-          <Link href={!page ? '/#' : `/${page}#`} className='logo'>
-            <Image src={Logo} alt='Logo' className='h-12' />
-          </Link>
-          <div className='justify-center flex items-center md:space-x-4'>
-            {buttonsConfig.map((button) => (
-              <Link key={button.id} href={button.link} className='items-center flex'>
-                <button
-                  className={`py-1.5 md:px-4 flex cursor-pointer text-base items-center space-x-1 ${button.styles}`}>
-                  {button.iconPosition === 'left' && button.icon && (
-                    <Image
-                      src={button.icon}
-                      alt={`${button.label} icon`}
-                      className='h-5 w-5'
-                    />
-                  )}
-                  <span>{button.label}</span>
-                  {button.iconPosition === 'right' && (
-                    <Image
-                      src={button.icon}
-                      alt={`${button.label} icon`}
-                      className='h-3 w-3'
-                    />
-                  )}
-                </button>
-              </Link>
-            ))}
-          </div>
+
+    <nav className='  z-40 mb-3 w-full px-0 md:px-6 lg:px-10 xl:px-28'>
+      <div className='px-4 container mx-auto flex justify-between items-center'>
+        <Link href={!page ? '/#' : `/${page}#`} className='logo'>
+          <Image src={Logo} alt='Logo' className='h-12' />
+        </Link>
+        <div className='justify-center flex items-center md:space-x-4'>
+          {buttonsConfig.map((button) => (
+            <Link key={button.id} href={button.link} className='items-center flex'>
+              <button
+                className={`py-1.5 md:px-4 flex cursor-pointer text-base items-center space-x-1 ${button.styles}`}>
+                {button.iconPosition === 'left' && button.icon && (
+                  <Image
+                    src={button.icon}
+                    alt={`${button.label} icon`}
+                    className='h-5 w-5'
+                  />
+                )}
+                <span>{button.label}</span>
+                {button.iconPosition === 'right' && (
+                  <Image
+                    src={button.icon}
+                    alt={`${button.label} icon`}
+                    className='h-3 w-3'
+                  />
+                )}
+              </button>
+            </Link>
+          ))}
         </div>
-      </nav>
-    </>
+      </div>
+    </nav>
   );
 };
 
