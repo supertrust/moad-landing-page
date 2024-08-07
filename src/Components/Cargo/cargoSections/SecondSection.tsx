@@ -5,6 +5,7 @@ import SectionBackground from '../../../Assets/SecondSectionBg.png';
 import ColorNavbar from '../../Navbar/ColorNavbar';
 import Image from 'next/image';
 import { useMediaQuery } from '@/hooks';
+import CustomImage from '@/Components/CustomImage/CustomImage';
 
 const IndexPage: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
   OnScrollDown,
@@ -28,9 +29,9 @@ const IndexPage: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
               }`}>
               {
                 isMobile ?
-                  <Image src='/assets/svgs/secondmobile-mob.svg' alt='mobile-img' fill />
+                  <CustomImage src='/assets/svgs/secondmobile-mob.svg' alt='mobile-img' fill />
                   :
-                  <Image src='/assets/svgs/secondmobile-desktop.svg' alt='mobile-img' fill />
+                  <CustomImage src='/assets/svgs/secondmobile-desktop.svg' alt='mobile-img' fill />
               }
               {/* <SecondMobileSvg /> */}
             </div>

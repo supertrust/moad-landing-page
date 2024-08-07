@@ -8,6 +8,7 @@ import WhiteNavbar from '../../Navbar/WhiteNavbar'
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import CustomImage from '@/Components/CustomImage/CustomImage';
 
 
 const IndexPage: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
@@ -85,7 +86,7 @@ const IndexPage: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
          `}
               >
                 <div className="relative block  h-[17.5rem] w-[8.5rem] group-hover:-translate-y-28 group-hover:scale-[1.5] duration-500 ease-in-out">
-                  <Image src={item.image} fill alt={item.title} />
+                  <CustomImage src={item.image} fill alt={item.title} />
                 </div>
                 <div className="w-[15.75rem] py-4 px-6 bg-[#101440] bg-opacity-50  group-hover:bg-opacity-100 z-[1000] rounded-[20px] flex flex-col items-center justify-center group-hover:scale-125 duration-500 ease-in-out">
                   <div className="flex justify-center items-center gap-x-1 ">

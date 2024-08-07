@@ -5,6 +5,7 @@ import SectionBackground from '../../../Assets/BlurTruck.svg';
 import SecondMobileIcon from '../../../Assets/Mobiletooltip.svg';
 import WhiteNavbar from '../../Navbar/WhiteNavbar';
 import { CustomScrollButton } from '@/Components/Buttons/CustomScrollButton';
+import CustomImage from '@/Components/CustomImage/CustomImage';
 
 const IndexPage: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
   OnScrollDown,
@@ -35,7 +36,7 @@ const IndexPage: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
 
           <div className='flex items-start relative w-full justify-end'>
             <div className='relative  block h-[50vh] md:h-[46rem] w-[33rem]'>
-              <Image
+              <CustomImage
                 src="/assets/svgs/thirdmobile-desktop.svg"
                 alt='Mobile--screen'
                 className=' z-50'

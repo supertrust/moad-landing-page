@@ -40,7 +40,7 @@ const ContactSection = ({ OnScrollDown }: Props) => {
                 <ColorNavbar page="advertisers" />
             </div>
             <section className="relative flex-1 md:items-center flex w-full">
-                <div className="flex flex-col h-full gap-8 justify-center md:grid lg:grid-cols-2  md:pt-3  w-full px-4 md:px-16 lg:px-10 xl:px-28 z-20 ">
+                <div className="flex flex-col  gap-8 justify-center md:grid lg:grid-cols-2  md:pt-3  w-full px-4 md:px-16 lg:px-10 xl:px-28 z-20 ">
                     <div className="z-50">
                         <h2 className=" font-bold text-daisyBush-60  text-[2.25rem] font-Pretendard ">
                             Contact us

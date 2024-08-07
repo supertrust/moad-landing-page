@@ -7,6 +7,7 @@ import { CustomScrollButton } from '@/Components/Buttons/CustomScrollButton';
 import { useMediaQuery } from '@/hooks';
 import Link from 'next/link';
 import { TextMoad } from '@/Assets/Svgs';
+import CustomImage from '@/Components/CustomImage/CustomImage';
 
 const AdvertHeroSection: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
     OnScrollDown,
@@ -39,8 +40,8 @@ const AdvertHeroSection: React.FC<{ OnScrollDown: () => void; isInView: boolean 
                                     <TextMoad />
                                 </div>
                                 <div className='shadow-screens px-8 box-border relative -translate-y-10  z-20 '>
-                                    <div className='px-8 block relative h-[30vh] md:h-[18.75rem] w-[26.25rem]'>
-                                        <Image
+                                    <div className='px-8 block relative h-[20vh] md:h-[18.75rem] w-[26.25rem]'>
+                                        <CustomImage
                                             onLoad={handleImageLoad}
                                             alt='Cargo--image'
                                             src="/assets/svgs/CargoImage.svg"
