@@ -91,7 +91,7 @@ const IndexPage: React.FC<Props> = ({ setCurrentSection, OnScrollDown }) => {
 
   return (
     <>
-      <div className=' h-[100vh] z-50 pb-8 relative  overflow-y-hidden bg-[#EEEFF3]'>
+      <div className=' h-[100vh] z-50 pb-8 relative  overflow-hidden bg-[#EEEFF3]'>
         <ColorNavbar />
         <div className='-z-10'>
           <Image
@@ -100,7 +100,7 @@ const IndexPage: React.FC<Props> = ({ setCurrentSection, OnScrollDown }) => {
             className='absolute right-0 -z-10 bottom-0'
           />
         </div>
-        <div className=' space-y-6 h-full z-50 mt-[10%] md:mt-0 flex flex-col '>
+        <div className=' space-y-6 h-full z-50  md:mt-0 flex flex-col '>
           <div className='px-4 md:px-6 lg:px-10 xl:px-28 flex-col justify-start items-start gap-4 inline-flex'>
             <div className="text-daisyBush-60 text-3xl font-extrabold font-Pretendard  leading-9">
               자주하는 질문

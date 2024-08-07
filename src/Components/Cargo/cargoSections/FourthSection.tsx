@@ -28,29 +28,30 @@ const IndexPage: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
 
   return (
 
-    <section className='overflow-hidden h-[100vh]  bg-[#101440]'>
+    <section className='overflow-hidden h-[100vh] relative bg-[#101440]'>
       <WhiteNavbar />
-      <div className='md:grid flex-col-reverse z-50 flex md:grid-cols-2 h-full relative md:gap-16 items-center pb-10 px-4 md:px-6 lg:px-10 xl:px-28'>
+      <div className='md:grid flex-col-reverse justify-center z-50 flex md:grid-cols-2 h-full gap-6  md:gap-16 items-center pb-10 px-4 md:px-6 lg:px-10 xl:px-28'>
         {
 
           <div className='flex items-start relative w-full justify-end'>
-            <div className='relative block  h-[46rem] w-[33rem]'>
+            <div className='relative  block h-[50vh] md:h-[46rem] w-[33rem]'>
               <Image
                 src="/assets/svgs/thirdmobile-desktop.svg"
                 alt='Mobile--screen'
-                className=' '
+                className=' z-50'
                 onLoad={handleImageLoad}
+
                 fill
               />
               {isImageLoaded && isInView && (
                 <>
-                  <div className='animate__animated animate__fadeInRight rounded-md absolute  top-[6.25rem] right-8  bg-daisyBush-60 text-lg text-white  px-4 py-2 text-center z-50 font-semibold'>
+                  <div className='animate__animated animate__fadeInRight rounded-md absolute top-[15%] md:top-[6.25rem] right-8  bg-daisyBush-60 text-lg text-white  px-4 py-2 text-center z-50 font-semibold'>
                     {`다들 오늘 운행은 어떠셨나요?`}
                   </div>
-                  <div className='animate__animated animate__fadeInLeft rounded-md absolute  top-[15.625rem]  left-4  bg-daisyBush-40 text-lg text-white px-4 py-2 font-semibold  text-center z-50'>
+                  <div className='animate__animated animate__fadeInLeft rounded-md absolute top-[35%] md:top-[15.625rem]  left-4  bg-daisyBush-40 text-lg text-white px-4 py-2 font-semibold  text-center z-50'>
                     {`꽃이 많이 폈네요! 꽃 보고 가세요~~`}
                   </div>
-                  <div className='animate__animated animate__fadeInUp  rounded-md absolute  top-[24.875rem] right-8   bg-[#EEEFF3] text-lg text-gray-100 font-semibold   px-4 py-2  text-center z-50'>
+                  <div className='animate__animated animate__fadeInUp  rounded-md absolute top-[60%]  md:top-[24.875rem] right-8   bg-[#EEEFF3] text-lg text-gray-100 font-semibold   px-4 py-2  text-center z-50'>
                     {`364km 운행기록 인증합니다!!`}
                   </div>
                 </>
@@ -84,7 +85,7 @@ const IndexPage: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
           </div>
         )}
 
-        <div className='absolute -z-0 left-0 md:left-auto md:right-0 bottom-20 w-[200px] md:w-[600.50px]'>
+        <div className='absolute -z-0 left-0 md:left-auto md:right-0 bottom-0 w-[200px] md:w-[600.50px]'>
           <Image
             onLoad={handleImageLoad}
             alt='blur-truck'

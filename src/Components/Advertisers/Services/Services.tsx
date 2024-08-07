@@ -75,7 +75,7 @@ const Services: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
             <div className="z-40">
                 <ColorNavbar page="advertisers" />
             </div>
-            <div className="h-full flex flex-col justify-center md:mt-0">
+            <div className="h-full flex flex-col mt-[5vh] md:justify-center md:mt-0">
                 <div className='  px-2 z-50 md:hidden slider-container'>
                     <Slider {...settings} className="space-x-4">
                         {

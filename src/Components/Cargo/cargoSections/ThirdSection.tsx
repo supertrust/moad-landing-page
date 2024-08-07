@@ -115,7 +115,7 @@ const IndexPage: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
                 >
                   <div className='flex justify-center'>
 
-                    <div className="relative block  h-[400px] w-[200px]">
+                    <div className="relative block  h-[30vh] w-[15vh]">
                       <Image src={item.image} fill alt={item.title} />
                     </div>
                   </div>

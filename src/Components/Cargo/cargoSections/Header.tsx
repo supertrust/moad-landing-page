@@ -38,7 +38,7 @@ const IndexPage: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
                   <TextMoad />
                 </div>
                 <div className='shadow-screens relative -translate-y-10  z-20 '>
-                  <div className='px-8 block relative h-[15rem] w-[23rem] '>
+                  <div className='px-8 block relative h-[20vh] md:h-[15rem] w-[23rem] '>.
                     <Image
                       onLoad={handleImageLoad}
                       alt='Cargo--image'

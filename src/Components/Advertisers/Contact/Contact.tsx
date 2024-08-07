@@ -6,13 +6,10 @@ import { ColorNavbar } from "@/Components/Navbar";
 import { RightArrow, ScrollToTop, SubmitIcon } from "@/Assets/Svgs";
 import Image from "next/image";
 import ContactBackground from '@/Assets/contactbg.svg'
-import ContactBg from '/assets/images/AD_Contact BG.png'
 interface FormData {
     기업명: string;
     전화번호: string;
     문의내용: string;
-
-
 }
 interface Props {
     OnScrollDown: () => void;
@@ -43,7 +40,7 @@ const ContactSection = ({ OnScrollDown }: Props) => {
                 <ColorNavbar page="advertisers" />
             </div>
             <section className="relative h-full md:h-auto md:items-center flex w-full">
-                <div className="flex flex-col md:justify-center md:grid lg:grid-cols-2  pt-3  w-full px-4 md:px-16 lg:px-10 xl:px-28 z-20 ">
+                <div className="flex flex-col md:justify-center md:grid lg:grid-cols-2  md:pt-3  w-full px-4 md:px-16 lg:px-10 xl:px-28 z-20 ">
                     <div className="z-50">
                         <h2 className=" font-bold text-daisyBush-60  text-[2.25rem] font-Pretendard ">
                             Contact us
