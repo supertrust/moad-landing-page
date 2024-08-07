@@ -28,9 +28,9 @@ const IndexPage: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
 
   return (
 
-    <section className='overflow-hidden h-[100vh] relative bg-[#101440]'>
+    <section className='overflow-hidden h-full flex flex-col relative bg-[#101440]'>
       <WhiteNavbar />
-      <div className='md:grid flex-col-reverse justify-center z-50 flex md:grid-cols-2 h-full gap-6  md:gap-16 items-center pb-10 px-4 md:px-6 lg:px-10 xl:px-28'>
+      <div className='md:grid flex-col-reverse flex-1 justify-center z-50 flex md:grid-cols-2 h-full gap-6  md:gap-16 items-center pb-10 px-4 md:px-6 lg:px-10 xl:px-28'>
         {
 
           <div className='flex items-start relative w-full justify-end'>

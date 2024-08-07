@@ -35,12 +35,12 @@ const ContactSection = ({ OnScrollDown }: Props) => {
     }
 
     return (
-        <div className=" bg-[#F2F5F8] h-[100vh] w-full overflow-hidden bg-center bg-cover" >
+        <div className=" bg-[#F2F5F8] h-full flex flex-col w-full overflow-hidden bg-center bg-cover" >
             <div className="">
                 <ColorNavbar page="advertisers" />
             </div>
-            <section className="relative h-full md:h-auto md:items-center flex w-full">
-                <div className="flex flex-col md:justify-center md:grid lg:grid-cols-2  md:pt-3  w-full px-4 md:px-16 lg:px-10 xl:px-28 z-20 ">
+            <section className="relative flex-1 md:items-center flex w-full">
+                <div className="flex flex-col h-full gap-8 justify-center md:grid lg:grid-cols-2  md:pt-3  w-full px-4 md:px-16 lg:px-10 xl:px-28 z-20 ">
                     <div className="z-50">
                         <h2 className=" font-bold text-daisyBush-60  text-[2.25rem] font-Pretendard ">
                             Contact us
@@ -50,8 +50,8 @@ const ContactSection = ({ OnScrollDown }: Props) => {
                         </p>
 
                     </div>
-                    <div className=" w-full mt-[3dvh] md:mt-0 z-40 pb-6 h-full md:h-auto flex-1 overflow-y-scroll">
-                        <form onSubmit={handleSubmit(onSubmit)} className="mt-8 w-full  lg:max-w-[35rem]">
+                    <div className=" w-full flex items-center h-full flex-1 z-40 pb-6 ">
+                        <form onSubmit={handleSubmit(onSubmit)} className="mt-8 w-full h-full lg:max-w-[35rem]">
                             <FormField
                                 type="text"
                                 label="기업명*"

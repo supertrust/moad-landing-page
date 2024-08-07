@@ -38,10 +38,10 @@ body,
 /* flex-direction: column; */
 /* } */
 
-.fp-is-overflow > .fp-overflow {
-  overflow-y: auto;
-  height: 100vh;
-}
+/* .fp-is-overflow > .fp-overflow { */
+/* overflow-y: auto; */
+/* height: 100vh; */
+/* } */
 
 .hero-section {
   background-image: url("../Assets/HeroSection.png");
@@ -64,6 +64,10 @@ body,
   height: 100vh;
   border-radius: 0;
   margin-top: 0;
+}
+
+.fp-overflow {
+  height: 100vh;
 }
 
 /* .fp-is-overflow>.fp-overflow{ */

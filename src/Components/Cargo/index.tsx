@@ -23,8 +23,6 @@ const CargoLayout = () => {
           scrollHorizontally={true}
           credits={{ enabled: false }}
           scrollingSpeed={500}
-          fitToSection={true}
-          fitToSectionDelay={1000}
           afterLoad={(origin, destination) => {
             setCurrentSection(destination.index);
           }}

@@ -24,13 +24,13 @@ const IndexPage: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
   return (
     <>
       <header
-        className=' h-screen overflow-hidden  relative bg-cover bg-center'
+        className='h-full flex flex-col overflow-hidden  relative bg-cover bg-center'
         style={{
           backgroundImage: `url(${MainBackground.src})`,
           zIndex: 0,
         }}>
         <WhiteNavbar />
-        <div className='flex  px-8 relative w-full h-full flex-1 flex-col justify-center  '>
+        <div className='flex  px-8 relative w-full  flex-1 flex-col justify-center  '>
           {isInView && (
             <div className='absolute h-full top-0 -translate-y-10  mb-8 w-full left-0 flex flex-col justify-center items-center'>
               <div className='relative px-8 h-full justify-center gap-4  flex flex-col items-center '>
@@ -38,7 +38,7 @@ const IndexPage: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
                   <TextMoad />
                 </div>
                 <div className='shadow-screens relative -translate-y-10  z-20 '>
-                  <div className='px-8 block relative h-[20vh] md:h-[15rem] w-[23rem] '>.
+                  <div className='px-8 block relative h-[30vh] md:h-[15rem] w-[23rem] '>.
                     <Image
                       onLoad={handleImageLoad}
                       alt='Cargo--image'

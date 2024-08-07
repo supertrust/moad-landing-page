@@ -18,10 +18,10 @@ const IndexPage: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
 
   return (
     <section
-      className=' h-[100vh]  bg-cover overflow-hidden bg-center opacity-100'
+      className=' h-full flex flex-col  bg-cover overflow-hidden bg-center opacity-100'
       style={sectionStyle}>
       <ColorNavbar />
-      <div className='flex items-center flex-col justify-center h-full'>
+      <div className='flex items-center flex-col justify-center flex-1'>
         <div className='grid mb-8  md:grid-cols-2 md:gap-8 justify-center px-8 lg:px-10 xl:px-28 items-center'>
           {isInView && (
             <div className={`h-[35vh] w-[375px] md:h-[40rem] md:w-[40rem]  xl:w-[59rem] ${isInView ? 'animate__animated animate__fadeInLeft' : ''

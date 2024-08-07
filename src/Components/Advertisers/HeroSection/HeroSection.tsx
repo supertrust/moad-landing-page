@@ -6,6 +6,7 @@ import WhiteNavbar from '../../Navbar/WhiteNavbar';
 import { CustomScrollButton } from '@/Components/Buttons/CustomScrollButton';
 import { useMediaQuery } from '@/hooks';
 import Link from 'next/link';
+import { TextMoad } from '@/Assets/Svgs';
 
 const AdvertHeroSection: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
     OnScrollDown,
@@ -22,7 +23,7 @@ const AdvertHeroSection: React.FC<{ OnScrollDown: () => void; isInView: boolean 
     return (
         <>
             <header
-                className='h-full overflow-hidden bg-daisyBush-60  relative bg-cover bg-top '
+                className='h-full flex flex-col overflow-hidden bg-daisyBush-60  relative bg-cover bg-top '
                 style={{
                     backgroundImage: `url(/assets/images/bg-2.png)`,
                     zIndex: 0,
@@ -30,22 +31,15 @@ const AdvertHeroSection: React.FC<{ OnScrollDown: () => void; isInView: boolean 
                 <div className="">
                     <WhiteNavbar page="advertisers" section="hero" />
                 </div>
-                <div className='flex    px-8  relative w-full h-full flex-col justify-center  '>
+                <div className='flex    px-8  relative w-full flex-1 flex-col justify-center  '>
                     {isInView && (
                         <div className='absolute h-full   px-8  mb-8 w-full left-0 flex flex-col justify-center items-center'>
                             <div className='relative px-8 h-full justify-center  flex flex-col items-center '>
-                                <div className={`max-w-[35.44rem] relative block  max-h-[7rem] ${isImageLoaded ? "animate__animated animate__fadeInLeft" : "invisible"}  z-50`}>
-                                    <div className='relative block w-[18rem]  h-[7rem] md:w-[30.44rem]'>
-                                        <Image
-                                            onLoad={handleImageLoad}
-                                            alt='Cargo--image'
-                                            src={'/assets/svgs/MOAD.svg'}
-                                            fill
-                                        />
-                                    </div>
+                                <div className={`md:max-w-[35.44rem]  max-h-[7rem] ${isImageLoaded ? "animate__animated animate__fadeInLeft" : "invisible"}  z-50`}>
+                                    <TextMoad />
                                 </div>
                                 <div className='shadow-screens px-8 box-border relative -translate-y-10  z-20 '>
-                                    <div className='px-8 block relative h-[20vh] md:h-[18.75rem] w-[26.25rem]'>
+                                    <div className='px-8 block relative h-[30vh] md:h-[18.75rem] w-[26.25rem]'>
                                         <Image
                                             onLoad={handleImageLoad}
                                             alt='Cargo--image'

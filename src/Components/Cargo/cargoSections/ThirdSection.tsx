@@ -48,12 +48,12 @@ const IndexPage: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
 
   return (
     <section
-      className=' bg-daisyBush-60 relative h-[100vh] md:px-10 overflow-hidden bg-cover bg-center'
+      className=' bg-daisyBush-60 relative h-full flex flex-col md:px-10 overflow-hidden bg-cover bg-center'
       style={{
         backgroundImage: `url(${ThirdBgSections.src})`,
       }}>
       <WhiteNavbar />
-      <div className='relative h-full  w-full flex flex-col gap-4  px-4 md:px-6 lg:px-10 xl:px-28'>
+      <div className='relative flex-1  w-full flex flex-col gap-4  px-4 md:px-6 lg:px-10 xl:px-28'>
         <div className='flex flex-col justify-center'>
           <div className='   flex-col gap-4 justify-start items-start inline-flex'>
             <div className="text-gray-0 text-2xl md:text-4xl font-extrabold font-Pretendard ">

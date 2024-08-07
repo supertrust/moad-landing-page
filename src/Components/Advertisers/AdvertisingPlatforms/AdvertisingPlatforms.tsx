@@ -29,12 +29,12 @@ const AdvertisingPlatforms: React.FC<{ OnScrollDown: () => void; isInView: boole
         },
     ];
     return (
-        <div className="relative z-40 h-screen bg-center bg-cover  bg-no-repeat  overflow-hidden flex flex-col items-start" style={{
+        <div className="relative z-40 h-full  bg-center bg-cover  bg-no-repeat  overflow-hidden flex flex-col items-start" style={{
             backgroundImage: `url(/assets/svgs/Ad_BG.svg)`,
             zIndex: 0,
         }}>
             <WhiteNavbar page="advertisers" />
-            <div className="flex items-center px-8 md:px-20 xl:px-25 flex-1 flex-col  md:pt-0 md:justify-center w-full gap-6 md:gap-32 ">
+            <div className="flex items-center justify-center mb-20 px-8 md:px-20 xl:px-25 flex-1 flex-col  md:pt-0 md:justify-center w-full gap-6 md:gap-32 ">
                 <div className="flex w-full  flex-col gap-4 items-start">
                     <h2 className=" font-extrabold text-white text-2xl md:text-4xl font-Pretendard ">
                         광고주를 위한 광고 플랫폼
