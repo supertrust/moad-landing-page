@@ -25,7 +25,6 @@ const CustomImage = ({ onLoad, src, className, alt, ...rest }: Props) => {
                 alt={alt}
                 onLoad={handleImageLoad}
                 onError={handleImageError}
-                className={`${imageLoading ? "shimmer" : ""}  ${className}`}
                 {...rest}
             />
         </div>
