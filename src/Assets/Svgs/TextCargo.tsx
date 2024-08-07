@@ -8,10 +8,10 @@ const TextCargo = () => {
         <div>
             {
                 isMobile ?
-                    <Image src='/assets/svgs/CargoTextMob.svg' alt='' height={128} width={327} />
+                    <Image src='/assets/svgs/Cargo_m.svg' alt='' height={128} width={327} />
+                    // <h1 className='font-extrabold text-7xl'>Cargo app</h1>
                     :
                     <Image src='/assets/svgs/CargoTextDesk.svg' alt='' height={100} width={1000} />
-
             }
         </div>
     )

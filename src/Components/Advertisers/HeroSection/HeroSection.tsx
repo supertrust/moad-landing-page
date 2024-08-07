@@ -74,7 +74,7 @@ const AdvertHeroSection: React.FC<{ OnScrollDown: () => void; isInView: boolean 
                                                     <Image
                                                         onLoad={handleImageLoad}
                                                         alt='Cargo--image'
-                                                        src={'/assets/svgs/ADVERTISEMENT (4).svg'}
+                                                        src={'/assets/svgs/Ad_m.svg'}
                                                         fill
                                                         className='z-50'
                                                     />

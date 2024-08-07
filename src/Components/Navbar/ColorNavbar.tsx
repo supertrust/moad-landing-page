@@ -31,11 +31,11 @@ const ColorNavbar = ({ page }: Props) => {
     },
     {
       id: 2,
-      label: '앱 다운로드',
-      icon: PlaysIcon,
+      label: page === "advertisers" ? "웹 페이지로" : '앱 다운로드',
+      icon: page === "advertisers" ? null : PlaysIcon,
       styles: 'bg-[#561AA4] rounded-lg text-white font-semibold hidden md:flex',
       iconPosition: 'left',
-      link: ""
+      link: page === 'advertisers' ? "https://moad.live/advertisers" : ""
     },
   ];
 
@@ -50,7 +50,7 @@ const ColorNavbar = ({ page }: Props) => {
             <Link key={button.id} href={button.link} className='items-center flex'>
               <button
                 className={`py-1.5 md:px-4 flex cursor-pointer items-center space-x-1 ${button.styles}`}>
-                {button.iconPosition === 'left' && (
+                {button.iconPosition === 'left' && button.icon && (
                   <Image
                     src={button.icon}
                     alt={`${button.label} icon`}

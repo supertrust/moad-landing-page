@@ -32,11 +32,11 @@ const IndexPage = ({ page, section }: Props) => {
     },
     {
       id: 2,
-      label: section === "hero" ? "웹 페이지로" : '앱 다운로드',
-      icon: section === "hero" ? null : PlayIcon,
+      label: page === "advertisers" ? "웹 페이지로" : '앱 다운로드',
+      icon: page === "advertisers" ? null : PlayIcon,
       styles: 'bg-white text-daisyBush-60 rounded-lg font-semibold hidden md:flex',
       iconPosition: 'left',
-      link: ''
+      link: page === 'advertisers' ? "https://moad.live/advertisers" : ""
     },
   ];
 

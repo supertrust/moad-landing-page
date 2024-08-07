@@ -75,7 +75,7 @@ const Services: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
             <div className="z-40">
                 <ColorNavbar page="advertisers" />
             </div>
-            <div className="h-full mt-[10vh] md:mt-0">
+            <div className="h-full flex flex-col justify-center md:mt-0">
                 <div className='  px-2 z-50 md:hidden slider-container'>
                     <Slider {...settings} className="space-x-4">
                         {
@@ -117,7 +117,7 @@ const Services: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
                     </Slider>
                 </div>
 
-                <div className="md:items-center md:justify-center mt-16  px-8 md:mt-0  lg:px-20 xl:px-32 flex flex-col-reverse  w-screen min-w-full gap-8 md:grid grid-cols-2  h-screen  overflow-hidden">
+                <div className="md:items-center md:justify-center mt-16  px-8 md:mt-0  lg:px-20 xl:px-32 flex flex-col-reverse  w-screen min-w-full gap-8 md:grid grid-cols-2  md:h-screen  overflow-hidden">
                     <div className="flex flex-col md:justify-center  h-full w-full">
                         <h2 className=" font-bold text-daisyBush-60  text-2xl md:text-4xl leading-normal font-Pretendard ">
                             효율적이고 경제적인 <br />

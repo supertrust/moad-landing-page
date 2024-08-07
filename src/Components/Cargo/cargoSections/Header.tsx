@@ -24,7 +24,7 @@ const IndexPage: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
   return (
     <>
       <header
-        className=' h-[100vh] overflow-hidden  relative bg-cover bg-center'
+        className=' h-screen overflow-hidden  relative bg-cover bg-center'
         style={{
           backgroundImage: `url(${MainBackground.src})`,
           zIndex: 0,
@@ -32,7 +32,7 @@ const IndexPage: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
         <WhiteNavbar />
         <div className='flex  px-8 relative w-full h-full flex-1 flex-col justify-center  '>
           {isInView && (
-            <div className='absolute h-full top-0 -translate-y-10  mb-8 w-full left-0 flex flex-col justify-between items-center'>
+            <div className='absolute h-full top-0 -translate-y-10  mb-8 w-full left-0 flex flex-col justify-center items-center'>
               <div className='relative px-8 h-full justify-center gap-4  flex flex-col items-center '>
                 <div className={`md:max-w-[35.44rem]  max-h-[7rem] ${isImageLoaded ? "animate__animated animate__fadeInLeft" : "invisible"}  z-50`}>
                   <TextMoad />
