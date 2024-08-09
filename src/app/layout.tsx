@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import localFont from 'next/font/local'
 
 // Font files can be colocated inside of `app`
@@ -66,6 +68,7 @@ export default function RootLayout({
   return (
     <html lang='en'>
       <body className={`${pretendard.variable}`}>
+      <ToastContainer />
         {children}
       </body>
     </html>
