@@ -25,7 +25,7 @@ const FormField: React.FC<FormFieldProps> = ({
 }) => {
 
     return (
-        <div className={`mb-6 w-full ${className}`}>
+        <div className={`mb-3 w-full ${className}`}>
             <label htmlFor={name} className="block text-gray-100 text-sm font-bold mb-2">
                 {label}
             </label>
@@ -41,7 +41,7 @@ const FormField: React.FC<FormFieldProps> = ({
             ) : (
                 <input
                     type={type}
-                    className="shadow appearance-none border border-[#99A0AE] rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-daisyBush-60 focus:shadow-outline"
+                    className="shadow appearance-none border border-[#99A0AE] rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-daisyBush-60 focus:shadow-outline"
                     id={name}
                     placeholder={placeholder}
                     {...others}
@@ -49,7 +49,7 @@ const FormField: React.FC<FormFieldProps> = ({
                 />
             )}
             {errors && (
-                <p className="text-red-500 text-xs mt-2 italic">{errors?.message?.toString()}</p>
+                <p className="text-red-500 mt-1 text-xs italic">{errors?.message?.toString()}</p>
             )}
         </div>
     );

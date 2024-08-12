@@ -22,7 +22,7 @@ const htmlIds = {
     detail: "detail" as const,
 }
 
-interface FormData  {
+interface FormData {
     [htmlIds.name]: string;
     [htmlIds.phone]: string;
     [htmlIds.detail]: string;
@@ -40,11 +40,11 @@ const ContactSection = ({ OnScrollDown }: Props) => {
     } = useForm<FormData>();
 
 
-    const onSubmit = async(data: ISendEmail) => {
+    const onSubmit = async (data: ISendEmail) => {
         setFetching(true)
         console.log(data); // Handle form submission here
         const res = await sendEmail(data)
-        if(res.error)
+        if (res.error)
             toast.error('이메일 전송에 실패했습니다. 문제가 지속될시 하기 이메일로 문의 바랍니다. 감사합니다.')
         else
             toast.success('이메일이 성공적으로 발송되었습니다. 빠른 시일내 연락드리겠습니다.')
@@ -59,22 +59,22 @@ const ContactSection = ({ OnScrollDown }: Props) => {
     return (
         <div className=" bg-[#F2F5F8] h-full flex flex-col w-full overflow-hidden bg-center bg-cover">
             <div className="">
-                <ColorNavbar page="advertisers"/>
+                <ColorNavbar page="advertisers" />
             </div>
             <section className="relative flex-1 md:items-center flex w-full">
                 <div
-                    className="flex flex-col  gap-8 justify-center md:grid lg:grid-cols-2  md:pt-3  w-full px-4 md:px-16 lg:px-10 xl:px-28 z-20 ">
+                    className="flex flex-col  gap-8 justify-center items-center md:items-start md:grid lg:grid-cols-2   w-full px-4 md:px-16 lg:px-10 xl:px-28 z-20 ">
                     <div className="z-50">
                         <h2 className=" font-bold text-daisyBush-60  text-[2.25rem] font-Pretendard ">
                             Contact us
                         </h2>
                         <p className="font-bold flex items-center gap-4 text-bunting-50 text-[1.75rem] underline font-Pretendard ">
-                            다른 질문이 있으신가요? <RightArrow/>
+                            다른 질문이 있으신가요? <RightArrow />
                         </p>
 
                     </div>
                     <div className=" w-full flex items-center h-full flex-1 z-40 pb-6 ">
-                        <form onSubmit={handleSubmit(onSubmit)} className="mt-8 w-full h-full lg:max-w-[35rem]">
+                        <form onSubmit={handleSubmit(onSubmit)} className=" w-full  lg:max-w-[35rem]">
                             <FormField
                                 type="text"
                                 label="기업명*"
@@ -120,7 +120,7 @@ const ContactSection = ({ OnScrollDown }: Props) => {
                                         aria-label="Loading Spinner"
                                         data-testid="loader"
                                     />
-                                    <SubmitIcon color={isHovered ? "#561AA4" : "#fff"}/>
+                                    <SubmitIcon color={isHovered ? "#561AA4" : "#fff"} />
                                     문의하기
                                 </button>
                             </div>
@@ -133,7 +133,7 @@ const ContactSection = ({ OnScrollDown }: Props) => {
 
             }
             }>
-                <ScrollToTop/>
+                <ScrollToTop />
             </div>
             <div className='absolute -z-0 left-0 bottom-0 w-full'>
                 <Image

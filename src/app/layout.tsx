@@ -67,8 +67,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
+      <link rel="icon" href="/favicon.png" type="image/x-icon" />
       <body className={`${pretendard.variable}`}>
-      <ToastContainer />
+        <ToastContainer />
         {children}
       </body>
     </html>

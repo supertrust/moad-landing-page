@@ -25,7 +25,7 @@ const Footer = ({ bgColor, type = 'dark', page = 'cargo' }: Props) => {
   const FooterItems = [
     { id: 1, label: '상호: 주식회사 슈퍼트러스트 (SUPER TRUST) | 대표자: 최병호' },
     { id: 2, label: '주소: 서울특별시 송파구 송파대로 167, 에이동 917호 (문정동, 문정역 테라타워)' },
-    { id: 3, label: '사업자 등록번호: 559-87-02646 | 이메일: cs@moad.co.kr' },
+    { id: 3, label: '사업자 등록번호: 559-87-02646 | 이메일: cs@moad.live' },
   ];
   return (
     <footer style={{ backgroundColor: bgColor ? bgColor : '' }} className='relative px-4 md:px-6 lg:px-10 xl:px-28 h-full  flex flex-col justify-center py-6'>
