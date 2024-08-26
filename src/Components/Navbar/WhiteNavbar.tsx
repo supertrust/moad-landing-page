@@ -36,7 +36,7 @@ const IndexPage = ({ page, section }: Props) => {
       icon: page === "advertisers" ? null : PlayIcon,
       styles: 'bg-white text-daisyBush-60 rounded-lg font-semibold hidden md:flex',
       iconPosition: 'left',
-      link: page === 'advertisers' ? "https://advertiser.moad.live/login" : ""
+      link: page === 'advertisers' ? "https://advertiser.moad.live/login" : "https://play.google.com/store/apps/details?id=com.msquare.msq_moad"
     },
   ];
 

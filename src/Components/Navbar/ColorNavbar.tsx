@@ -35,7 +35,7 @@ const ColorNavbar = ({ page }: Props) => {
       icon: page === "advertisers" ? null : PlaysIcon,
       styles: 'bg-[#561AA4] rounded-lg text-white font-semibold hidden md:flex',
       iconPosition: 'left',
-      link: page === 'advertisers' ? "https://moad.live/advertisers" : ""
+      link: page === 'advertisers' ? "https://moad.live/advertisers" : "https://play.google.com/store/apps/details?id=com.msquare.msq_moad"
     },
   ];
 
