@@ -1,7 +1,7 @@
 'use client';
 import React, { useState, useEffect, Suspense } from 'react';
 import ReactFullpage from '@fullpage/react-fullpage';
-import { FifthSection, FourthSection, Header, SecondSection, ThirdSection } from './cargoSections';
+import { CargoVideoSection, FifthSection, FourthSection, Header, SecondSection, ThirdSection } from './cargoSections';
 import Footer from '../Footer/Footer';
 
 const CargoLayout = () => {
@@ -40,12 +40,21 @@ const CargoLayout = () => {
                   isInView={currentSection === 0}
                 />
               </div>
+                <div className='section'>
+                    <CargoVideoSection
+                        OnScrollDown={() => {
+                            fullpageApi.moveSectionDown();
+                        }}
+                        isInView={currentSection === 1}
+                    />
+                </div>
+
               <div className='section'>
                 <SecondSection
                   OnScrollDown={() => {
                     fullpageApi.moveSectionDown();
                   }}
-                  isInView={currentSection === 1}
+                  isInView={currentSection === 2}
                 />
               </div>
               <div className='section'>
@@ -53,7 +62,7 @@ const CargoLayout = () => {
                   OnScrollDown={() => {
                     fullpageApi.moveSectionDown();
                   }}
-                  isInView={currentSection === 2}
+                  isInView={currentSection === 3}
                 />
               </div>
               <div className='section'>
@@ -62,14 +71,14 @@ const CargoLayout = () => {
                     fullpageApi.moveSectionDown();
                     fullpageApi.moveTo(0)
                   }}
-                  isInView={currentSection === 3}
+                  isInView={currentSection === 4}
                 />
               </div>
               <div className='section'>
                 <FifthSection
                   setCurrentSection={setCurrentSection}
                   OnScrollDown={() => {
-                    fullpageApi.moveTo(1)
+                    fullpageApi.moveTo(5)
                   }}
                 />
               </div>

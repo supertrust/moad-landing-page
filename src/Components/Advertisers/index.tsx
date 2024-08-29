@@ -1,12 +1,13 @@
 'use client';
-import React, { useState, useEffect, Suspense } from 'react';
+import { AdvertiserVideoSection } from "@/Components/Advertisers/VideoSection";
 import ReactFullpage from '@fullpage/react-fullpage';
-import AdvertHeroSection from './HeroSection/HeroSection';
-import Services from './Services/Services';
-import CommunityRoadMap from './CommunityRoadMap/CommunityRoadMap';
+import React, { Suspense, useEffect, useState } from 'react';
 import Footer from '../Footer/Footer';
 import AdvertisingPlatforms from './AdvertisingPlatforms/AdvertisingPlatforms';
+import CommunityRoadMap from './CommunityRoadMap/CommunityRoadMap';
 import ContactSection from './Contact/Contact';
+import AdvertHeroSection from './HeroSection/HeroSection';
+import Services from './Services/Services';
 
 const AdvertisersPage = () => {
     const [currentSection, setCurrentSection] = useState(0);
@@ -43,6 +44,14 @@ const AdvertisersPage = () => {
                                         fullpageApi.moveSectionDown();
                                     }}
                                     isInView={currentSection === 0}
+                                />
+                            </div>
+                            <div className='section'>
+                                <AdvertiserVideoSection
+                                    OnScrollDown={() => {
+                                        fullpageApi.moveSectionDown();
+                                    }}
+                                    isInView={currentSection === 1}
                                 />
                             </div>
                             <div className='section'>
