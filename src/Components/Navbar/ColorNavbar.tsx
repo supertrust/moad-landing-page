@@ -47,7 +47,7 @@ const ColorNavbar = ({ page }: Props) => {
         </Link>
         <div className='justify-center flex items-center md:space-x-4'>
           {buttonsConfig.map((button) => (
-            <Link key={button.id} href={button.link} className='items-center flex'>
+            <a key={button.id} href={button.link} className='items-center flex'>
               <button
                 className={`py-1.5 md:px-4 flex cursor-pointer items-center space-x-1 ${button.styles}`}>
                 {button.iconPosition === 'left' && button.icon && (
@@ -66,7 +66,7 @@ const ColorNavbar = ({ page }: Props) => {
                   />
                 )}
               </button>
-            </Link>
+            </a>
           ))}
         </div>
       </div>
