@@ -69,7 +69,7 @@ const IndexPage: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
                 커뮤니티도 모드에서 이용해 보세요.
               </h2>
               <div className="md:w-[502px] md:h-[196px] text-gray-20 text-xl font-bold font-Pretendard leading-9">
-                <p className=''>
+                <p className='text-nowrap'>
                   좋은 정보, 좋은 업체 찾기 번거로우셨죠?
                 </p>
                 <p>

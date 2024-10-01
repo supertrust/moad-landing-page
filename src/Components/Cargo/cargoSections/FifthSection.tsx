@@ -109,8 +109,10 @@ const IndexPage: React.FC<Props> = ({ setCurrentSection, OnScrollDown }) => {
               <div className=" text-gray-60 text-2xl font-bold font-Pretendard underline">
                 다른 질문이 있으신가요
               </div>
-              <div onClick={handleArrowClick} className='z-[1000]'>
-                <Image src={ArrowsIcon} alt='Arrow--icon' className='h-5 w-5 cursor-pointer' />
+              <div  className='z-[1000]'>
+                <a href="mailto:cs@moad.live?subject=모드 문의 메일입니다.">
+                  <Image src={ArrowsIcon} alt='Arrow--icon' className='h-5 w-5 cursor-pointer' />
+                </a>
               </div>
             </div>
           </div>
@@ -133,7 +135,7 @@ const IndexPage: React.FC<Props> = ({ setCurrentSection, OnScrollDown }) => {
                   </div>
                 ))}
               </div>
-              <div className="custom-scrollbar-container px-4" onClick={handleScrollbarClick}>
+              <div className="custom-scrollbar-container px-4 cursor-pointer" onClick={handleScrollbarClick}>
                 <div className="custom-scrollbar-track">
                   <div ref={scrollbarThumbRef} className="custom-scrollbar-thumb">
                   </div>

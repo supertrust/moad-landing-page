@@ -69,7 +69,7 @@ const IndexPage: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
           </div>
         </div>
         <div className='hidden md:flex items-center h-full w-full -translate-y-16'>
-          <div className='grid w-full grid-cols-3 px-10 justify-start gap-8 '>
+          <div className='grid w-full grid-cols-3 px-10 justify-start gap-8 xl:pt-10'>
             {cards.map((item) => (
               <div
                 key={item.id}

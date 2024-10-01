@@ -65,7 +65,7 @@ const IndexPage: React.FC<{ OnScrollDown: () => void; isInView: boolean }> = ({
 
         </div>
         <div className=' mx-auto flex  justify-between items-center '>
-          <div className='w-full px-8 hidden md:block md:w-auto md:max-w-[350px] left-8 absolute md:bottom-[20px]'>
+          <div className='w-full px-8 hidden md:block md:w-auto md:max-w-[350px] lg:max-w-[100%] left-8 absolute md:bottom-[20px]'>
             <Link href="https://play.google.com/store/apps/details?id=com.msquare.msq_moad"  className='flex w-full justify-center items-center space-x-2 bg-[#561AA4] text-white px-8 py-4 rounded-xl border border-white'>
               <Image alt='icon' src={PlaysIcon} />
               <span className='font-bold text-xl'>앱 다운로드</span>
