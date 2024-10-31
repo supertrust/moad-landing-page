@@ -1,8 +1,8 @@
+import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 import Logo from '../../Assets/cardLogo.svg';
 import LogoLight from '../../Assets/logo.svg';
-import Image from 'next/image';
-import Link from 'next/link';
 
 interface Props {
   bgColor?: string
@@ -23,8 +23,8 @@ const Footer = ({ bgColor, type = 'dark', page = 'cargo' }: Props) => {
     },
   ];
   const FooterItems = [
-    { id: 1, label: '상호: 주식회사 슈퍼트러스트 (SUPER TRUST) | 대표자: 최병호' },
-    { id: 2, label: '주소: 서울특별시 송파구 송파대로 167, 에이동 917호 (문정동, 문정역 테라타워)' },
+    { id: 1, label: '상호: 주식회사 슈퍼트러스트 (SUPER TRUST) | 대표자: 김학응' },
+    { id: 2, label: '주소: 서울특별시 송파구 송파대로 167, 에이동 1303호 (문정동, 문정역 테라타워)' },
     { id: 3, label: <>사업자 등록번호: 559-87-02646 | 이메일:  <a href="mailto:cs@moad.live?subject=모드 문의 메일입니다.">cs@moad.live</a></> },
   ];
   return (
