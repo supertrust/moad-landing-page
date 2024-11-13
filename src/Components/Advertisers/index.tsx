@@ -86,7 +86,7 @@ const AdvertisersPage = () => {
                                 />
                             </div>
                             <div className='section custom-footer '>
-                                <Footer page='advertisers' />
+                                <Footer page='advertisers'/>
                             </div>
                         </ReactFullpage.Wrapper>
                     )}
